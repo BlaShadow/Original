@@ -55,3 +55,16 @@ CREATE TABLE IF NOT EXISTS `ubicaciones` (
 -- Dumping data for table `ubicaciones`
 --
 
+--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+insert into datos_personales values(00103302231,'Eni','Garcia','Jose Reyes esq. Mercedes','809-333-4454','829-555-4244','masculino','casado','eniklkcontigo@hotmail.com');
+insert into datos_personales values(00103323456,'Luis','Calderon','Conde Esq. Sanchez','809-323-4774','829-532-4784','pajaro','soltero','eniklkcontigo@hotmail.com');
+insert into datos_personales values(30103123456,'Mamas','Guchi','Conde Esq. Santome','809-123-4884','829-534-2184','Gay','soltero','fdecontigo@hotmail.com');
+insert into usuario values(00103302231,'eni','1234','usuario');
+insert into peluqueria(id_usuario,nombre,telefono1,telefono2,rnc,email) values(00103302231,'Eni BalberShop','809-333-2222','809-332-1123',00103302231,'enipela@gmail.com');
+insert into ubicacion(latitud,longitud,direccion,zona,provincia) values(18.47415, -69.88813, 'Jose Reyes esq. Mercedes','Zona Colonial','Santo Domingo');
+insert into servicios(id_peluqueria,servicio,precio) values (1,'cerquillo',30.30);
+insert into servicios(id_peluqueria,servicio,precio) values (1,'pelada sin cerquillo',50.30);
+insert into servicios(id_peluqueria,servicio,precio) values (1,'pelada con cerquillo',100.00);
+insert into empleados(id_empleado,id_peluqueria)values(00103323456,1);
+insert into clientes (id_cliente,id_peluqueria)values (30103123456,1);
+

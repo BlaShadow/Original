@@ -11,7 +11,7 @@
 	<title>Peluquerias</title>
 	
 	<link rel="stylesheet" type="text/css" href="css/styleNegocio.css" media="screen">
-	
+	<script type = 'text/javascript' src = 'js/SingIn.js'></script>
 </head>
 
 <body>
@@ -52,7 +52,7 @@
 			
 			<div id="singIn" align="center">
 			
-				<form onsubmit = ''>
+				<form onsubmit = 'return validacion();'>
 						<label id = 'labelSingIn'> Registra </label></br></br>
 					Cedula: </br>
 					<input type="text" id = 'txtCedula' name = 'txtCedula'></br>
@@ -77,7 +77,7 @@
 					Email: </br>
 					<input type="text" id = 'txtEmail' name = 'txtEmail'></br>
 					
-					<button> registar</button>
+					<input type = 'submit' value = 'registrar'>
 				
 				</form>
 			

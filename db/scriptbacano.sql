@@ -6,8 +6,8 @@ CREATE DATABASE `peluqueria` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish
 USE `peluqueria`;
 
 -- --------------------------------------------------------
-
 --
+
 -- Table structure for table `clientes`
 --
 
