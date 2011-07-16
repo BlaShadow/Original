@@ -71,9 +71,19 @@
 					Telefono Celular: </br>
 					<input type="text" id = 'txtTelefonoCelular' name = 'txtTelefonoCelular'></br>
 					Sexo: </br>
-					<input type="text" id = 'txtSexo' name = 'txtSexo'></br>
+					<select id = 'txtSexo'>
+						<option value = ''></option>
+						<option value = 'masculino'> Masculino </option>
+						<option value = 'femenino'> Femenino </option>
+						<option value = 'gay'> Gay </option>
+						<option value = 'lesbiana'> Lesbiana </option>
+					</select></br>
 					Estado Civil: </br>
-					<input type="text" id = 'txtEstadoCivil' name = 'txtEstadoCivil'></br>
+					<select id = 'txtEstadoCivil'>
+						<option value = ''></option>
+						<option value = 'Soltero'> Soltero </option>
+						<option value = 'Casado'> Casado </option>
+					</select></br>
 					Email: </br>
 					<input type="text" id = 'txtEmail' name = 'txtEmail'></br>
 					
