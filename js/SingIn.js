@@ -1,4 +1,4 @@
-function validacion(){
+function validacionSingIn(){
 	var cedula = document.getElementById("txtCedula");
 	var nombre = document.getElementById("txtNombre");
 	var apellido = document.getElementById("txtApellido");
@@ -97,9 +97,32 @@ function validacion(){
 	}
 	else
 	{
-		
 		return false;
 	}
+}
+function validacionLogin(){
+	var user = document.getElementById("user");
+	var password = document.getElementById("password");
+	var ind = "";
 	
-	
+	if(user.value == ""){
+		ind = "h";
+		user.style.border = '3px solid red';
+	}
+	else{
+		user.style.border = '3px solid black';
+	}
+	if(password.value == "" || password.value.length < 6){
+		ind = "h";
+		password.style.border = '3px solid red';
+	}
+	else{
+		password.style.border = '3px solid black';
+	}
+	if(ind == ""){
+		return true;
+	}
+	else{
+		return false;
+	}
 }

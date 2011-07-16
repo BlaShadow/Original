@@ -36,13 +36,13 @@
 		<div id="bodyNegocio">
 		
 			<div id="login" align="center">
-			
-			<form>
+				
+			<form method = 'POST' onsubmit = 'return validacionLogin();'>
 			
 				User:<br>
-				<input type="text">
+				<input type="text" id = 'user' name = 'user'>
 				Password:<br>
-				<input type="text">
+				<input type="password" id = 'password' name = 'password'>
 				
 				<input type="submit" value="Login">
 			
@@ -52,8 +52,8 @@
 			
 			<div id="singIn" align="center">
 			
-				<form onsubmit = 'return validacion();'>
-						<label id = 'labelSingIn'> Registra </label></br></br>
+				<form method = 'POST' onsubmit = 'return validacionSingIn();'>
+					<label id = 'labelSingIn'> Registra </label></br></br>
 					Cedula: </br>
 					<input type="text" id = 'txtCedula' name = 'txtCedula'></br>
 					Nombre: </br>
