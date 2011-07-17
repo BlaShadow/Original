@@ -94,7 +94,9 @@ table {
 
 
 /***************************************/
-
+textarea {
+        resize: none;
+}
 .item{
 
 	width:150px;
@@ -141,15 +143,45 @@ table {
 
 }
 
+/*****************comentarios divs******************/
 .comentario{
 
 	margin:auto;
 	width:300px;
-	min-height:150px;
+	min-height:50px;
 	background-color:white;
 	margin-top:20px;
 	margin-bottom:20px;
-	
+	padding:5px;
 
 }
+
+/*******************div para insertar comentarios******************************/
+#insertarComentario{
+
+	color:black;
+	background-color:white;
+	padding:10px;
+
+}
+#insertarComentario input{
+
+	height:25px;
+	width:220px;
+	margin:10px;
+}
+#insertarComentario textarea{
+
+	height:100px;
+	width:220px;
+	margin:10px;
+}
+#insertarComentario button{
+
+	height:30px;
+	width:100px;
+	margin:10px;
+}
+
+
 

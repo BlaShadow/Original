@@ -30,6 +30,11 @@ function getHTTPrequest(){
 
 }
 
+//primera letra mayuscula :)
+function ucFirst(string) {
+	return string.substring(0, 1).toUpperCase() + string.substring(1).toLowerCase();
+}
+
 //Cargar Los pots Para news
 function newsHome(){
 
@@ -64,7 +69,7 @@ function newsHome(){
 					//creo mi elemento div donde estaras todos los post 
 					divPost=document.createElement("div");
 					divPost.className="divPost";
-					divPost.innerHTML="<p><a href=newsdetails.php?id="+idNode+" style='text-decoration:none'>"+tituloNode+"</a></p>"+"<p>"+detalleNode+"</p>"+"<p>"+posteadorNode+"</p>"+"<p>"+photosNode+"</p>"+"<p>"+fechaNode+"</p>"+idNode;
+					divPost.innerHTML="<p><a href=newsdetails.php?id="+idNode+" style='text-decoration:none'>"+ucFirst(tituloNode)+"</a></p>"+"<p>"+ucFirst(detalleNode.substring(0,120))+"....</p>"+"<p>"+posteadorNode+"</p>"+"<p>"+photosNode+"</p>"+"<p>"+fechaNode+"</p>"+idNode;
 					
 					//agrego el div al div potscuerpo
 					cuerpo.appendChild(divPost);
@@ -82,7 +87,39 @@ function newsHome(){
 
 }
 
+function addComent(post,usuario,comentario){
 
+	objeto=getHTTPrequest();
+	
+	objeto.open("GET","./engine/addcomentario.php?post="+post+"&usuario="+usuario+"&comentario="+comentario,true);
+	
+	objeto.onreadystatechange=function(){
+	
+		if(objeto.readyState==4){
+		
+			if(objeto.status==200){
+			
+				if(objeto.responseText==1){
+				
+					padreDiv=document.getElementById("comentariosPadre");
+				
+					hijoDiv=document.createElement("div");
+					hijoDiv.className="comentario";
+					hijoDiv.innerHTML="<p>"+usuario+"</p><p>"+comentario+"</p>";
+					
+					padreDiv.appendChild(hijoDiv);
+				
+				}
+			
+			}
+		
+		}
+	
+	}
+	
+	objeto.send(null);
+
+}
 
 
 
