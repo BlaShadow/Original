@@ -9,7 +9,7 @@
 <head>
 
 	<title>Peluquerias</title>
-	
+	<link rel="stylesheet" type="text/css" href="css/template.css" media="screen">
 	<link rel="stylesheet" type="text/css" href="css/styleNegocio.css" media="screen">
 	<script type = 'text/javascript' src = 'js/SingIn.js'></script>
 </head>
