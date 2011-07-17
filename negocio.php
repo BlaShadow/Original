@@ -14,7 +14,7 @@
 	<script type = 'text/javascript' src = 'js/SingIn.js'></script>
 </head>
 
-<body>
+<body onload = 'load();'>
 
 	<div id="page">
 		
@@ -85,7 +85,7 @@
 						<option value = 'Casado'> Casado </option>
 					</select></br>
 					Email: </br>
-					<input type="text" id = 'txtEmail' name = 'txtEmail'></br>
+					<input type="text" id = 'txtEmail' name = 'txtEmail'></br></br>
 					
 					<input type = 'submit' value = 'registrar'>
 				
@@ -94,9 +94,9 @@
 			</div>
 			
 			<div id = "SignUpNegocio" align = "center"> 
-				<form method = 'POST' onsubmit = ''>		
+				<form method = 'POST' onsubmit = 'return validacionSignUpNegocio();'>		
 					<label> Registro de Negocio </label></br></br></br>
-					Nombre: </br>
+					Nombre Local: </br>
 					<input type = 'text' id = 'nombre' name = 'nombre' ></br>
 					Telefono 1: </br>
 					<input type = 'text' id = 'telefono1' name = 'telefono1' ></br>
@@ -109,15 +109,15 @@
 					Latitud: </br>
 					<input type = 'text' id = 'latitud' name = 'latitud' ></br>
 					Longitud: </br>
-					<input type = 'text' id = 'latitud' name = 'latitud' ></br>
+					<input type = 'text' id = 'longitud' name = 'longitud' ></br>
 					Direccion: </br>
 					<input type = 'text' id = 'direccion' name = 'direccion' ></br>
 					Zona: </br>
 					<input type = 'text' id = 'zona' name = 'zona' ></br>
 					Provincia: </br>
-					<input type = 'text' id = 'provincia' name = 'provincia' ></br>
+					<input type = 'text' id = 'provincia' name = 'provincia' ></br></br>
 				
-					<input type = 'submit'> Registrar </input>
+					<input type = 'submit' value = 'Registrar'> 
 				</form>
 			</div>
 		</div>
