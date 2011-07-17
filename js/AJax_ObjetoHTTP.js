@@ -36,13 +36,13 @@ function ucFirst(string) {
 }
 
 //Cargar Los pots Para news
-function newsHome(){
+function newsHome(start,end){
 
 	//Obtengo mi objeto httprequest
 	http=getHTTPrequest();
 	
 	//abro una coneion asincronima via get
-	http.open("GET","./engine/posts.php",true);
+	http.open("GET","./engine/posts.php?strar="+start+"&end="+end,true);
 	
 	//accedo al eventos que cuando te ready que realice esta funcion
 	http.onreadystatechange = function(){
@@ -54,9 +54,10 @@ function newsHome(){
 			if(http.status==200){
 			
 				cuerpo=document.getElementById("postsCuerpo");
-				documentXML=http.responseXML.getElementsByTagName("titulo");
+				cuerpo.innerHTML="";
+				documentXML=Math.ceil(http.responseXML.getElementsByTagName("titulo").length/10);
 				
-				for(y=0;y<documentXML.length;y++){
+				for(y=start;y<end;y++){
 				
 				//recupero todos los tag del xml
 					idNode=http.responseXML.getElementsByTagName("id")[y].childNodes[0].nodeValue;
@@ -69,11 +70,19 @@ function newsHome(){
 					//creo mi elemento div donde estaras todos los post 
 					divPost=document.createElement("div");
 					divPost.className="divPost";
-					divPost.innerHTML="<p><a href=newsdetails.php?id="+idNode+" style='text-decoration:none'>"+ucFirst(tituloNode)+"</a></p>"+"<p>"+ucFirst(detalleNode.substring(0,120))+"....</p>"+"<p>"+posteadorNode+"</p>"+"<p>"+photosNode+"</p>"+"<p>"+fechaNode+"</p>"+idNode;
+					divPost.innerHTML="<p><a href=newsdetails.php?id="+idNode+" style='text-decoration:none'>"+ucFirst(tituloNode)+"</a></p>"+"<p>"+ucFirst(detalleNode.substring(0,120))+"....</p>"+"<p>"+posteadorNode+"</p>"+"<p>"+photosNode+"</p>"+"<p>"+fechaNode+"</p>";
 					
 					//agrego el div al div potscuerpo
 					cuerpo.appendChild(divPost);
 					
+				}
+				
+				paginadorDiv=document.getElementById("paginador");
+				paginadorDiv.innerHTML="";	
+				for(t=0;t<documentXML;t++){
+				
+					paginadorDiv.innerHTML=paginadorDiv.innerHTML+"<a href='#' onclick='newsHome("+t*10+","+(t+1)*10+")'><b>"+(t+1)+"</b></a>";
+				//"+(t*10+)+","+(t*10+)+"
 				}
 				
 				
@@ -87,6 +96,7 @@ function newsHome(){
 
 }
 
+//Agregar los comentarios a las noticias
 function addComent(post,usuario,comentario){
 
 	objeto=getHTTPrequest();

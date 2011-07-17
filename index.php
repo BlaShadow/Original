@@ -13,7 +13,7 @@
 	
 </head>
 
-<body onload="newsHome()">
+<body onload="newsHome(0,10)">
 
 	<div id="page">
 		
@@ -49,6 +49,7 @@
 				</form>
 			
 			</div>
+		<div style="clear:both" id="paginador"></div>
 		<div style="clear:both"></div>
 		</div>
 		
