@@ -19,7 +19,7 @@
 	
 </head>
 
-<body onload="inicio()">
+<body onload="inicio()" bgcolor="black">
 
 	<div id="page">
 		
