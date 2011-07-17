@@ -11,10 +11,15 @@
 	<title>Peluquerias</title>
 	
 	<link rel="stylesheet" type="text/css" href="css/style.css" media="screen">
+	<script type="text/javascript" src="http://maps.google.com/maps?file=api&v=2&key=ABQIAAAAjU0EJWnWPMv7oQ-jjS7dYxTPZYElJSBeBUeMSX5xXgq6lLjHthSAk20WnZ_iuuzhMt60X_ukms-AUg"
+            ></script>
+		<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+	
+	<script type="text/javascript"	src="map.js"></script>
 	
 </head>
 
-<body>
+<body onload="inicio()">
 
 	<div id="page">
 		
