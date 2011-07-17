@@ -29,7 +29,7 @@
 				<a href="mapa.php"><div class="item">Mapa</div></a>
 				<a href="negocio.php"><div class="item">Negocio</div></a>
 		
-		<div style="clear:both"></div>
+			<div style="clear:both"></div>
 		
 		</div>
 		
@@ -48,41 +48,9 @@
 						<input type="submit" value="Login">
 						<a href="#" onclick = 'registrarse();'><div class="login">Registrar</div></a>
 						
-					
 					</form>
-				
-<<<<<<< HEAD
 				</div>
-=======
-				</form>
-			
-			</div>
 
-			<div id = "SignUpNegocio" align = "center"> 
-				<form method = 'POST' onsubmit = 'return validacionSignUpNegocio();'>		
-					<label> Registro de Negocio </label></br></br></br>
-					Nombre Local: </br>
-					<input type = 'text' id = 'nombre' name = 'nombre' ></br>
-					Telefono 1: </br>
-					<input type = 'text' id = 'telefono1' name = 'telefono1' ></br>
-					Telefono 2:</br>
-					<input type = 'text' id = 'telefono2' name = 'telefono2' ></br>
-					RNC: </br>
-					<input type = 'text' id = 'rnc' name = 'rnc' ></br>
-					Email: </br>
-					<input type = 'text' id = 'email' name = 'email' ></br>
-					Latitud: </br>
-					<input type = 'text' id = 'latitud' name = 'latitud' ></br>
-					Longitud: </br>
-					<input type = 'text' id = 'longitud' name = 'longitud' ></br>
-					Direccion: </br>
-					<input type = 'text' id = 'direccion' name = 'direccion' ></br>
-					Zona: </br>
-					<input type = 'text' id = 'zona' name = 'zona' ></br>
-					Provincia: </br>
-					<input type = 'text' id = 'provincia' name = 'provincia' ></br></br>
->>>>>>> f82cd98ad318a7f8e9670406b630487d276d7d0f
-				
 				<div id="singIn" align="center">
 				
 					<form method = 'POST' onsubmit = 'return validacionSingIn();'>
