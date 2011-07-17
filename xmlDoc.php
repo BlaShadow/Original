@@ -1,6 +1,7 @@
 <?php
 
 require_once("engine/libreria.php");
+$a = new conexion();//instancia de la clase conexion
 
 function parseToXML($htmlStr) 
 { 
@@ -12,22 +13,16 @@ $xmlStr=str_replace("&",'&amp;',$xmlStr);
 return $xmlStr; 
 } 
 
-$link=mysql_connect("localhost", "root", "");
-if(!$link){
-	die('No se conecto:'.mysql_error());
-}
+$a->conexion();//llamada al metodo conexion
 
-$db_selected=mysql_select_db("peluqueria", $link);
-if(!$db_selected){
-	die('no se hizo nada:'.mysql_error());
-}
-
-$sql="SELECT * FROM ubicaciones WHERE 1";
+$sql="SELECT * FROM ubicaciones WHERE 1"; //extraccion de los datos de la base de datos
 $result=mysql_query($sql);
 if(!$result)
 {
 	die('Ha ocurrido un error:'.mysql_error());
 }
+
+//creacion del xml
 echo "<?xml version='1.0' encoding='iso-8859-1'?>";
 echo "<barberias>";
 
@@ -52,6 +47,7 @@ echo "</barberias>";
 
 header("Content-Type: text/xml");
 
+//document  created by  El Dave
 ?>
 
 
