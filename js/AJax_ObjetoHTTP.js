@@ -70,7 +70,7 @@ function newsHome(start,end){
 					//creo mi elemento div donde estaras todos los post 
 					divPost=document.createElement("div");
 					divPost.className="divPost";
-					divPost.innerHTML="<p><a href=newsdetails.php?id="+idNode+" style='text-decoration:none'>"+ucFirst(tituloNode)+"</a></p>"+"<p>"+ucFirst(detalleNode.substring(0,120))+"....</p>"+"<p>"+posteadorNode+"</p>"+"<p>"+photosNode+"</p>"+"<p>"+fechaNode+"</p>"+idNode;
+					divPost.innerHTML="<p><a href=newsdetails.php?id="+idNode+" style='text-decoration:none'>"+ucFirst(tituloNode)+"</a></p>"+"<p>"+ucFirst(detalleNode.substring(0,120))+"....</p>"+"<p>"+posteadorNode+"</p>"+"<p>"+photosNode+"</p>"+"<p>"+fechaNode+"</p>";
 					
 					//agrego el div al div potscuerpo
 					cuerpo.appendChild(divPost);
