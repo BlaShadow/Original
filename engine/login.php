@@ -1,5 +1,6 @@
 <?php
 	
+	session_start();
 	require_once("libreria.php");
 	
 	$conecion=new conexion;
@@ -8,9 +9,11 @@
 	
 	$query=mysql_query($sql);
 	
+	
 	if(mysql_affected_rows()==1){
 	
 		echo "ok";
+		$_SESSION["master"]=$_GET["nick"];
 	
 	}
 	else{

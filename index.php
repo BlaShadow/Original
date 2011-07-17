@@ -39,6 +39,19 @@
 		
 			<div id="postsCuerpo"></div>
 			
+			<?php 
+			
+				if(@!$_SESSION["master"]){ 
+				
+					echo "<style> #loginMaster{ display:block; }#masterLog{ display:none; } </style>"; 
+					
+					}else{
+					
+						echo "<style> #loginMaster{ display:none; }#masterLog{ display:block; } </style>";
+					
+					}
+			
+			?>
 				<div id="loginMaster" align="center">
 				
 					<form onsubmit="return false" name="loginForm">
@@ -49,13 +62,22 @@
 						
 					Clave:<br>
 					
-						<input type="text" name="pass"><br>
+						<input type="password" name="pass"><br>
 						
 						<button onclick="login(document.loginForm.nick.value,document.loginForm.pass.value)">Iniciar</button>
 					
 					</form>
 				
 				</div>
+				
+				
+				<div id="masterLog">
+				
+				<a href="engine/logout.php">Logout</a>
+				<a href="news.php">Nueva Noticia</a>
+				
+				</div>
+				
 				
 		<div style="clear:both" id="paginador"></div>
 		<div style="clear:both"></div>

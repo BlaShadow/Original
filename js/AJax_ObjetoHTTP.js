@@ -60,6 +60,7 @@ function newsHome(start,end){
 				for(y=start;y<end;y++){
 				
 				//recupero todos los tag del xml
+				try{
 					idNode=http.responseXML.getElementsByTagName("id")[y].childNodes[0].nodeValue;
 					tituloNode=http.responseXML.getElementsByTagName("titulo")[y].childNodes[0].nodeValue;
 					detalleNode=http.responseXML.getElementsByTagName("detalle")[y].childNodes[0].nodeValue;
@@ -74,7 +75,7 @@ function newsHome(start,end){
 					
 					//agrego el div al div potscuerpo
 					cuerpo.appendChild(divPost);
-					
+				}catch(e){}	
 				}
 				
 				paginadorDiv=document.getElementById("paginador");
@@ -143,7 +144,16 @@ function login(nick,pass){
 		
 			if(http.status==200){
 			
-				alert("metio mano");
+				if(http.responseText=="ok"){
+				
+					document.getElementById("loginMaster").style.display="none";
+					document.getElementById("masterLog").style.display="block";
+				
+				}else{
+				alert(http.responseText);
+					alert("Fail");
+				
+				}
 			
 			}
 		
@@ -155,8 +165,40 @@ function login(nick,pass){
 
 }
 
+function validarNews(){
 
+	validar=false;
+	
+	
+	if(document.noticias.titulo.value=="" || document.noticias.detalles.value==""){
+	
+		document.noticias.titulo.style.border="solid red 2px";
+		document.noticias.detalles.style.border="solid red 2px";
+		alert("Llenar Todos los Campos");
+		validar=false;
+	
+	}else{
+	
+		if(document.noticias.titulo.value.length < 20 || document.noticias.detalles.value.length < 40){
+		
+			document.noticias.titulo.style.border="solid red 2px";
+			document.noticias.detalles.style.border="solid red 2px";
+			validar=false;
+			document.noticias.titulo.focus;
+			alert("Datos Insuficientes Para una Noticia!!!");
+			
+		
+		}else{
+		
+			validar=true;
+		
+		}
+	
+	}
+	
+	return validar;
 
+}
 
 
 

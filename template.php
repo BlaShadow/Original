@@ -10,7 +10,7 @@
 
 	<title>Peluquerias</title>
 	
-	<link rel="stylesheet" type="text/css" href="css/style.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="css/template.css" media="screen">
 	
 </head>
 
