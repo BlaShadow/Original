@@ -123,6 +123,8 @@ table {
 }
 
 /**********************************/
+/* Registrar Usuario */
+
 #singIn{
 
 	margin:auto;
@@ -132,7 +134,23 @@ table {
 	margin-bottom:20px;
 
 }
+
 #labelSingIn{
+	font-family: Blackoak Std;
+	font-size: 20px;
+	color: black;
+}
+/* Registrar Negocio */
+#SignUpNegocio{
+
+	margin:auto;
+	background-color:red;
+	width:400px;
+	margin-top:20px;
+	margin-bottom:20px;
+
+}
+#SignUpNegocio label{
 	font-family: Blackoak Std;
 	font-size: 20px;
 	color: black;

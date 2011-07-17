@@ -92,7 +92,34 @@
 				</form>
 			
 			</div>
-		
+			
+			<div id = "SignUpNegocio" align = "center"> 
+				<form method = 'POST' onsubmit = ''>		
+					<label> Registro de Negocio </label></br></br></br>
+					Nombre: </br>
+					<input type = 'text' id = 'nombre' name = 'nombre' ></br>
+					Telefono 1: </br>
+					<input type = 'text' id = 'telefono1' name = 'telefono1' ></br>
+					Telefono 2:</br>
+					<input type = 'text' id = 'telefono2' name = 'telefono2' ></br>
+					RNC: </br>
+					<input type = 'text' id = 'rnc' name = 'rnc' ></br>
+					Email: </br>
+					<input type = 'text' id = 'email' name = 'email' ></br>
+					Latitud: </br>
+					<input type = 'text' id = 'latitud' name = 'latitud' ></br>
+					Longitud: </br>
+					<input type = 'text' id = 'latitud' name = 'latitud' ></br>
+					Direccion: </br>
+					<input type = 'text' id = 'direccion' name = 'direccion' ></br>
+					Zona: </br>
+					<input type = 'text' id = 'zona' name = 'zona' ></br>
+					Provincia: </br>
+					<input type = 'text' id = 'provincia' name = 'provincia' ></br>
+				
+					<input type = 'submit'> Registrar </input>
+				</form>
+			</div>
 		</div>
 		
 		<div id="footer"></div>
