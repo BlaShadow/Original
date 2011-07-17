@@ -15,31 +15,29 @@ return $xmlStr;
 
 $a->conexion();//llamada al metodo conexion
 
-$sql="SELECT * FROM ubicaciones WHERE 1"; //extraccion de los datos de la base de datos
+$sql="SELECT * FROM peluqueria JOIN ubicacion WHERE 1"; //extraccion de los datos de la base de datos por medio de un join
 $result=mysql_query($sql);
 if(!$result)
 {
 	die('Ha ocurrido un error:'.mysql_error());
 }
 
-//creacion del xml
+//creacion del cuerpo de  xml
 echo "<?xml version='1.0' encoding='iso-8859-1'?>";
 echo "<barberias>";
 
 while($row=mysql_fetch_assoc($result))
 {
 			echo"<barberia ";
-			echo "ID = '".$row["ID"]."' ";
-			echo "usuario = '".$row["Usuario"]."' ";
-			echo "clave = '".$row["Clave"]."' ";
-			echo "negocio = '".$row["Nombre_Negocio"]."' ";
-			echo "direccion = '".$row["Direccion"]."' ";
-			echo "email = '".$row["Email"]."' ";
-			echo "Latitud = '".$row["Lat"]."' ";
-			echo "Longitud = '".$row["Lng"]."' ";
-			echo "rnc = '".$row["RNC"]."' ";
-			echo "telefono = '".$row["Tel"]."' ";
-			echo "url = '".$row["URL"]."' ";
+			//echo "ID = '".$row["ID"]."' ";
+			echo "nombre = '".$row["nombre"]."' ";
+			echo "direccion = '".$row["direccion"]."' ";
+			echo "email = '".$row["email"]."' ";
+			echo "Latitud = '".$row["latitud"]."' ";
+			echo "Longitud = '".$row["longitud"]."' ";
+			echo "rnc = '".$row["rnc"]."' ";
+			echo "telefono = '".$row["telefono1"]."' ";
+			//echo "url = '".$row["URL"]."' ";
 			echo "/>";
 
 }			
