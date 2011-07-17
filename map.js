@@ -43,15 +43,16 @@ function inicio()
 		}); 
 		
 		
-		
+		//llamada al evento mouseover en el marcador
 		google.maps.event.addListener(marker,'mouseover',function(){
 			infoWin.open(map,marker);
 			
 		});
 		
+		//llamada al evento mouseout del marcador
 		google.maps.event.addListener(marker, 'mouseout', function(){
 			infoWin.close(map,marker);
 		});
 	}	
 	
-	
+//document created by El Dave	

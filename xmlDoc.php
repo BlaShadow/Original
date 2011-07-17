@@ -1,7 +1,7 @@
 <?php
 
 require_once("engine/libreria.php");
-$a = new conexion();
+$a = new conexion();//instancia de la clase conexion
 
 function parseToXML($htmlStr) 
 { 
@@ -13,14 +13,16 @@ $xmlStr=str_replace("&",'&amp;',$xmlStr);
 return $xmlStr; 
 } 
 
-$a->conexion();
+$a->conexion();//llamada al metodo conexion
 
-$sql="SELECT * FROM ubicaciones WHERE 1";
+$sql="SELECT * FROM ubicaciones WHERE 1"; //extraccion de los datos de la base de datos
 $result=mysql_query($sql);
 if(!$result)
 {
 	die('Ha ocurrido un error:'.mysql_error());
 }
+
+//creacion del xml
 echo "<?xml version='1.0' encoding='iso-8859-1'?>";
 echo "<barberias>";
 
@@ -45,6 +47,7 @@ echo "</barberias>";
 
 header("Content-Type: text/xml");
 
+//document  created by  El Dave
 ?>
 
 
