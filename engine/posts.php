@@ -6,7 +6,8 @@
 	$conexion=new Conexion;
 	
 	//Querry que me retornara todos los registrso(posts)
-	$sql="select * from news";
+	//$sql="select * from news limit ".$_GET["start"].",".$_GET["end"]."";
+	$sql="select * from news ";
 
 	//Convierto mi query en una array
 	$query=mysql_query($sql);
@@ -17,6 +18,8 @@
 	//Elemento padre
 	echo "<posts>";
 	
+		//$ara=mysql_fetch_array($query);
+		
 		while($ara=mysql_fetch_array($query)){
 		
 			echo "<item>";
