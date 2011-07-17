@@ -45,11 +45,11 @@
 				
 					echo "<style> #loginMaster{ display:block; }#masterLog{ display:none; } </style>"; 
 					
-					}else{
+				}else{
 					
-						echo "<style> #loginMaster{ display:none; }#masterLog{ display:block; } </style>";
+					echo "<style> #loginMaster{ display:none; }#masterLog{ display:block; } </style>";
 					
-					}
+				}
 			
 			?>
 				<div id="loginMaster" align="center">

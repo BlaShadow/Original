@@ -50,6 +50,13 @@ table {
 	border-spacing: 0;
 }
 /* Pagina */
+
+a{
+
+	text-decoration:none;
+
+}
+
 #page{
 
 	width:960px;
