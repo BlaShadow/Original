@@ -1,55 +1,3 @@
-/************/
-/**********************************************************/
-
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-/* Pagina */
 #page{
 
 	width:960px;
@@ -75,13 +23,6 @@ table {
 	color:white;
 }
 
-/* pie de pagina*/
-#footer{
-
-	height:40px;
-	border:2px solid green;
-
-}
 
 #login{
 
@@ -96,18 +37,6 @@ table {
 
 /***************************************/
 
-.item{
-
-	width:150px;
-	height:30px;
-	background-color:red;
-	float:left;
-	margin:5;
-	color:white;
-	text-align:center;
-	padding-top:5px;
-	
-}
 .login{
 	
 	width:190px;
@@ -121,19 +50,6 @@ table {
 
 #login  div:hover{
 	background-color:black;
-}
-#menu a{
-
-	text-decoration:none;
-
-}
-
-
-#menu div:hover{
-
-	background-color:white;
-	color:black;
-
 }
 
 /**********************************/
