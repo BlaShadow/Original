@@ -52,12 +52,32 @@
 			
 			<div id="singIn" align="center">
 			
-				<form>
-				
-					<input type="text"><br>
-					<input type="text"><br>
-					<input type="text"><br>
-					<input type="text"><br>
+				<form onsubmit = ''>
+						<label id = 'labelSingIn'> Registra </label></br></br>
+					Cedula: </br>
+					<input type="text" id = 'txtCedula' name = 'txtCedula'></br>
+					Nombre: </br>
+					<input type="text" id = 'txtNombre' name = 'txtNombre'></br>
+					Apellido: </br>
+					<input type="text" id = 'txtApellido' name = 'txtApellido'></br>
+					Nombre de Usuario: </br>
+					<input type = 'text' id = 'txtNombreUsuario' name = 'txtNombreUsuario'></br>
+					Password: </br>
+					<input type = 'password' id = 'txtPassword' name = 'txtPassword'></br>
+					Direccion: </br>
+					<input type="text" id = 'txtDireccion' name = 'txtDireccion'></br>
+					Telefono Local: </br>
+					<input type="text" id = 'txtTelefonoLocal' name = 'txtTelefonoLocal'></br>
+					Telefono Celular: </br>
+					<input type="text" id = 'txtTelefonoCelular' name = 'txtTelefonoCelular'></br>
+					Sexo: </br>
+					<input type="text" id = 'txtSexo' name = 'txtSexo'></br>
+					Estado Civil: </br>
+					<input type="text" id = 'txtEstadoCivil' name = 'txtEstadoCivil'></br>
+					Email: </br>
+					<input type="text" id = 'txtEmail' name = 'txtEmail'></br>
+					
+					<button> registar</button>
 				
 				</form>
 			
