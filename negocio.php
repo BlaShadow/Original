@@ -92,7 +92,7 @@
 				</form>
 			
 			</div>
-			
+
 			<div id = "SignUpNegocio" align = "center"> 
 				<form method = 'POST' onsubmit = 'return validacionSignUpNegocio();'>		
 					<label> Registro de Negocio </label></br></br></br>

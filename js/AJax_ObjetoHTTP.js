@@ -143,7 +143,15 @@ function login(nick,pass){
 		
 			if(http.status==200){
 			
-				alert("metio mano");
+				if(http.responseText=="ok"){
+				
+					document.getElementById("loginMaster").style.display="none";
+				
+				}else{
+				
+					alert("Fail");
+				
+				}
 			
 			}
 		

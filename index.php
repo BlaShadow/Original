@@ -49,13 +49,15 @@
 						
 					Clave:<br>
 					
-						<input type="text" name="pass"><br>
+						<input type="password" name="pass"><br>
 						
 						<button onclick="login(document.loginForm.nick.value,document.loginForm.pass.value)">Iniciar</button>
 					
 					</form>
 				
 				</div>
+				
+				<div ></div>
 				
 		<div style="clear:both" id="paginador"></div>
 		<div style="clear:both"></div>
