@@ -1,6 +1,7 @@
 <?php
 
 require_once("engine/libreria.php");
+$a = new conexion();
 
 function parseToXML($htmlStr) 
 { 
@@ -12,15 +13,7 @@ $xmlStr=str_replace("&",'&amp;',$xmlStr);
 return $xmlStr; 
 } 
 
-$link=mysql_connect("localhost", "root", "");
-if(!$link){
-	die('No se conecto:'.mysql_error());
-}
-
-$db_selected=mysql_select_db("peluqueria", $link);
-if(!$db_selected){
-	die('no se hizo nada:'.mysql_error());
-}
+$a->conexion();
 
 $sql="SELECT * FROM ubicaciones WHERE 1";
 $result=mysql_query($sql);
