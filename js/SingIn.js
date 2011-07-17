@@ -1,10 +1,16 @@
-function load(){
+function loadNegocio(){
 	var singIn = document.getElementById("singIn");
+	singIn.style.display = "none";
+
+}
+function load(){
 	var SignUpNegocio = document.getElementById("SignUpNegocio");
 	var SignUpClientes = document.getElementById("SignUpClientes");
-	singIn.style.display = "none";
+	var SignUpEmpleados = document.getElementById("SignUpEmpleados");
 	SignUpNegocio.style.display = "none";
 	SignUpClientes.style.display = "none";
+	SignUpEmpleados.style.display = "none";
+
 }
 
 function validacionSingIn(){
@@ -231,7 +237,7 @@ function validacionSignUpNegocio(){
 	}
 }
 function ValidacionSignUpClientes(){
-var cedula = document.getElementById("txtCedula");
+	var cedula = document.getElementById("txtCedula");
 	var nombre = document.getElementById("txtNombre");
 	var apellido = document.getElementById("txtApellido");
 	var direccion = document.getElementById("txtDireccion");
@@ -316,4 +322,50 @@ var cedula = document.getElementById("txtCedula");
 		return false;
 	}
 }
+function registrarse(){
+	
+	var singIn = document.getElementById("singIn");
+	var login = document.getElementById("login");
+	
+	if(singIn.style.display == 'none'){
+		singIn.style.display = 'block';
+		login.style.display = 'none';
+	}
+	else{
+		login.style.display = 'block';
+		singIn.style.display = 'none';
+	}
+}
+function agregarNegocio(){
 
+	if(SignUpNegocio.style.display == "none"){
+		SignUpNegocio.style.display = "block";
+		SignUpClientes.style.display = "none";
+		SignUpEmpleados.style.display = "none";
+	}
+	else{
+		SignUpNegocio.style.display = "none";
+	}
+}
+
+function agregarCliente(){
+	if(SignUpClientes.style.display == "none"){
+		SignUpNegocio.style.display = "none";
+		SignUpClientes.style.display = "block";
+		SignUpEmpleados.style.display = "none";	
+	}
+	else{
+		SignUpClientes.style.display = "none";
+	}
+}
+
+function agregarEmpleado(){
+	if(SignUpEmpleados.style.display == "none"){
+		SignUpNegocio.style.display = "none";
+		SignUpClientes.style.display = "none";
+		SignUpEmpleados.style.display = "block";
+	}
+	else{
+		SignUpEmpleados.style.display = "none";
+	}
+}
