@@ -126,16 +126,58 @@ p{
 
 }
 
+a:visited{
+
+	color:black;
+
+}
 
 /********************Estylos para cada post*****************/
 .divPost{
 
 	background-color:red;
 	width:400px;
-	height:100px;
+	min-height:100px;
 	margin:30px;
-	padding:15px;
+	padding:1px;
+	color:black;
 	
+}
+
+.borrarPost{
+
+	width:80px;
+	background-color:white;
+	text-decoration:none;
+	padding:10px;
+	float:right;
+}
+.fechaPost{
+
+	width:80px;
+	height:15px;
+	background-color:white;
+	text-decoration:none;
+	padding:10px;
+	float:left;
+
+}
+.tituloPost{
+
+	color:black;
+	width:390px;
+	background-color:white;
+	padding:5px;
+	margin:auto;
+	margin-bottom:10px;
+}
+
+.detallesPost{
+
+	padding:10px;
+	width:350px;
+	margin:auto;
+
 }
 
 /*********************log in master*******************************/
@@ -180,6 +222,16 @@ p{
 	float:right;
 	margin:20px;
 	padding:20px;
+
+}
+#masterLog a{
+
+	width:120px;
+	height:40px;
+	text-decoration:none;
+	background-color:black;
+	padding:10px;
+	color:white;
 
 }
 

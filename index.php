@@ -70,6 +70,7 @@
 				
 				</div>
 				
+				<input type="hidden" value="<?php if(@$_SESSION["master"]){ echo "true"; }else{ echo "false"; }?>" id="session">
 				
 				<div id="masterLog">
 				

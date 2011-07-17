@@ -73,10 +73,16 @@ function newsHome(start,end){
 						//creo mi elemento div donde estaras todos los post 
 						divPost=document.createElement("div");
 						divPost.className="divPost";
-						divPost.innerHTML="<p><a href=newsdetails.php?id="+idNode+" style='text-decoration:none'>"+ucFirst(tituloNode)+
-						"</a></p>"+"<p>"+ucFirst(detalleNode.substring(0,120))+"....</p>"+"<p>"+posteadorNode+"</p>"+"<p>"+photosNode+"</p>"+
-						"<p>"+fechaNode+"</p><a onclick='borrarNew("+idNode+")' href='#'>Borrar</a>";
+						divPost.innerHTML="<p class='tituloPost'><a href=newsdetails.php?id="+idNode+" style='text-decoration:none'><b>"+ucFirst(tituloNode)+
+						"</b></a></p>"+"<p class='detallesPost'>"+ucFirst(detalleNode.substring(0,120))+"....</p>"+
+						"<p class='fechaPost'>"+fechaNode+"</p>";
 						
+						if(document.getElementById("session").value=="true"){ 
+						
+							divPost.innerHTML+="<a align='center' onclick='borrarNew("+idNode+")' href='#' class='borrarPost'>Borrar</a>";
+						
+						}
+						divPost.innerHTML+="<div style='clear:both'></div>";
 						//agrego el div al div potscuerpo
 						cuerpo.appendChild(divPost);
 						
