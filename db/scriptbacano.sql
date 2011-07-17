@@ -14,8 +14,8 @@ USE `peluqueria`;
 CREATE TABLE IF NOT EXISTS `clientes` (
   `id_cliente` int(11) NOT NULL,
   `id_peluqueria` int(11) NOT NULL,
-  PRIMARY KEY (`id_cliente`),
-) ENGINE=MyISAM DEFAULT;
+  PRIMARY KEY (`id_cliente`)
+) ENGINE=MyISAM;
 
 
 --
@@ -47,7 +47,7 @@ CREATE TABLE IF NOT EXISTS `datos_personales` (
   `estado_civil` varchar(10) NOT NULL,
   `email` varchar(10) NOT NULL,
   PRIMARY KEY (`cedula`)
-) ENGINE=MyISAM DEFAULT;
+) ENGINE=MyISAM ;
 
 -- --------------------------------------------------------
 
@@ -58,8 +58,8 @@ CREATE TABLE IF NOT EXISTS `datos_personales` (
 CREATE TABLE IF NOT EXISTS `empleados` (
   `id_empleado` int(11) NOT NULL,
   `id_peluqueria` int(11) NOT NULL,
-  PRIMARY KEY (`id_empleado`),
-) ENGINE=MyISAM DEFAULT;
+  PRIMARY KEY (`id_empleado`)
+) ENGINE=MyISAM;
 
 -- --------------------------------------------------------
 
@@ -77,7 +77,7 @@ CREATE TABLE IF NOT EXISTS `factura` (
   `itbis` float(10,6) NOT NULL,
   `total` float(10,6) NOT NULL,
   `fecha` date NOT NULL,
-  PRIMARY KEY (`id_factura`),
+  PRIMARY KEY (`id_factura`)
 ) ENGINE=MyISAM ;
 
 -- --------------------------------------------------------
@@ -117,7 +117,7 @@ CREATE TABLE IF NOT EXISTS `peluqueria` (
   `rnc` int(11) NOT NULL,
   `email` varchar(50) NOT NULL,
   `fotos` text NOT NULL,
-  PRIMARY KEY (`id_peluqueria`),
+  PRIMARY KEY (`id_peluqueria`)
 ) ENGINE=MyISAM;
 
 -- --------------------------------------------------------
@@ -131,7 +131,7 @@ CREATE TABLE IF NOT EXISTS `servicios` (
   `id_peluqueria` int(11) NOT NULL,
   `servicio` varchar(30) NOT NULL,
   `precio` float(10,6) NOT NULL,
-  PRIMARY KEY (`id_servicios`),
+  PRIMARY KEY (`id_servicios`)
 
 ) ENGINE=MyISAM;
 
@@ -164,5 +164,5 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `nombre_usuario` varchar(20) NOT NULL,
   `contrasena` varchar(12) NOT NULL,
   `clase` int(1) NOT NULL,
-  PRIMARY KEY (`cedula`)
+  PRIMARY KEY (`id_usuario`)
 ) ENGINE=MyISAM;
