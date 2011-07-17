@@ -218,7 +218,7 @@ begin
      insert into peluqueria(id_usuario,nombre,telefono1,telefono2,rnc,email,fotos)
      values(id_usuario,nombre,telefono1,telefono2,rnc,email,fotos);     
 	
-	 select max(id_peluqueria) into var;
+	 select max(id_peluqueria)  into var from peluqueria;
 	 
 	
      insert into ubicacion(id_peluqueria,latitud,longitud,direccion,zona,provincia)
