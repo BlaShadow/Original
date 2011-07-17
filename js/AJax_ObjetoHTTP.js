@@ -131,6 +131,29 @@ function addComent(post,usuario,comentario){
 
 }
 
+function login(nick,pass){
+
+	http=getHTTPrequest();
+	
+	http.open("GET","./engine/login.php?nick="+nick+"&pass="+pass,true);
+	
+	http.onreadystatechange=function(){
+	
+		if(http.readyState==4){
+		
+			if(http.status==200){
+			
+				alert("metio mano");
+			
+			}
+		
+		}
+	
+	};
+	
+	http.send(null);
+
+}
 
 
 

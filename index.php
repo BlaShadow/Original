@@ -38,17 +38,25 @@
 		<div id="body">
 		
 			<div id="postsCuerpo"></div>
-			<div id="loginMaster" align="center">
 			
-				<form>
+				<div id="loginMaster" align="center">
 				
-					<input type="text"><br>
-					<input type="text"><br>
-					<button>Iniciar</button>
+					<form onsubmit="return false" name="loginForm">
+					
+					Nombre:<br>
+					
+						<input type="text" name="nick"><br>
+						
+					Clave:<br>
+					
+						<input type="text" name="pass"><br>
+						
+						<button onclick="login(document.loginForm.nick.value,document.loginForm.pass.value)">Iniciar</button>
+					
+					</form>
 				
-				</form>
-			
-			</div>
+				</div>
+				
 		<div style="clear:both" id="paginador"></div>
 		<div style="clear:both"></div>
 		</div>
