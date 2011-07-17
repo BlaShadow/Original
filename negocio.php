@@ -53,7 +53,7 @@
 			<div id="singIn" align="center">
 			
 				<form method = 'POST' onsubmit = 'return validacionSingIn();'>
-					<label id = 'labelSingIn'> Registra </label></br></br>
+					<label id = 'labelSingIn'> Registrate </label></br></br>
 					Cedula: </br>
 					<input type="text" id = 'txtCedula' name = 'txtCedula'></br>
 					Nombre: </br>
@@ -118,6 +118,46 @@
 					<input type = 'text' id = 'provincia' name = 'provincia' ></br></br>
 				
 					<input type = 'submit' value = 'Registrar'> 
+				</form>
+			</div>
+			<div id = 'SignUpClientes' align = 'center'>
+				<form method = 'POST' onsubmit = 'return validacionSignUpClientes();'>
+					<label id = 'labelSingIn'> Registrar Cliente </label></br></br>
+					Cedula: </br>
+					<input type="text" id = 'txtCedula' name = 'txtCedula'></br>
+					Nombre: </br>
+					<input type="text" id = 'txtNombre' name = 'txtNombre'></br>
+					Apellido: </br>
+					<input type="text" id = 'txtApellido' name = 'txtApellido'></br>
+					Direccion: </br>
+					<input type="text" id = 'txtDireccion' name = 'txtDireccion'></br>
+					Telefono Local: </br>
+					<input type="text" id = 'txtTelefonoLocal' name = 'txtTelefonoLocal'></br>
+					Telefono Celular: </br>
+					<input type="text" id = 'txtTelefonoCelular' name = 'txtTelefonoCelular'></br>
+					Sexo: </br>
+					<select id = 'txtSexo'>
+						<option value = ''></option>
+						<option value = 'masculino'> Masculino </option>
+						<option value = 'femenino'> Femenino </option>
+						<option value = 'gay'> Gay </option>
+						<option value = 'lesbiana'> Lesbiana </option>
+					</select></br>
+					Estado Civil: </br>
+					<select id = 'txtEstadoCivil'>
+						<option value = ''></option>
+						<option value = 'Soltero'> Soltero </option>
+						<option value = 'Casado'> Casado </option>
+					</select></br>
+					Email: </br>
+					<input type="text" id = 'txtEmail' name = 'txtEmail'></br></br>
+					
+					<input type = 'submit' value = 'registrar'>
+				</form>
+			</div>
+			<div id = 'SignUpEmpleados' align = 'center'> 
+				<form method = 'POST'>
+				
 				</form>
 			</div>
 		</div>

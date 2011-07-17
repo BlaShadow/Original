@@ -155,3 +155,17 @@ table {
 	font-size: 20px;
 	color: black;
 }
+#SignUpClientes{
+	margin:auto;
+	background-color:red;
+	width:400px;
+	margin-top:20px;
+	margin-bottom:20px;
+}
+#SignUpClientes label{
+
+	font-family: Blackoak Std;
+	font-size: 20px;
+	color: black;
+}
+
