@@ -1,3 +1,4 @@
+/************news style************************/
 /**********************************************************/
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -83,16 +84,6 @@ table {
 
 }
 
-#login{
-
-	width:200px;
-	height:200px;
-	border:2px solid red;
-	margin:auto;
-	margin-top:50px;
-}
-
-
 /***************************************/
 
 .item{
@@ -107,17 +98,11 @@ table {
 	padding-top:5px;
 	
 }
-p{
-	text-transform:capitalize;
-
-}
-
 #menu a{
 
 	text-decoration:none;
 
 }
-
 
 #menu div:hover{
 
@@ -125,81 +110,37 @@ p{
 	color:black;
 
 }
+/***este es el panel donde se crearan las noticias :)***/
+#panel{
 
-
-/********************Estylos para cada post*****************/
-.divPost{
-
-	background-color:red;
-	width:400px;
-	height:100px;
-	margin:30px;
-	padding:15px;
-	
-}
-
-/*********************log in master*******************************/
-#loginMaster{
-
-	float:right;
-	width:280px;
-	min-height:80px;
+	width:370px;
+	min-height:270px;
 	background-color:black;
-	margin:20px;
-	padding:10px;
-	color:white;
-
-}
-
-#loginMaster input{
-
-	width:190px;
-	height:30px;
-	margin:10px;
-
-}
-#loginMaster  button{
-
-	width:80px;
-	height:30px;
-
-}
-
-
-#postsCuerpo{
-
-	float:left;
-
-}
-/**********************masterLog***************************/
-#masterLog{
-
-	width:250px;
-	height:200px;
-	background-color:red;
-	float:right;
-	margin:20px;
+	margin:auto;
 	padding:20px;
-
-}
-
-/***********************paginador****************************/
-#paginador{
-
-	height:20px;
-	background-color:red;
-	color:white;
-	margin:5px;
-	padding:5px;
-
-}
-#paginador a{
-
-	width:20px;
-	height:20px;
-	margin:5px;
-	background-color:red;
-	text-decoration:none;
+	margin-top:30px;
+	margin-bottom:30px;
 	color:white;
 
 }
+#panel textarea{
+
+	resize:none;
+	width:300px;
+	height:150px;
+	margin:10px;
+}
+#panel input{
+
+	height:30px;
+	width:300px;
+	margin:15px;
+
+}
+#panel button{
+
+	width:120px;
+	height:40px;
+
+}
+

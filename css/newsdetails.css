@@ -92,6 +92,12 @@ table {
 	margin-top:50px;
 }
 
+p{
+	text-transform:capitalize;
+
+}
+
+
 
 /***************************************/
 textarea {

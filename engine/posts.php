@@ -25,27 +25,27 @@
 			echo "<item>";
 				
 				echo "<id>";
-					echo $ara[0];
+					echo $ara[0]." ";
 				echo "</id>";
 			
 				echo "<titulo>";
-					echo $ara[1];
+					echo $ara[1]." ";
 				echo "</titulo>";
 				
 				echo "<detalle>";
-					echo $ara[2];
+					echo $ara[2]." ";
 				echo "</detalle>";
 				
 				echo "<posteador>";
-					echo $ara[3];
+					echo $ara[3]." ";
 				echo "</posteador>";
 				
 				echo "<photos>";
-					echo $ara[4];
+					echo $ara[4]." ";
 				echo "</photos>";
 					
 				echo "<fecha>";
-					echo $ara[5];
+					echo $ara[5]." ";
 				echo "</fecha>";
 					
 			echo "</item>";
