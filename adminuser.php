@@ -10,7 +10,6 @@
 
 	<title>Peluquerias</title>
 	
-	<link rel="stylesheet" type="text/css" href="css/template.css" media="screen">
 	<link rel="stylesheet" type="text/css" href="css/styleNegocio.css" media="screen">
 	<script type = 'text/javascript' src = 'js/SingIn.js'></script>
 	
@@ -110,10 +109,10 @@
 					</form>
 				</div>
 				<div id = 'SignUpEmpleados' align = 'center'> 
-					<form method = 'POST' onsubmit = ''>
+					<form method = 'POST' onsubmit = 'return validacionSignUpClientes();'>
 						<label> Registrar Empleado </label></br></br>
 						Cedula: </br>
-						<input type="text" id = 'txtCedula' name = 'txtCedula'></br>
+						<input type="text" id = 'txtCedula' name = 'txtCedula'></br>s
 						Nombre: </br>
 						<input type="text" id = 'txtNombre' name = 'txtNombre'></br>
 						Apellido: </br>
