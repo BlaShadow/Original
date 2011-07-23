@@ -103,7 +103,7 @@
 								<textarea maxlength="700" id="comentario"></textarea><br>
 								<input id="id_post" type="hidden" value="<?php echo $_GET["id"]; ?>">
 								
-								<button onclick="addComent(document.getElementById('id_post').value,document.formulario.usuario.value,document.getElementById('comentario').value)">Comentar</button>
+								<button onclick="addComent(document.getElementById('id_post').value,document.formulario.usuario.value,document.getElementById('comentario').value);document.formulario.reset()">Comentar</button>
 								
 						</form>
 					
