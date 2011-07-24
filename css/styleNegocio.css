@@ -129,7 +129,7 @@ a{
 
 	margin:auto;
 	background-color:red;
-	width:400px;
+	width:600px;
 	margin-top:20px;
 	margin-bottom:20px;
 
@@ -138,6 +138,7 @@ a{
 	font-family: Blackoak Std;
 	font-size: 20px;
 	color: black;
+	
 }
 #SignUpClientes{
 	margin:auto;
@@ -151,6 +152,7 @@ a{
 	font-family: Blackoak Std;
 	font-size: 20px;
 	color: black;
+	
 }
 #SignUpEmpleados{
 	margin:auto;
@@ -164,15 +166,21 @@ a{
 	font-size: 20px;
 	color: black;
 }
+
 .botones{
 	
-	width:190px;
+	width:150px;
 	height:30px;
 	background-color:red;
 	margin:5;
 	color:white;
 	text-align:center;
 	padding-top:5px;
+
+}
+#buttons{
+	float:left;
+	
 }
 #buttons a{
 
@@ -181,5 +189,5 @@ a{
 }
 
 #buttons  div:hover{
-	background-color:black;
+	background-color:blue;
 }

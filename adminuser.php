@@ -39,7 +39,7 @@
 		<div id="body">
 			<div id = "bodyNegocio">
 				
-				<div id = 'buttons' align = 'center'>
+				<div id = 'buttons' >
 				
 					<a href = '#' onclick = 'agregarNegocio();'><div class = 'botones' > Suscribir mi Negocio</div></a>
 					<a href = '#' onclick = 'agregarEmpleado();'><div class = 'botones' > Agregar Empleado</div></a>
@@ -50,28 +50,44 @@
 				<div id = "SignUpNegocio" align = "center"> 
 					<form method = 'POST' onsubmit = 'return validacionSignUpNegocio();'>		
 						<label> Registro de Negocio </label></br></br></br>
-						Nombre Local: </br>
-						<input type = 'text' id = 'nombre' name = 'nombre' ></br>
-						Telefono 1: </br>
-						<input type = 'text' id = 'telefono1' name = 'telefono1' ></br>
-						Telefono 2:</br>
-						<input type = 'text' id = 'telefono2' name = 'telefono2' ></br>
-						RNC: </br>
-						<input type = 'text' id = 'rnc' name = 'rnc' ></br>
-						Email: </br>
-						<input type = 'text' id = 'email' name = 'email' ></br>
-						Latitud: </br>
-						<input type = 'text' id = 'latitud' name = 'latitud' ></br>
-						Longitud: </br>
-						<input type = 'text' id = 'longitud' name = 'longitud' ></br>
-						Direccion: </br>
-						<input type = 'text' id = 'direccion' name = 'direccion' ></br>
-						Zona: </br>
-						<input type = 'text' id = 'zona' name = 'zona' ></br>
-						Provincia: </br>
-						<input type = 'text' id = 'provincia' name = 'provincia' ></br></br>
-					
-						<input type = 'submit' value = 'Registrar'> 
+						<table>
+							<tr>
+								<th>Nombre Local: </th>
+								<td> <input type = 'text' id = 'nombre' name = 'nombre' > </td>
+								<th> RNC: </th>
+								<td> <input type = 'text' id = 'rnc' name = 'rnc' > </td>
+							</tr>			
+							<tr>		
+								<th> Telefono 1:</th>
+								<td> <input type = 'text' id = 'telefono1' name = 'telefono1' > </td>
+								<th> Telefono 2:</th>
+								<td> <input type = 'text' id = 'telefono2' name = 'telefono2' > </td>
+							</tr>
+							<tr>
+								<th>Email: </th>
+								<td> <input type = 'text' id = 'email' name = 'email' > </td>
+								<th>Direccion:</th> 
+								<td><input type = 'text' id = 'direccion' name = 'direccion' ></td>
+							</tr>
+							
+							<tr>
+								<th>Longitud:</th> 
+								<td><input type = 'text' id = 'longitud' name = 'longitud' ></td>
+								<th>Latitud:</th> 
+								<td> <input type = 'text' id = 'latitud' name = 'latitud' > </td>
+							</tr>
+							<tr>
+								<th>Zona:</th> 
+								<td><input type = 'text' id = 'zona' name = 'zona' ></td>
+								<th>Provincia:</th>
+								<td><input type = 'text' id = 'provincia' name = 'provincia' ></td>
+							</tr>
+							<tr>
+								
+								<td><button> Registrar </button></td>
+								
+							</tr>
+						</table>
 					</form>
 				</div>
 				<div id = 'SignUpClientes' align = 'center'>
@@ -113,7 +129,7 @@
 					<form method = 'POST' onsubmit = 'return validacionSignUpClientes();'>
 						<label> Registrar Empleado </label></br></br>
 						Cedula: </br>
-						<input type="text" id = 'txtCedula' name = 'txtCedula'></br>s
+						<input type="text" id = 'txtCedula' name = 'txtCedula'></br>
 						Nombre: </br>
 						<input type="text" id = 'txtNombre' name = 'txtNombre'></br>
 						Apellido: </br>
