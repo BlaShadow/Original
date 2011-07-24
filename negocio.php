@@ -12,6 +12,8 @@
 	<link rel="stylesheet" type="text/css" href="css/template.css" media="screen">
 	<link rel="stylesheet" type="text/css" href="css/styleNegocio.css" media="screen">
 	<script src="js/jquery-1.6.2.min.js" type="text/javascript"></script>
+	
+	<script type = 'text/javascript' src = 'js/AJax_ObjetoHTTP.js'></script>
 	<script type = 'text/javascript' src = 'js/negocio.js'></script>
 </head>
 
@@ -39,22 +41,22 @@
 				
 				<div id="login" align="center">
 					
-					<form method = 'POST' onsubmit = 'return validacionLogin();'>
+					<form method = 'POST' onsubmit = 'return false'>
 					
 						User:<br>
 						<input type="text" id = 'user' name = 'user'>
 						Password:<br>
 						<input type="password" id = 'password' name = 'password'>
 						
-						<input type="submit" value="Login">
+						<button  onclick = 'loguear();'>Logear</button>
 						<a href="#" onclick = 'registrarse();'><div class="login">Registrar</div></a>
-						
+						<div id = 'Mensaje' ></div>
 					</form>
 				</div>
 
 				<div id="singIn" align="center">
 				
-					<form method = 'POST' onsubmit = 'return validacionSingIn();'>
+					<form>
 						<label id = 'labelSingIn'> Registrate </label></br></br>
 						<table>
 							<tr>
@@ -98,8 +100,8 @@
 								</select></td>
 							</tr>
 							<tr>
-								<thEmail: </br>
-								<input type="text" id = 'txtEmail' name = 'txtEmail'></br></br>
+								<th>Email: </th>
+								<td><input type="text" id = 'txtEmail' name = 'txtEmail'></td>
 							</tr>
 							<tr>
 								<td colspan = '4' align = 'center'> <button style = 'width:200px;'> Registrar </button></td>

@@ -7,6 +7,31 @@ function loadNegocio(){
 	singIn.style.display = "none";
 
 }
+function loguear(){
+	var valor = validacionLogin();
+	alert(valor);
+	if(valor){
+		var varAjax = getHTTPrequest();
+		var respuesta = "";
+		
+		varAjax.open('GET',"engine/negociologin.php/?usuario="+user.value+"&password="+password.value,true);
+		varAjax.onreadystatechange = function(){
+			if(varAjax.readyState==4 && varAjax.status==200){
+				respuesta = varAjax.responseText;
+				if(respuesta == "autentificado"){
+					window.location = "adminuser.php";
+				}
+				else{
+					var mensaje = document.getElementById("Mensaje");
+					mensaje.innerHTML = "<label style = 'font-color:white;'> Error Contrasena</label>";
+				}	
+				
+			}
+		}
+		varAjax.send(null);
+	}
+	
+}
 function validacionLogin(){
 	var user = document.getElementById("user");
 	var password = document.getElementById("password");

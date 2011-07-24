@@ -214,8 +214,23 @@ a{
 	border: 2px solid black;
 	width: 10px;
 }
+#negocio{
+	margin:215px;
+	background-color:red;
+	width:700px;
+	margin-top:20px;
+	margin-bottom:20px;
+}
+
+#negocio  div:hover{
+	background-color:blue;
+}
+
+#negocio a{
+	text-decoration:none;
+}
+
 .botones{
-	
 	width:150px;
 	height:30px;
 	background-color:red;
@@ -223,8 +238,6 @@ a{
 	color:white;
 	text-align:center;
 	padding-top:5px;
-
-
 }
 
 

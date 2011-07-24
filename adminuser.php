@@ -2,6 +2,7 @@
 
 	session_start();
 	require_once("engine/libreria.php");
+	include("engine/negocioseguridad.php");
 
 ?>
 <html>
@@ -86,13 +87,8 @@
 								<td><input type = 'text' id = 'provincia' name = 'provincia' ></td>
 							</tr>
 							<tr>
-<<<<<<< HEAD
+
 								<td colspan = '4' align = 'center'><button style = "width: 200px;"> Registrar </button></td>
-=======
-								
-								<td colspan = '4' align='center'><button> Registrar </button></td>
-								
->>>>>>> 1d134144db08d77defe9fc01560db9d44f27aa7b
 							</tr>
 						</table>
 					</form>
@@ -101,7 +97,7 @@
 					<form method = 'POST' onsubmit = 'return validacionSignUpClientes();'>
 						<table>
 							<label > Registrar Cliente </label></br></br>
-							<t>r	
+							<tr>	
 								<th>Cedula:</th>
 								<td><input type="text" id = 'txtCedula' name = 'txtCedula'></td>
 								<th>Nombre:</th> 
@@ -140,7 +136,7 @@
 								<td><input type="text" id = 'txtEmail' name = 'txtEmail'></td>
 							</tr>
 							<tr>
-								<td colspan = '4' align = 'center'><button style ="width:200px;"> Registrar</button></td>
+								<td colspan = '4' align = 'center'><button style = "width:200px;"> Registrar </button></td>
 							</tr>
 						</table>
 					</form>
@@ -189,7 +185,7 @@
 								<td><input type="text" id = 'txtEmail' name = 'txtEmail'></td>
 							</tr>
 							<tr>
-								<td colspan = '4' align = 'center'> <button style = 'border:200px;'>Registrar</button></td>
+								<td colspan = '4' align = 'center'> <button style="width:200px;"> Registrar </button></td>
 							</tr>
 						</table>
 					</form>
