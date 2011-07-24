@@ -158,7 +158,8 @@ function login(nick,pass){
 			
 				if(http.responseText=="ok"){
 				
-					document.getElementById("loginMaster").style.display="none";
+				$("#loginMaster").hide("slow"); 
+					//document.getElementById("loginMaster").style.display="none";
 					document.getElementById("masterLog").style.display="block";
 				
 				}else{

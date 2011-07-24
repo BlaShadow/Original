@@ -1,5 +1,7 @@
 function loadNegocio(){
 	var singIn = document.getElementById("singIn");
+	//$("#login").show("slow");
+	$("#singIn").hide(2000);
 	singIn.style.display = "none";
 
 }
@@ -7,9 +9,16 @@ function load(){
 	var SignUpNegocio = document.getElementById("SignUpNegocio");
 	var SignUpClientes = document.getElementById("SignUpClientes");
 	var SignUpEmpleados = document.getElementById("SignUpEmpleados");
-	SignUpNegocio.style.display = "none";
-	SignUpClientes.style.display = "none";
-	SignUpEmpleados.style.display = "none";
+	
+	
+	//SignUpNegocio.style.display = "none";
+	//SignUpClientes.style.display = "none";
+	//SignUpEmpleados.style.display = "none";
+	
+	$("#SignUpNegocio").hide("slow");
+	$("#SignUpClientes").hide("slow");
+	$("#SignUpEmpleados").hide("slow");
+	
 
 }
 
@@ -328,12 +337,18 @@ function registrarse(){
 	var login = document.getElementById("login");
 	
 	if(singIn.style.display == 'none'){
-		singIn.style.display = 'block';
-		login.style.display = 'none';
+	
+	$("#singIn").show("slow");
+	$("#login").hide(2000);
+	
+		//singIn.style.display = 'block';
+		//login.style.display = 'none';
 	}
 	else{
-		login.style.display = 'block';
-		singIn.style.display = 'none';
+		//login.style.display = 'block';
+		$("#login").show("slow");
+		$("#singIn").hide(2000);
+		//singIn.style.display = 'none';
 	}
 }
 function agregarNegocio(){
@@ -360,10 +375,16 @@ function agregarCliente(){
 }
 
 function agregarEmpleado(){
-	if(SignUpEmpleados.style.display == "none"){
+
+	if( SignUpEmpleados.style.display == "none"){
+	
+	$("#SignUpEmpleados").show("slow");
+	$("#SignUpNegocio").hide("slow");
+	$("#SignUpClientes").hide("slow");
+	/*
 		SignUpNegocio.style.display = "none";
 		SignUpClientes.style.display = "none";
-		SignUpEmpleados.style.display = "block";
+		SignUpEmpleados.style.display = "block";*/
 	}
 	else{
 		SignUpEmpleados.style.display = "none";

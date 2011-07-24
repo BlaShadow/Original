@@ -15,8 +15,8 @@
 <head>
 
 	<title>Peluquerias</title>
-	<script type="text/javascript" src="js/Ajax_ObjetoHTTP.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/newsdetails.css" media="screen">
+	<script type="text/javascript" src="../js/Ajax_ObjetoHTTP.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/newsdetails.css" media="screen">
 	
 </head>
 

@@ -70,7 +70,7 @@ table {
 
 #body{
 
-	border:2px dashed red;
+	border:2px solid red;
 	min-height:300px;
 	background-color:#f0f0f0;
 	padding:16px;
@@ -95,7 +95,8 @@ table {
 
 
 /***************************************/
-
+p{
+	white-space:pre-wrap;}
 .item{
 
 	width:150px;

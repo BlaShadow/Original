@@ -11,6 +11,7 @@
 	<title>Peluquerias</title>
 	<link rel="stylesheet" type="text/css" href="css/template.css" media="screen">
 	<link rel="stylesheet" type="text/css" href="css/styleNegocio.css" media="screen">
+	<script src="js/jquery-1.6.2.min.js" type="text/javascript"></script>
 	<script type = 'text/javascript' src = 'js/SingIn.js'></script>
 </head>
 
