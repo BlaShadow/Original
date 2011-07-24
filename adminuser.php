@@ -86,7 +86,13 @@
 								<td><input type = 'text' id = 'provincia' name = 'provincia' ></td>
 							</tr>
 							<tr>
+<<<<<<< HEAD
 								<td colspan = '4' align = 'center'><button style = "width: 200px;"> Registrar </button></td>
+=======
+								
+								<td colspan = '4' align='center'><button> Registrar </button></td>
+								
+>>>>>>> 1d134144db08d77defe9fc01560db9d44f27aa7b
 							</tr>
 						</table>
 					</form>
