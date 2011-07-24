@@ -84,7 +84,7 @@
 							</tr>
 							<tr>
 								
-								<td><button> Registrar </button></td>
+								<td colspan = '4' align='center'><button> Registrar </button></td>
 								
 							</tr>
 						</table>
