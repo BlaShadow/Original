@@ -10,14 +10,9 @@ function load(){
 	var SignUpClientes = document.getElementById("SignUpClientes");
 	var SignUpEmpleados = document.getElementById("SignUpEmpleados");
 	
-	
-	//SignUpNegocio.style.display = "none";
-	//SignUpClientes.style.display = "none";
-	//SignUpEmpleados.style.display = "none";
-	
-	$("#SignUpNegocio").hide("slow");
-	$("#SignUpClientes").hide("slow");
-	$("#SignUpEmpleados").hide("slow");
+	SignUpNegocio.style.display = "none";
+	SignUpClientes.style.display = "none";
+	SignUpEmpleados.style.display = "none";
 	
 
 }
@@ -378,13 +373,10 @@ function agregarEmpleado(){
 
 	if( SignUpEmpleados.style.display == "none"){
 	
-	$("#SignUpEmpleados").show("slow");
-	$("#SignUpNegocio").hide("slow");
-	$("#SignUpClientes").hide("slow");
-	/*
+	
 		SignUpNegocio.style.display = "none";
 		SignUpClientes.style.display = "none";
-		SignUpEmpleados.style.display = "block";*/
+		SignUpEmpleados.style.display = "block";
 	}
 	else{
 		SignUpEmpleados.style.display = "none";
