@@ -1,23 +1,43 @@
-
+var cedula;
+	var nombre;
+	var apellido;
+	var nombre_usuario;
+	var password;
+	var direccion;
+	var telefono_local;
+	var telefono_celular;
+	var sexo;
+	var estado_civil;
+	var email;
 
 function loadNegocio(){
 	var singIn = document.getElementById("singIn");
 	//$("#login").show("slow");
 	$("#singIn").hide(2000);
 	singIn.style.display = "none";
+	
+	cedula = document.getElementById("txtCedula");
+	nombre = document.getElementById("txtNombre");
+	apellido = document.getElementById("txtApellido");
+	nombre_usuario = document.getElementById("txtNombreUsuario");
+	password = document.getElementById("txtPassword");
+	direccion = document.getElementById("txtDireccion");
+	telefono_local = document.getElementById("txtTelefonoLocal");
+	telefono_celular = document.getElementById("txtTelefonoCelular");
+	sexo = document.getElementById("txtSexo");
+	estado_civil = document.getElementById("txtEstadoCivil");
+	email = document.getElementById("txtEmail");
 
 }
 function loguear(){
-	var valor = validacionLogin();
-	alert(valor);
-	if(valor){
+	if(validacionLogin()){
 		var varAjax = getHTTPrequest();
 		var respuesta = "";
-		
-		varAjax.open('GET',"engine/negociologin.php/?usuario="+user.value+"&password="+password.value,true);
+		varAjax.open('GET',"engine/negociologin.php/?usuario="+user.value+"&password="+pass.value,true);
 		varAjax.onreadystatechange = function(){
 			if(varAjax.readyState==4 && varAjax.status==200){
 				respuesta = varAjax.responseText;
+				alert(respuesta);
 				if(respuesta == "autentificado"){
 					window.location = "adminuser.php";
 				}
@@ -32,9 +52,34 @@ function loguear(){
 	}
 	
 }
+function registrarUsuario(){
+	if(validacionSingIn()){
+		var varAjax2 = getHTTPrequest();
+		var respuesta="";
+		varAjax2.open('GET',"engine/negocioregistrarusuario.php/?cedula="+cedula.value+"&nombre="+nombre.value+
+		"&apellido="+apellido.value+"&nombre_usuario="+nombre_usuario.value+"&contrasena="+password.value+
+		"&direccion="+direccion.value+"&telefono_local="+telefono_local.value+"&telefono_celular="+telefono_celular+
+		"&sexo"+sexo+"&estado_civil="+estado_civil+"&email="+email,true);
+		
+		varAjax2.onreadystatechange = function(){
+			if(varAjax2.readyState==4 && varAjax2.status==200){
+				respuesta = varAjax2.responseText;
+				alert(respuesta);
+				if(respuesta == "Good"){
+					window.location = "../Original/negocio.php";
+				}
+				else{
+					alert("la verga");
+				}
+			}
+			
+		}
+	}
+	varAjax2.send(null);
+}
 function validacionLogin(){
 	var user = document.getElementById("user");
-	var password = document.getElementById("password");
+	var pass = document.getElementById("pass");
 	var ind = "";
 	
 	if(user.value == ""){
@@ -44,12 +89,12 @@ function validacionLogin(){
 	else{
 		user.style.border = '3px solid black';
 	}
-	if(password.value == "" || password.value.length < 6){
+	if(pass.value == "" || pass.value.length < 6){
 		ind = "h";
-		password.style.border = '3px solid red';
+		pass.style.border = '3px solid red';
 	}
 	else{
-		password.style.border = '3px solid black';
+		pass.style.border = '3px solid black';
 	}
 	if(ind == ""){
 		return true;
@@ -79,18 +124,9 @@ function registrarse(){
 		//singIn.style.display = 'none';
 	}
 }
+
 function validacionSingIn(){
-	var cedula = document.getElementById("txtCedula");
-	var nombre = document.getElementById("txtNombre");
-	var apellido = document.getElementById("txtApellido");
-	var nombre_usuario = document.getElementById("txtNombreUsuario");
-	var password = document.getElementById("txtPassword");
-	var direccion = document.getElementById("txtDireccion");
-	var telefono_local = document.getElementById("txtTelefonoLocal");
-	var telefono_celular = document.getElementById("txtTelefonoCelular");
-	var sexo = document.getElementById("txtSexo");
-	var estado_civil = document.getElementById("txtEstadoCivil");
-	var email = document.getElementById("txtEmail");
+
 	var ind = "";
 	
 	if(cedula.value == "" || isNaN(cedula.value) || cedula.value.length < 11){

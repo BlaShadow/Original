@@ -46,7 +46,7 @@
 						User:<br>
 						<input type="text" id = 'user' name = 'user'>
 						Password:<br>
-						<input type="password" id = 'password' name = 'password'>
+						<input type="password" id = 'pass' name = 'pass'>
 						
 						<button  onclick = 'loguear();'>Logear</button>
 						<a href="#" onclick = 'registrarse();'><div class="login">Registrar</div></a>
@@ -56,7 +56,7 @@
 
 				<div id="singIn" align="center">
 				
-					<form>
+					<form onsubmit = 'return false'>
 						<label id = 'labelSingIn'> Registrate </label></br></br>
 						<table>
 							<tr>
@@ -104,7 +104,7 @@
 								<td><input type="text" id = 'txtEmail' name = 'txtEmail'></td>
 							</tr>
 							<tr>
-								<td colspan = '4' align = 'center'> <button style = 'width:200px;'> Registrar </button></td>
+								<td colspan = '4' align = 'center'> <button onclick = 'registrarUsuario();' style = 'width:200px;'> Registrar </button></td>
 							</tr>
 							<tr>
 								<td colspan = '4' align = 'center'><a href="#" onclick = 'registrarse();'><div class="login">Back to Login</div></a>

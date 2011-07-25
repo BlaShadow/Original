@@ -7,12 +7,12 @@
 		$usuario = $_GET["usuario"];
 		$pass = $_GET["password"];
 		$usuarios = new usuarios($usuario,$pass);
-		
+	
 		if($usuarios->autorizado)
 		{
 			$_SESSION["userLogin"] = serialize($usuarios);
 			echo "autentificado";
-			
+		
 		}
 		else
 		{

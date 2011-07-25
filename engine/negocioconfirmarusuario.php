@@ -9,10 +9,13 @@
 		{	
 			$query = "SELECT * FROM usuario";
 			$result = mysql_query($query);
-			$row = mysql_fetch_assoc($result);
-			if($usuario == $row["nombre_usuario"]  && $pass == $row["contrasena"])
-			{
-				$this->autorizado = true;
+			
+			while($row = mysql_fetch_assoc($result)){
+				if($usuario == $row["nombre_usuario"]  && $pass == $row["contrasena"])
+				{
+					$_SESSION['usuario']= $row['id_usuario'];
+					$this->autorizado = true;
+				}
 			}
 		}
 	}

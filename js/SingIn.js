@@ -15,6 +15,21 @@ function load(){
 	mostrarFactura.style.display = "none";
 }
 
+function registrarNegocio(){
+	if(validacionSignUpNegocio()){
+		var varAjax1 = getHTTPrequest();
+		var respuesta = "";
+		varAjax1.open('GET',"engine/negocioregistrarnegocio.php/?nombre="+nombre+
+		"&telefono1="+telefono1+"&telefono2="+telefono2+"&rnc="+rnc+"&email="+email+
+		"&latitud="+latitud+"&longitud="+direccion+"&zona="+zona+"&provincia="+provincia,true)
+		varAjax1.onreadystatechange = function(){
+			if(varAjax1.readyState
+			
+		}
+	}
+
+}
+
 function validacionSignUpNegocio(){
 	var nombre = document.getElementById("nombre");
 	var telefono1 = document.getElementById("telefono1");
