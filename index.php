@@ -77,6 +77,7 @@
 				<a href="engine/logout.php">Logout</a>
 				<a href="news.php">Nueva Noticia</a>
 				
+				
 				</div>
 				
 				

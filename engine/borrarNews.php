@@ -11,11 +11,11 @@
 	
 	if(mysql_affected_rows()==1){
 	
-		echo "<script>alert('Noticia Borrada');window.location='../index.php';</script>";
+		echo "ok";
 	
 	}else{
 	
-		echo "<script>alert('Error');window.location='../index.php';</script>";
+		echo "fail";
 	
 	}
 	
