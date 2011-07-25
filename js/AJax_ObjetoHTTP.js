@@ -79,7 +79,7 @@ function newsHome(start,end){
 						
 						if(document.getElementById("session").value=="true"){ 
 						
-							divPost.innerHTML+="<a align='center' onclick='borrarNew("+idNode+")' href='#' class='borrarPost'>Borrar</a>";
+							divPost.innerHTML+="<a align='center' onclick=\"borrarNew("+idNode+",this)\" href='#' class='borrarPost'>Borrar</a>";
 						
 						}
 						divPost.innerHTML+="<div style='clear:both'></div>";
@@ -213,13 +213,36 @@ function validarNews(){
 
 }
 
-function borrarNew(id){
-
+function borrarNew(id,div){
+	
 	borr=confirm("Seguro de Borrar?");
 	
 	if(borr){
 	
-		window.location="engine/borrarNews.php?id="+id;
+	HTTPBorrar = getHTTPrequest();
+	
+	HTTPBorrar.open("GET","engine/borrarNews.php?id="+id,true);
+	
+	HTTPBorrar.onreadystatechange = function(){
+	
+		if(HTTPBorrar.status==200 && HTTPBorrar.readyState==4){
+		
+			if(HTTPBorrar.responseText=="ok"){
+			
+				div = div.parentNode;
+				document.getElementById("postsCuerpo").removeChild(div);
+		
+			}else{
+			
+				alert("Error De Coneccion");
+			
+			}
+		
+		}
+	
+	}
+	
+	HTTPBorrar.send(null);
 	
 	}
 
