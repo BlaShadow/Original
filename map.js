@@ -26,14 +26,14 @@ function inicio()
 			}
 		});
 	
-<<<<<<< HEAD
+//aqui modifique un meneo
 		
 	
 	}
 	
 	function createMarker(map,zone,nombreNeg,direccion, telefono, email){
 		//var image = new google.maps.MarkerImage("img/razor6.jpg", new google.maps.Size(42, 52));
-=======
+
 	//creo un maker para markar un centro del mapa para que el usuario se oriente
 				marker = new google.maps.Marker({
 				position: latlng, 
@@ -58,7 +58,6 @@ function moveMaker(pos) {
 	
 	function createMarker(map,zone,nombreNeg,direccion, telefono, email, url){
 		var image = new google.maps.MarkerImage("img/razor6.jpg", new google.maps.Size(42, 52));
->>>>>>> 7c82758f9a11b878bd0e73ec8a54adacc4a0e0d8
 		var marker= new google.maps.Marker({
 			position: zone,
 			map: map,

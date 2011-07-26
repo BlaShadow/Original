@@ -45,18 +45,16 @@
 			
 		</div>
 		
-<<<<<<< HEAD
 		
 		
 		<div id="footer"></div>
-=======
 		<div id="footer">
 		
 		<div id="lat" style="color:white"></div>
 		<div id="lon" style="color:white"></div>
 		
 		</div>
->>>>>>> 7c82758f9a11b878bd0e73ec8a54adacc4a0e0d8
+
 		
 		<div id="coor">
 		
