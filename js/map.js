@@ -31,12 +31,12 @@ function inicio()
 	}
 	
 	function createMarker(map,zone,nombreNeg,direccion, telefono, email, url){
-		var image = new google.maps.MarkerImage("img/razor6.jpg", new google.maps.Size(42, 52));
+		var image = new google.maps.MarkerImage("img/razor1.jpg", new google.maps.Size(100, 75));
 		var marker= new google.maps.Marker({
 			position: zone,
 			map: map,
 			title:"Barberias",
-			icon: image,
+			icon: image 
 		});
 		var infoWin = new google.maps.InfoWindow({
 			content:"<b>" + nombreNeg + "</b> </br>" + direccion + "</b> </br>" + telefono + "</b> </br>" + email + "</b> </br>" + url

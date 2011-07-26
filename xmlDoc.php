@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once("engine/libreria.php");
 $a = new conexion();//instancia de la clase conexion
 

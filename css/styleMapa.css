@@ -1,4 +1,4 @@
-/************/
+	/************/
 /**********************************************************/
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -73,6 +73,12 @@ table {
 	height:600px;
 	
 	}
+	#coor{
+	border:1px slid blue:;
+	height:20px;
+}	
+	
+
 
 /* pie de pagina*/
 #footer{

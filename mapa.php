@@ -19,7 +19,7 @@
 	
 </head>
 
-<body onload="inicio()" bgcolor="black">
+<body onload="inicio()" >
 
 	<div id="page">
 		
@@ -39,16 +39,25 @@
 		
 		</div>
 		
-		<div id="body">
+		<div id="body" onload="alert(google.maps.Map.prototype.getCenter)">
 		
 			
 			
 		</div>
 		
+		
+		
 		<div id="footer"></div>
+		
+		<div id="coor">
+		
+		<span id="cod"></span>
+		
+		</div>
+		
 		
 	</div>
 	
-</body>
+	</body>
 
 </html>

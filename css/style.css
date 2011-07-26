@@ -57,6 +57,7 @@ table {
 	border:2px solid red;
 	margin:auto;
 	min-height:600px;
+	
 
 }
 /* Cabecera*/
@@ -75,6 +76,10 @@ table {
 	background-color:#f0f0f0;
 	padding:16px;
 }
+#coor{
+	border:1px slid blue:;
+	height:20px;
+}	
 
 /* pie de pagina*/
 #footer{
