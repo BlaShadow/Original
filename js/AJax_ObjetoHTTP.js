@@ -73,10 +73,16 @@ function newsHome(start,end){
 						//creo mi elemento div donde estaras todos los post 
 						divPost=document.createElement("div");
 						divPost.className="divPost";
-						divPost.innerHTML="<p><a href=newsdetails.php?id="+idNode+" style='text-decoration:none'>"+ucFirst(tituloNode)+
-						"</a></p>"+"<p>"+ucFirst(detalleNode.substring(0,120))+"....</p>"+"<p>"+posteadorNode+"</p>"+"<p>"+photosNode+"</p>"+
-						"<p>"+fechaNode+"</p><a onclick='borrarNew("+idNode+")' href='#'>Borrar</a>";
+						divPost.innerHTML="<p class='tituloPost'><a href=newsdetails.php?id="+idNode+" style='text-decoration:none'><b>"+ucFirst(tituloNode)+
+						"</b></a></p>"+"<p class='detallesPost'>"+ucFirst(detalleNode.substring(0,120))+"....</p>"+
+						"<p class='fechaPost'>"+fechaNode+"</p>";
 						
+						if(document.getElementById("session").value=="true"){ 
+						
+							divPost.innerHTML+="<a align='center' onclick=\"borrarNew("+idNode+",this)\" href='#' class='borrarPost'>Borrar</a>";
+						
+						}
+						divPost.innerHTML+="<div style='clear:both'></div>";
 						//agrego el div al div potscuerpo
 						cuerpo.appendChild(divPost);
 						
@@ -152,7 +158,8 @@ function login(nick,pass){
 			
 				if(http.responseText=="ok"){
 				
-					document.getElementById("loginMaster").style.display="none";
+				$("#loginMaster").hide("slow"); 
+					//document.getElementById("loginMaster").style.display="none";
 					document.getElementById("masterLog").style.display="block";
 				
 				}else{
@@ -206,13 +213,36 @@ function validarNews(){
 
 }
 
-function borrarNew(id){
-
+function borrarNew(id,div){
+	
 	borr=confirm("Seguro de Borrar?");
 	
 	if(borr){
 	
-		window.location="engine/borrarNews.php?id="+id;
+	HTTPBorrar = getHTTPrequest();
+	
+	HTTPBorrar.open("GET","engine/borrarNews.php?id="+id,true);
+	
+	HTTPBorrar.onreadystatechange = function(){
+	
+		if(HTTPBorrar.status==200 && HTTPBorrar.readyState==4){
+		
+			if(HTTPBorrar.responseText=="ok"){
+			
+				div = div.parentNode;
+				document.getElementById("postsCuerpo").removeChild(div);
+		
+			}else{
+			
+				alert("Error De Coneccion");
+			
+			}
+		
+		}
+	
+	}
+	
+	HTTPBorrar.send(null);
 	
 	}
 

@@ -7,7 +7,7 @@
 	
 	//Querry que me retornara todos los registrso(posts)
 	//$sql="select * from news limit ".$_GET["start"].",".$_GET["end"]."";
-	$sql="select * from news ";
+	$sql="select * from news order by id desc";
 
 	//Convierto mi query en una array
 	$query=mysql_query($sql);

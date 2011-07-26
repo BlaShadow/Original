@@ -41,7 +41,7 @@
 				<form action="engine/crearNoticias.php" method="post" onsubmit="return validarNews()" name="noticias">
 				
 				Titulo:<br>
-					<input type="text" name="titulo"><br>
+					<input type="text" name="titulo" maxlength="100"><br>
 				Detalles:<br>
 					<textarea name="detalles"></textarea><br>
 				Photo:<br>

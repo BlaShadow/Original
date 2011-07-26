@@ -9,6 +9,7 @@
 
 	<title>Peluquerias</title>
 	<script src="js/Ajax_ObjetoHTTP.js" type="text/javascript"></script>
+	<script src="js/jquery-1.6.2.min.js" type="text/javascript"></script>
 	<link rel="stylesheet" type="text/css" href="css/style.css" media="screen">
 	
 </head>
@@ -20,8 +21,7 @@
 		<div id="header">
 		
 			<font face="Comic Sans MS" size="20">
-			esto es una letra jevi verdad
-		</font>
+			<?php echo $_GET["nombre"];?>		</font>
 		
 		</div>
 		
@@ -70,11 +70,13 @@
 				
 				</div>
 				
+				<input type="hidden" value="<?php if(@$_SESSION["master"]){ echo "true"; }else{ echo "false"; }?>" id="session">
 				
 				<div id="masterLog">
 				
 				<a href="engine/logout.php">Logout</a>
 				<a href="news.php">Nueva Noticia</a>
+				
 				
 				</div>
 				

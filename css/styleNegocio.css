@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /************/
 /**********************************************************/
 
@@ -58,16 +57,8 @@ a{
 
 }
 
-=======
->>>>>>> a901c1acdf6ebdb7731b5ac3bd9bc061419c5334
-#page{
-
-	width:960px;
-	border:2px solid black;
-	margin:auto;
-	min-height:600px;
-
 }
+
 /* Cabecera*/
 #header{
 
@@ -109,8 +100,10 @@ a{
 	text-align:center;
 	padding-top:5px;
 }
-
-#login  div:hover{
+#login div:hover{
+	background-color:black;
+}
+#SingIn  div:hover{
 	background-color:black;
 }
 
@@ -119,9 +112,9 @@ a{
 
 #singIn{
 
-	margin:auto;
+	margin:215px;
 	background-color:red;
-	width:400px;
+	width:700px;
 	margin-top:20px;
 	margin-bottom:20px;
 
@@ -136,9 +129,9 @@ a{
 /* Registrar Negocio */
 #SignUpNegocio{
 
-	margin:auto;
+	margin:215px;
 	background-color:red;
-	width:400px;
+	width:700px;
 	margin-top:20px;
 	margin-bottom:20px;
 
@@ -147,11 +140,12 @@ a{
 	font-family: Blackoak Std;
 	font-size: 20px;
 	color: black;
+	
 }
 #SignUpClientes{
-	margin:auto;
+	margin:215px;
 	background-color:red;
-	width:400px;
+	width:700px;
 	margin-top:20px;
 	margin-bottom:20px;
 }
@@ -160,11 +154,12 @@ a{
 	font-family: Blackoak Std;
 	font-size: 20px;
 	color: black;
+	
 }
 #SignUpEmpleados{
-	margin:auto;
+	margin:215px;
 	background-color:red;
-	width:400px;
+	width:700px;
 	margin-top:20px;
 	margin-bottom:20px;
 }
@@ -173,15 +168,82 @@ a{
 	font-size: 20px;
 	color: black;
 }
+#SignUpFactura{
+	margin:215px;
+	background-color:red;
+	width:700px;
+	margin-top:20px;
+	margin-bottom:20px;
+}
+#SignUpFactura label{
+	font-family: Blackoak Std;
+	font-size: 20px;
+	color: black;
+}
+#mostrarCliente{
+	margin:170px;
+	background-color:red;
+	width:780px;
+	margin-top:20px;
+	margin-bottom:20px;
+	min-height:100px;
+}
+#mostrarCliente table{
+	margin: auto;
+	border: 2px solid black;
+	width: 780px;
+}
+#mostrarCliente th{
+	border: 2px solid black;
+	width: 10px;
+}
+#mostrarFactura{
+	margin:170px;
+	background-color:red;
+	width:780px;
+	margin-top:20px;
+	margin-bottom:20px;
+	min-height:100px;
+}
+#mostrarFactura table{
+	margin: auto;
+	border: 2px solid black;
+	width: 780px;
+}
+#mostrarFactura th{
+	border: 2px solid black;
+	width: 10px;
+}
+#negocio{
+	margin:215px;
+	background-color:red;
+	width:700px;
+	margin-top:20px;
+	margin-bottom:20px;
+}
+
+#negocio  div:hover{
+	background-color:blue;
+}
+
+#negocio a{
+	text-decoration:none;
+}
+
 .botones{
-	
-	width:190px;
+	width:150px;
 	height:30px;
 	background-color:red;
 	margin:5;
 	color:white;
 	text-align:center;
 	padding-top:5px;
+}
+
+
+#buttons{
+	float:left;
+	min-height:300px;
 }
 #buttons a{
 
@@ -190,5 +252,5 @@ a{
 }
 
 #buttons  div:hover{
-	background-color:black;
+	background-color:blue;
 }
