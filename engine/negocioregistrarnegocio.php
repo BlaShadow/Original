@@ -15,12 +15,14 @@
 		$direccion = $_GET['direccion'];
 		$zona = $_GET['zona'];
 		$provincia = $_GET['provincia'];
+		$foto = "temp";
+		
 		
 		$query = "call registrarnegocio('".$id_usuario."','".$nombre."','".$telefono1."','".$telefono2."','".$rnc."',
-		'".$email."','".$latitud."','".$longitud."','".$direccion."','".$zona."','".$provincia."',)";
+		'".$email."','".$foto."','".$latitud."','".$longitud."','".$direccion."','".$zona."','".$provincia."')";
 		
 		mysql_query($query);
-		if(mysqli_affected_rows() > 0){
+		if(mysql_affected_rows() > 0){
 			echo "Good";
 		}
 		else{

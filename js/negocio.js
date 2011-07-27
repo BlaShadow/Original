@@ -37,7 +37,6 @@ function loguear(){
 		varAjax.onreadystatechange = function(){
 			if(varAjax.readyState==4 && varAjax.status==200){
 				respuesta = varAjax.responseText;
-				alert(respuesta);
 				if(respuesta == "autentificado"){
 					window.location = "adminuser.php";
 				}
@@ -45,7 +44,6 @@ function loguear(){
 					var mensaje = document.getElementById("Mensaje");
 					mensaje.innerHTML = "<label style = 'font-color:white;'> Error Contrasena</label>";
 				}	
-				
 			}
 		}
 		varAjax.send(null);
@@ -58,8 +56,8 @@ function registrarUsuario(){
 		var respuesta="";
 		varAjax2.open('GET',"engine/negocioregistrarusuario.php/?cedula="+cedula.value+"&nombre="+nombre.value+
 		"&apellido="+apellido.value+"&nombre_usuario="+nombre_usuario.value+"&contrasena="+password.value+
-		"&direccion="+direccion.value+"&telefono_local="+telefono_local.value+"&telefono_celular="+telefono_celular+
-		"&sexo"+sexo+"&estado_civil="+estado_civil+"&email="+email,true);
+		"&direccion="+direccion.value+"&telefono_local="+telefono_local.value+"&telefono_celular="+telefono_celular.value+
+		"&sexo="+sexo.value+"&estado_civil="+estado_civil.value+"&email="+email.value,true);
 		
 		varAjax2.onreadystatechange = function(){
 			if(varAjax2.readyState==4 && varAjax2.status==200){

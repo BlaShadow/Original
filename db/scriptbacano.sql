@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `comentarios` (
 --
 
 CREATE TABLE IF NOT EXISTS `datos_personales` (
-  `cedula` int(11) NOT NULL,
+  `cedula` varchar(11) NOT NULL,
   `nombre` varchar(40) NOT NULL,
   `apellido` varchar(40) NOT NULL,
   `direccion` varchar(100) NOT NULL,
@@ -70,7 +70,7 @@ CREATE TABLE IF NOT EXISTS `empleados` (
 CREATE TABLE IF NOT EXISTS `factura` (
   `id_factura` int(11) NOT NULL AUTO_INCREMENT,
   `id_peluqueria` int(11) NOT NULL,
-  `id_cliente` int(11) NOT NULL,
+  `id_cliente` varchar(11) NOT NULL,
   `servicio` varchar(30) NOT NULL,
   `costo` float(10,6) NOT NULL,
   `descuento` float(10,6) NOT NULL,
@@ -283,7 +283,7 @@ begin
      insert into datos_personales(cedula,nombre,apellido,direccion,telefono_local,telefono_celular,sexo,estado_civil,email)     
      values(cedula,nombre,apellido,direccion,telefono_local,telefono_celular,sexo,estado_civil,email);     
 
-     insert into empleados(id_cliente,id_peluqueria)values(cedula,id_peluqueria);
+     insert into empleados(id_empleado,id_peluqueria)values(cedula,id_peluqueria);
 end;
 
 create procedure registrarservicios(
