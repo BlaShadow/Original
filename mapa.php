@@ -50,8 +50,8 @@
 		<div id="footer"></div>
 		<div id="footer">
 		
-		<div id="lat" style="color:white"></div>
-		<div id="lon" style="color:white"></div>
+		<div id="lat" style="color:black"></div>
+		<div id="lon" style="color:black"></div>
 		
 		</div>
 

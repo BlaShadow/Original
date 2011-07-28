@@ -26,19 +26,13 @@
 /*oculta todos los div*/
 
 function load(){
-	var SignUpNegocio = document.getElementById("SignUpNegocio");
-	var SignUpClientes = document.getElementById("SignUpClientes");
-	var SignUpEmpleados = document.getElementById("SignUpEmpleados");
-	var SignUpFactura = document.getElementById("SignUpFactura");
-	var mostrarCliente = document.getElementById("mostrarCliente");
-	var mostrarFactura = document.getElementById("mostrarFactura");
 	
-	SignUpNegocio.style.display = "none";
-	SignUpClientes.style.display = "none";
-	SignUpEmpleados.style.display = "none";
-	SignUpFactura.style.display = "none";
-	mostrarCliente.style.display = "none";
-	mostrarFactura.style.display = "none";
+	elementos = document.getElementsByName("elemento");
+	
+	for(i=0;i<elementos.length;i++){
+		elementos[i].style.display="none";
+	}
+	
 }
 
 function registrarNegocio(){
@@ -176,7 +170,7 @@ function registrarEmpleado(){
 	if(validacionSignUpEmpleados()){
 		alert(sexo.value+estado_civil.value);
 		var varAjax_2 = getHTTPrequest();
-		var respuesta=""
+		var respuesta="";
 		varAjax_2.open('GET',"engine/negocioregistrarempleado.php/?cedula="+cedula.value+
 		"&nombre="+nombre.value+"&apellido="+apellido.value+"&direccion="+direccion.value+
 		"&telefono_local="+telefono_local.value+"&telefono_celular="+telefono_celular.value+
@@ -187,15 +181,9 @@ function registrarEmpleado(){
 				respuesta = varAjax_2.responseText;
 				alert(respuesta);
 				if(respuesta == "Good"){
-					cedula.value="";
-					nombre.value="";
-					apellido.value="";
-					telefono_local.value="";
-					telefono_celular.value="";
-					email.value="";
-					direccion.value="";
-					sexo.value="";
-					estado_civil.value="";
+					
+					document.signupemepleadosName.reset();
+					
 				}
 				else{
 					alert("la verga");
@@ -314,15 +302,9 @@ function registrarCliente(){
 				respuesta = varAjax_3.responseText;
 				alert(respuesta);
 				if(respuesta == "Good"){
-					cedula.value="";
-					nombre.value="";
-					apellido.value="";
-					telefono_local.value="";
-					telefono_celular.value="";
-					email.value="";
-					direccion.value="";
-					sexo.value="";
-					estado_civil.value="";
+					
+					document.signupCliente.reset();
+					
 				}
 				else{
 					alert("la verga");
@@ -473,90 +455,14 @@ function validacionSignUpFactura(){
 	}
 	
 }
+function mostrarOcultar(div){
 
-function agregarNegocio(){
-
-	if(SignUpNegocio.style.display == "none"){
-		SignUpNegocio.style.display = "block";
-		SignUpClientes.style.display = "none";
-		SignUpEmpleados.style.display = "none";
-		SignUpFactura.style.display = "none";
-		mostrarCliente.style.display = "none";
-		mostrarFactura.style.display = "none";
-	}
-	else{
-		SignUpNegocio.style.display = "none";
-	}
-}
-
-function agregarCliente(){
-	if(SignUpClientes.style.display == "none"){
-		SignUpNegocio.style.display = "none";
-		SignUpClientes.style.display = "block";
-		SignUpEmpleados.style.display = "none";
-		SignUpFactura.style.display = "none";
-		mostrarCliente.style.display = "none";
-		mostrarFactura.style.display = "none";
-	}
-	else{
-		SignUpClientes.style.display = "none";
-	}
-}
-
-function agregarEmpleado(){
-
-	if( SignUpEmpleados.style.display == "none"){
-		SignUpNegocio.style.display = "none";
-		SignUpClientes.style.display = "none";
-		SignUpEmpleados.style.display = "block";
-		SignUpFactura.style.display = "none";
-		mostrarCliente.style.display = "none";
-		mostrarFactura.style.display = "none";
-	}
-	else{
-		SignUpEmpleados.style.display = "none";
-	}
-}
-function agregarFactura(){
-
-	if(SignUpFactura.style.display == "none"){
-		SignUpNegocio.style.display = "none";
-		SignUpClientes.style.display = "none";
-		SignUpEmpleados.style.display = "none";
-		SignUpFactura.style.display = "block";
-		mostrarCliente.style.display = "none";
-		mostrarFactura.style.display = "none";
-	}
-	else{
-		SignUpFactura.style.display = "none";
-	}
-}
-function mostrarClientes(){
-
-	if(mostrarCliente.style.display == "none"){
-		SignUpNegocio.style.display = "none";
-		SignUpClientes.style.display = "none";
-		SignUpEmpleados.style.display = "none";
-		SignUpFactura.style.display = "none";
-		mostrarCliente.style.display = "block";
-		mostrarFactura.style.display = "none";
-	}
-	else{
-		mostrarCliente.style.display = "none";
-	}
-}
-function mostrarFacturas(){
-	if(mostrarFactura.style.display == "none"){
-		SignUpNegocio.style.display = "none";
-		SignUpClientes.style.display = "none";
-		SignUpEmpleados.style.display = "none";
-		SignUpFactura.style.display = "none";
-		mostrarCliente.style.display = "none";
-		mostrarFactura.style.display = "block";
+	elementos = document.getElementsByName("elemento");
 	
+	for(i=0;i<elementos.length;i++){
+		elementos[i].style.display="none";
 	}
-	else{
 	
-		mostrarFactura.style.display = "none";
-	}
+	document.getElementById(div).style.display="block";
+
 }

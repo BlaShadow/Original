@@ -12,13 +12,40 @@
 	<title>Peluquerias</title>
 	<link rel="stylesheet" type="text/css" href="css/template.css" media="screen">
 	<link rel="stylesheet" type="text/css" href="css/styleNegocio.css" media="screen">
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
 	<script type = 'text/javascript' src = 'js/AJax_ObjetoHTTP.js'></script>
+	<script type = 'text/javascript' src = 'js/mapaNegocio.js'></script>
 	<script type = 'text/javascript' src = 'js/SingIn.js'></script>
+	<script language="javascript">
+	
+	//mapa negocio
+		function algo(){
+		alert("entro");
+				var latlng = new google.maps.LatLng(18.90,-70.40);
+
+						var myOptions = {
+						zoom: 8,
+						center: latlng,
+						mapTypeId: google.maps.MapTypeId.ROADMAP
+					};
+					
+					var map = new google.maps.Map(document.getElementById("mapaNO"), myOptions);
+
+			alert("salio");
+		}
+		
+		window.onload = function(){
+		
+			document.getElementById("mapaNO").style.display = "block";
+		alert("termino");
+		}
+	
+	</script>
 	
 	
 </head>
 
-<body onload = 'load();'>
+<body onload = "load();algo()">
 
 	<div id="page">
 		
@@ -43,17 +70,22 @@
 				
 				<div id = 'buttons' >
 				
-					<a href = '#' onclick = 'agregarNegocio();'><div class = 'botones' > Agregar Negocio</div></a>
-					<a href = '#' onclick = 'agregarEmpleado();'><div class = 'botones' > Agregar Empleado</div></a>
-					<a href = '#' onclick = 'agregarCliente();'><div class = 'botones' > Agregar Cliente</div></a>
-					<a href = '#' onclick = 'agregarFactura();'><div class = 'botones' > Agregar Factura</div></a>
-					<a href = '#' onclick = 'mostrarClientes();'><div class = 'botones' > Mostrar Cliente</div></a>
-					<a href = '#' onclick = 'mostrarFacturas();'><div class = 'botones' > Mostrar Factura</div></a>
+					<a href = '#' onclick = "mostrarOcultar('SignUpNegocio');"><div class = 'botones' > Agregar Negocio</div></a>
+					<a href = '#' onclick = "mostrarOcultar('SignUpClientes');"><div class = 'botones' > Agregar Empleado</div></a>
+					<a href = '#' onclick = "mostrarOcultar('SignUpEmpleados');"><div class = 'botones' > Agregar Cliente</div></a>
+					<a href = '#' onclick = "mostrarOcultar('SignUpFactura');"><div class = 'botones' > Agregar Factura</div></a>
+					<a href = '#' onclick = "mostrarOcultar('mostrarCliente');"><div class = 'botones' > Mostrar Cliente</div></a>
+					<a href = '#' onclick = "mostrarOcultar('mostrarFactura');"><div class = 'botones' > Mostrar Factura</div></a>
 					
 				</div>
 				
-				<div id = "SignUpNegocio" align = "center"> 
-					<form method = 'POST' onsubmit = 'return false;'>		
+				
+				<div id = "SignUpNegocio" align = "center" name="elemento"> 
+				
+					<div id="mapaNO" class="mapaNO" style="margin:auto;width:400px;background-color:white;">lkjhgghm</div>
+
+				
+					<form method = 'POST' onsubmit = 'return false'>		
 						<label> Registro de Negocio </label></br></br></br>
 						<table>
 							<tr>
@@ -93,9 +125,10 @@
 							</tr>
 						</table>
 					</form>
+					
 				</div>
-				<div id = 'SignUpClientes' align = 'center'>
-					<form method = 'POST' onsubmit = 'return false;'>
+				<div id = 'SignUpClientes' align = 'center' name="elemento">
+					<form method = 'POST' onsubmit = 'return false;' name="signupCliente">
 						<table>
 							<label > Registrar Cliente </label></br></br>
 							<tr>	
@@ -142,8 +175,8 @@
 						</table>
 					</form>
 				</div>
-				<div id = 'SignUpEmpleados' align = 'center'> 
-					<form method = 'POST' onsubmit = 'return false;'>
+				<div id = 'SignUpEmpleados' align = 'center' name="elemento"> 
+					<form method = 'POST' onsubmit = 'return false;' name="signupemepleadosName">
 						<label> Registrar Empleado </label></br></br>
 						<table>
 							<tr>
@@ -191,7 +224,7 @@
 						</table>
 					</form>
 				</div>
-				<div id = 'SignUpFactura' align = 'center'>
+				<div id = 'SignUpFactura' align = 'center' name="elemento">
 					<form method = 'POST' onsubmit = 'return validacionSignUpFactura();'>
 						<label> Registrar Factura </label></br></br></br>
 							
@@ -222,7 +255,7 @@
 					</form>
 					
 				</div>
-				<div id = 'mostrarCliente'>
+				<div id = 'mostrarCliente' name="elemento">
 					<table>
 						<tr>
 							<th>Cedula</th>
@@ -239,7 +272,7 @@
 					</table>
 			
 				</div>
-				<div id = 'mostrarFactura'>
+				<div id = 'mostrarFactura' name="elemento">
 					<table>
 						<th>ID Factura</th>
 						<th> ID Peluqueria</th>

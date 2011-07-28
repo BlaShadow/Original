@@ -64,7 +64,7 @@ function registrarUsuario(){
 				respuesta = varAjax2.responseText;
 				alert(respuesta);
 				if(respuesta == "Good"){
-					window.location = "../Original/negocio.php";
+					window.location = "./negocio.php";
 				}
 				else{
 					alert("la verga");
