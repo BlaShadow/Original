@@ -61,7 +61,7 @@
 				
 					<form metdod = 'POST' onsubmit = 'return false'>		
 						<label> Registro de Negocio </label></br></br></br>
-						<table>
+						<table border="1">
 							<tr>
 								<td>Nombre Local: </td>
 								<td> <input type = 'text' id = 'nombreNegocio' name = 'nombre' > </td>
@@ -103,7 +103,7 @@
 				</div>
 				<div id = 'SignUpClientes' align = 'center' name="elemento" class="elementos">
 					<form method = 'POST' onsubmit = 'return false;' name="signupCliente">
-						<table>
+						<table border="1">
 							<label > Registrar Cliente </label></br></br>
 							<tr>	
 								<td>Cedula:</td>
