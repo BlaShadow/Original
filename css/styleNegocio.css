@@ -90,7 +90,6 @@ a{
 
 /***************************************/
 
-
 .login{
 	
 	width:190px;
@@ -101,137 +100,8 @@ a{
 	text-align:center;
 	padding-top:5px;
 }
-#login div:hover{
-	background-color:black;
-}
-#SingIn  div:hover{
-	background-color:black;
-}
 
-/**********************************/
-/* Registrar Usuario */
-
-#singIn{
-
-	margin:215px;
-	background-color:red;
-	width:700px;
-	margin-top:20px;
-	margin-bottom:20px;
-
-}
-
-#singIn label{
-	font-family: Blackoak Std;
-	font-size: 20px;
-	color: black;
-}
-
-/* Registrar Negocio */
-#SignUpNegocio{
-
-	margin:215px;
-	background-color:red;
-	width:700px;
-	margin-top:20px;
-	margin-bottom:20px;
-	padding-top:10px;
-
-}
-#SignUpNegocio label{
-	font-family: Blackoak Std;
-	font-size: 20px;
-	color: black;
-	
-}
-#SignUpClientes{
-	margin:215px;
-	background-color:red;
-	width:700px;
-	margin-top:20px;
-	margin-bottom:20px;
-}
-#SignUpClientes label{
-
-	font-family: Blackoak Std;
-	font-size: 20px;
-	color: black;
-	
-}
-#SignUpEmpleados{
-	margin:215px;
-	background-color:red;
-	width:700px;
-	margin-top:20px;
-	margin-bottom:20px;
-}
-#SignUpEmpleados label{
-	font-family: Blackoak Std;
-	font-size: 20px;
-	color: black;
-}
-#SignUpFactura{
-	margin:215px;
-	background-color:red;
-	width:700px;
-	margin-top:20px;
-	margin-bottom:20px;
-}
-#SignUpFactura label{
-	font-family: Blackoak Std;
-	font-size: 20px;
-	color: black;
-}
-#mostrarCliente{
-	margin:170px;
-	background-color:red;
-	width:780px;
-	margin-top:20px;
-	margin-bottom:20px;
-	min-height:100px;
-}
-#mostrarCliente table{
-	margin: auto;
-	border: 2px solid black;
-	width: 780px;
-}
-#mostrarCliente th{
-	border: 2px solid black;
-	width: 10px;
-}
-#mostrarFactura{
-	margin:170px;
-	background-color:red;
-	width:780px;
-	margin-top:20px;
-	margin-bottom:20px;
-	min-height:100px;
-}
-#mostrarFactura table{
-	margin: auto;
-	border: 2px solid black;
-	width: 780px;
-}
-#mostrarFactura th{
-	border: 2px solid black;
-	width: 10px;
-}
-#negocio{
-	margin:215px;
-	background-color:red;
-	width:700px;
-	margin-top:20px;
-	margin-bottom:20px;
-}
-
-#negocio  div:hover{
-	background-color:blue;
-}
-
-#negocio a{
-	text-decoration:none;
-}
-
+/**************************************************************************/
 .botones{
 	width:150px;
 	height:30px;
@@ -246,21 +116,29 @@ a{
 	float:left;
 	min-height:300px;
 }
-#buttons a{
-
-	text-decoration:none;
-
-}
 
 #buttons  div:hover{
 	background-color:blue;
 }
-//**************  Style Mapa  ***************/
 
-.mapaNO{
 
-	height:250px;
-	width:98%;
+/********************************************************************/
+
+/**********Elemetos**************/
+.elementos{
+
+	width:720px;
 	background-color:white;
+	float:right;
+	margin:30 30 0 0;
 
 }
+
+.elementos button{
+
+	margin:15px;
+	height:30px;
+
+}
+
+

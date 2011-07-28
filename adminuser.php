@@ -20,7 +20,6 @@
 	
 	//mapa negocio
 		function algo(){
-		alert("entro");
 				var latlng = new google.maps.LatLng(18.90,-70.40);
 
 						var myOptions = {
@@ -31,7 +30,7 @@
 					
 					var map = new google.maps.Map(document.getElementById("mapaNO"), myOptions);
 
-			alert("salio");
+					
 		}
 		
 		window.onload = function(){
@@ -80,7 +79,7 @@
 				</div>
 				
 				
-				<div id = "SignUpNegocio" align = "center" name="elemento"> 
+				<div id = "SignUpNegocio" align = "center" name="elemento" class="elementos"> 
 				
 					<div id="mapaNO" class="mapaNO" style="margin:auto;width:400px;background-color:white;">lkjhgghm</div>
 
@@ -127,7 +126,7 @@
 					</form>
 					
 				</div>
-				<div id = 'SignUpClientes' align = 'center' name="elemento">
+				<div id = 'SignUpClientes' align = 'center' name="elemento" class="elementos">
 					<form method = 'POST' onsubmit = 'return false;' name="signupCliente">
 						<table>
 							<label > Registrar Cliente </label></br></br>
@@ -175,7 +174,7 @@
 						</table>
 					</form>
 				</div>
-				<div id = 'SignUpEmpleados' align = 'center' name="elemento"> 
+				<div id = 'SignUpEmpleados' align = 'center' name="elemento" class="elementos"> 
 					<form method = 'POST' onsubmit = 'return false;' name="signupemepleadosName">
 						<label> Registrar Empleado </label></br></br>
 						<table>
@@ -224,7 +223,7 @@
 						</table>
 					</form>
 				</div>
-				<div id = 'SignUpFactura' align = 'center' name="elemento">
+				<div id = 'SignUpFactura' align = 'center' name="elemento" class="elementos">
 					<form method = 'POST' onsubmit = 'return validacionSignUpFactura();'>
 						<label> Registrar Factura </label></br></br></br>
 							
@@ -255,7 +254,7 @@
 					</form>
 					
 				</div>
-				<div id = 'mostrarCliente' name="elemento">
+				<div id = 'mostrarCliente' name="elemento" class="elementos">
 					<table>
 						<tr>
 							<th>Cedula</th>
@@ -272,7 +271,7 @@
 					</table>
 			
 				</div>
-				<div id = 'mostrarFactura' name="elemento">
+				<div id = 'mostrarFactura' name="elemento" class="elementos">
 					<table>
 						<th>ID Factura</th>
 						<th> ID Peluqueria</th>
