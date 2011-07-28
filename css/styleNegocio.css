@@ -90,7 +90,6 @@ a{
 
 /***************************************/
 
-
 .login{
 	
 	width:190px;
@@ -101,6 +100,7 @@ a{
 	text-align:center;
 	padding-top:5px;
 }
+<<<<<<< HEAD
 #login div:hover{
 	background-color:black;
 }
@@ -243,7 +243,10 @@ a{
 #negocio a{
 	text-decoration:none;
 }
+=======
+>>>>>>> cd85467251fcd4cd09804a83636db983270ccfeb
 
+/**************************************************************************/
 .botones{
 	width:150px;
 	height:30px;
@@ -258,21 +261,29 @@ a{
 	float:left;
 	min-height:300px;
 }
-#buttons a{
-
-	text-decoration:none;
-
-}
 
 #buttons  div:hover{
 	background-color:blue;
 }
-//**************  Style Mapa  ***************/
 
-.mapaNO{
 
-	height:250px;
-	width:98%;
+/********************************************************************/
+
+/**********Elemetos**************/
+.elementos{
+
+	width:720px;
 	background-color:white;
+	float:right;
+	margin:30 30 0 0;
 
 }
+
+.elementos button{
+
+	margin:15px;
+	height:30px;
+
+}
+
+
