@@ -243,7 +243,7 @@
 								<td><input type = 'text' id = 'costoServicio' name = 'costoServicio'></td>
 							</tr>
 							<tr>
-								<td colspan = '4' align = 'center'><button style = "width:200px;">Registrar</button></td>
+								<td colspan = '4' align = 'center'><button onclick = 'registrarServicio();' style = "width:200px;">Registrar</button></td>
 							</tr>
 						</table>
 						

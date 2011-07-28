@@ -34,7 +34,7 @@ function load(){
 	
 		elementos[i].style.display="none";
 	}
-	
+	registrarServicio();
 }
 
 function registrarNegocio(){
@@ -284,7 +284,7 @@ function registrarCliente(){
 	if(validacionSignUpClientes()){
 		alert(sexo.value+estado_civil.value);
 		var varAjax_3 = getHTTPrequest();
-		var respuesta=""
+		var respuesta="";
 		varAjax_3.open('GET',"engine/negocioregistrarclientes.php/?cedula="+cedula.value+
 		"&nombre="+nombre.value+"&apellido="+apellido.value+"&direccion="+direccion.value+
 		"&telefono_local="+telefono_local.value+"&telefono_celular="+telefono_celular.value+
@@ -402,11 +402,24 @@ function validacionSignUpClientes(){
 
 function registrarServicio(){
 	if(validacionSignUpServicio()){
-		alert(sexo.value+estado_civil.value);
 		var varAjax_4 = getHTTPrequest();
-		var respuesta=""
-		varAjax_4.open('GET',"",true);
+		var respuesta="";
+		varAjax_4.open('GET',"engine/negociocargadatofactura.php",true);
+		varAjax_4.onreadystatechange = function(){
+			if(varAjax_4.readyState == 4 && varAjax_4.status == 200){
+				var select = document.getElementById('servicio');
+				var xml = varAjax_4.responseXML;
+				var nombre = xml.getElementsByTagName('nombre');
+				var apellido = xml.getElementsByTagName('apellido');
+				alert(xml+ " " +nombre[0].childNodes[0].nodeValue+ " " + apellido[0].childNodes[0].nodeValue + " " + select);
+				for(var ind = 0;ind < nombre.length;ind++){
+					select.innerHTML = "<option value = '"+nombre[ind].childNodes[ind].nodeValue+" "+nombre[ind].childNodes[ind].nodeValue+"'>"+nombre[ind].childNodes[ind].nodeValue+" "+nombre[ind].childNodes[ind].nodeValue+"</option>";
+					
+				}
+			}
+		}
 	}
+	varAjax_4.send(null);
 }
 
 function validacionSignUpServicio(){
