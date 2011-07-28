@@ -16,35 +16,12 @@
 	<script type = 'text/javascript' src = 'js/AJax_ObjetoHTTP.js'></script>
 	<script type = 'text/javascript' src = 'js/mapaNegocio.js'></script>
 	<script type = 'text/javascript' src = 'js/SingIn.js'></script>
-	<script language="javascript">
-	
-	//mapa negocio
-		function algo(){
-				var latlng = new google.maps.LatLng(18.90,-70.40);
-
-						var myOptions = {
-						zoom: 8,
-						center: latlng,
-						mapTypeId: google.maps.MapTypeId.ROADMAP
-					};
-					
-					var map = new google.maps.Map(document.getElementById("mapaNO"), myOptions);
-
-					
-		}
-		
-		window.onload = function(){
-		
-			document.getElementById("mapaNO").style.display = "block";
-		alert("termino");
-		}
-	
-	</script>
+	<script language="javascript"></script>
 	
 	
 </head>
 
-<body onload = "load();algo()">
+<body onload = "load();mapaLoad();">
 
 	<div id="page">
 		
@@ -78,49 +55,47 @@
 					
 				</div>
 				
+				<div id="mapaNO"></div>
 				
 				<div id = "SignUpNegocio" align = "center" name="elemento" class="elementos"> 
 				
-					<div id="mapaNO" class="mapaNO" style="margin:auto;width:400px;background-color:white;">lkjhgghm</div>
-
-				
-					<form method = 'POST' onsubmit = 'return false'>		
+					<form metdod = 'POST' onsubmit = 'return false'>		
 						<label> Registro de Negocio </label></br></br></br>
 						<table>
 							<tr>
-								<th>Nombre Local: </th>
+								<td>Nombre Local: </td>
 								<td> <input type = 'text' id = 'nombreNegocio' name = 'nombre' > </td>
-								<th> RNC: </th>
+								<td> RNC: </td>
 								<td> <input type = 'text' id = 'rncNegocio' name = 'rnc' > </td>
 							</tr>			
 							<tr>		
-								<th> Telefono 1:</th>
+								<td> Telefono 1:</td>
 								<td> <input type = 'text' id = 'telefono1Negocio' name = 'telefono1' > </td>
-								<th> Telefono 2:</th>
+								<td> Telefono 2:</td>
 								<td> <input type = 'text' id = 'telefono2Negocio' name = 'telefono2' > </td>
 							</tr>
 							<tr>
-								<th>Email: </th>
+								<td>Email: </td>
 								<td> <input type = 'text' id = 'emailNegocio' name = 'email' > </td>
-								<th>Direccion:</th> 
+								<td>Direccion:</td> 
 								<td><input type = 'text' id = 'direccionNegocio' name = 'direccion' ></td>
 							</tr>
 							
 							<tr>
-								<th>Longitud:</th> 
-								<td><input type = 'text' id = 'longitudNegocio' name = 'longitud' ></td>
-								<th>Latitud:</th> 
-								<td> <input type = 'text' id = 'latitudNegocio' name = 'latitud' > </td>
+								<td>Longitud:</td> 
+								<td><input type = 'text' id = 'longitudNegocio' name = 'longitud' readonly="readonly"></td>
+								<td>Latitud:</td> 
+								<td> <input type = 'text' id = 'latitudNegocio' name = 'latitud' readonly="readonly"> </td>
 							</tr>
 							<tr>
-								<th>Zona:</th> 
+								<td>Zona:</td> 
 								<td><input type = 'text' id = 'zonaNegocio' name = 'zona' ></td>
-								<th>Provincia:</th>
+								<td>Provincia:</td>
 								<td><input type = 'text' id = 'provinciaNegocio' name = 'provincia' ></td>
 							</tr>
 							<tr>
 
-								<td colspan = '4' align = 'center'><button onclick = 'registrarNegocio();' style = "width: 200px;"> Registrar </button></td>
+								<td colspan = '4' align = 'center'><button onclick = 'registrarNegocio();' style = "widtd: 200px;"> Registrar </button></td>
 							</tr>
 						</table>
 					</form>
@@ -131,25 +106,25 @@
 						<table>
 							<label > Registrar Cliente </label></br></br>
 							<tr>	
-								<th>Cedula:</th>
+								<td>Cedula:</td>
 								<td><input type="text" id = 'txtCedulaCliente' name = 'txtCedula'></td>
-								<th>Nombre:</th> 
+								<td>Nombre:</td> 
 								<td><input type="text" id = 'txtNombreCliente' name = 'txtNombre'></td>
 							</tr>
 							<tr>
-								<th>Apellido: </th>
+								<td>Apellido: </td>
 								<td><input type="text" id = 'txtApellidoCliente' name = 'txtApellido'></td>
-								<th>Direccion: </th>
+								<td>Direccion: </td>
 								<td><input type="text" id = 'txtDireccionCliente' name = 'txtDireccion'></td>
 							</tr>
 							<tr>
-								<th>Telefono Local:</th>
+								<td>Telefono Local:</td>
 								<td><input type="text" id = 'txtTelefonoLocalCliente' name = 'txtTelefonoLocal'></td>
-								<th>Telefono Celular:</th> 
+								<td>Telefono Celular:</td> 
 								<td><input type="text" id = 'txtTelefonoCelularCliente' name = 'txtTelefonoCelular'></td>
 							</tr>
 							<tr>
-								<th>Sexo:</th>
+								<td>Sexo:</td>
 								<td><select id = 'txtSexoCliente'>
 									<option value = ''></option>
 									<option value = 'masculino'> Masculino </option>
@@ -157,7 +132,7 @@
 									<option value = 'gay'> Gay </option>
 									<option value = 'lesbiana'> Lesbiana </option>
 								</select></td>
-								<th>Estado Civil: </th>
+								<td>Estado Civil: </td>
 								<td><select id = 'txtEstadoCivilCliente'>
 									<option value = ''></option>
 									<option value = 'Soltero'> Soltero </option>
@@ -165,7 +140,7 @@
 								</select></td>
 							</tr>
 							<tr>
-								<th>Email:</th> 
+								<td>Email:</td> 
 								<td><input type="text" id = 'txtEmailCliente' name = 'txtEmail'></td>
 							</tr>
 							<tr>
@@ -179,25 +154,26 @@
 						<label> Registrar Empleado </label></br></br>
 						<table>
 							<tr>
-								<th>Cedula: </th>
+								<td>Cedula: </td>
 								<td><input type="text" id = 'txtCedulaEmpleado' name = 'txtCedula'></td>
-								<th>Nombre: </th>
+								<td>Nombre: </td>
 								<td><input type="text" id = 'txtNombreEmpleado' name = 'txtNombre'></td>
 							</tr>
 							<tr>
-								<th>Apellido:</th>
+								<td>Apellido:</td>
 								<td><input type="text" id = 'txtApellidoEmpleado' name = 'txtApellido'></td>
-								<th>Direccion: </th>
+								<td>Direccion: </td>
 								<td><input type="text" id = 'txtDireccionEmpleado' name = 'txtDireccion'></td>
 							</tr>
 							<tr>
-								<th>Telefono Local: </th>
+								<td>Telefono Local: </td>
 								<td><input type="text" id = 'txtTelefonoLocalEmpleado' name = 'txtTelefonoLocal'></td>
-								<th>Telefono Celular: </th>
+								<td>Telefono Celular: </td>
 								<td><input type="text" id = 'txtTelefonoCelularEmpleado' name = 'txtTelefonoCelular'></td>
 							</tr>
+							
 							<tr>
-								<th>Sexo:</th>
+								<td>Sexo:</td>
 								<td><select id = 'txtSexoEmpleado'>
 									<option value = ''></option>
 									<option value = 'masculino'> Masculino </option>
@@ -206,15 +182,16 @@
 									<option value = 'lesbiana'> Lesbiana </option>
 								</select></td>
 							
-								<th>Estado Civil:</th>
+								<td>Estado Civil:</td>
 								<td><select id = 'txtEstadoCivilEmpleado'>
 									<option value = ''></option>
 									<option value = 'Soltero'> Soltero </option>
 									<option value = 'Casado'> Casado </option>
 								</select></td>
 							</tr>
+							
 							<tr>
-								<th>Email: </th>
+								<td>Email: </td>
 								<td><input type="text" id = 'txtEmailEmpleado' name = 'txtEmail'></td>
 							</tr>
 							<tr>
@@ -229,22 +206,22 @@
 							
 						<table>
 							<tr>
-								<th>Cedula Cliente:</th>
+								<td>Cedula Cliente:</td>
 								<td><input type = 'text' id = 'cedulaFactura' name = 'cedula'></td>
-								<th>Servicio</th>
+								<td>Servicio</td>
 								<td><select id = 'servicio'>
 									</select></td>
 							</tr>
 							<tr>
-								<th>Costo</th>
+								<td>Costo</td>
 								<td><input type = 'text' id = 'costoFactura' name = 'costo'></td>
-								<th>Descuento</th>
+								<td>Descuento</td>
 								<td><input type = 'text' id = 'descuentoFactura' name = 'descuento'></td>
 							</tr>
 							<tr>
-								<th>Itbis</th>
+								<td>Itbis</td>
 								<td><input type = 'text' id = 'itbisFactura' name = 'itbis'></td>
-								<th>total</th>
+								<td>total</td>
 								<td><input type = 'text' id = 'totalFactura' name = 'total'></td>
 							</tr>
 							<tr>
@@ -257,15 +234,15 @@
 				<div id = 'mostrarCliente' name="elemento" class="elementos">
 					<table>
 						<tr>
-							<th>Cedula</th>
-							<th>Nombre</th>
-							<th>Apellido</th>
-							<th>Direccion</th>
-							<th>Telefono Local</th>
-							<th>Telefono Cel</th>
-							<th>Sexo</th>
-							<th>Estado Civil</th>
-							<th>Email</th>
+							<td>Cedula</td>
+							<td>Nombre</td>
+							<td>Apellido</td>
+							<td>Direccion</td>
+							<td>Telefono Local</td>
+							<td>Telefono Cel</td>
+							<td>Sexo</td>
+							<td>Estado Civil</td>
+							<td>Email</td>
 						</tr>
 					
 					</table>
@@ -273,24 +250,28 @@
 				</div>
 				<div id = 'mostrarFactura' name="elemento" class="elementos">
 					<table>
-						<th>ID Factura</th>
-						<th> ID Peluqueria</th>
-						<th>ID Cliente</th>
-						<th>Servicio</th>
-						<th>Costo</th>
-						<th>Descuento</th>
-						<th>Itbis</th>
-						<th>Total</th>
-						<th>Fecha</th>
+						<td>ID Factura</td>
+						<td> ID Peluqueria</td>
+						<td>ID Cliente</td>
+						<td>Servicio</td>
+						<td>Costo</td>
+						<td>Descuento</td>
+						<td>Itbis</td>
+						<td>Total</td>
+						<td>Fecha</td>
 					</table>
 				</div>
+			
+			<div style="clear:both;height:20px;"></div>
 			</div>
 			
 		</div>
 		
-		<div id="footer"></div>
+		
+	<div id="footer"></div>
 		
 	</div>
+	
 	
 </body>
 

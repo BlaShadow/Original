@@ -33,6 +33,8 @@ function load(){
 		elementos[i].style.display="none";
 	}
 	
+	//document.getElementById("mapaNO").style.display="none";
+	
 }
 
 function registrarNegocio(){
@@ -461,6 +463,16 @@ function mostrarOcultar(div){
 	
 	for(i=0;i<elementos.length;i++){
 		elementos[i].style.display="none";
+	}
+	
+	if(div=="SignUpNegocio"){
+	
+		document.getElementById("mapaNO").style.display="block";
+	
+	}else{
+	
+		document.getElementById("mapaNO").style.display="none";
+	
 	}
 	
 	document.getElementById(div).style.display="block";
