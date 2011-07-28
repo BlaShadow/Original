@@ -168,6 +168,18 @@ a{
 	font-size: 20px;
 	color: black;
 }
+#SignUpServicios{
+	margin:215px;
+	background-color:red;
+	width:700px;
+	margin-top:20px;
+	margin-bottom:20px;
+}
+#SignUpServicios label{
+	font-family: Blackoak Std;
+	font-size: 20px;
+	color: black;
+}
 #SignUpFactura{
 	margin:215px;
 	background-color:red;

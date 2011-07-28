@@ -46,6 +46,7 @@
 					<a href = '#' onclick = 'agregarNegocio();'><div class = 'botones' > Agregar Negocio</div></a>
 					<a href = '#' onclick = 'agregarEmpleado();'><div class = 'botones' > Agregar Empleado</div></a>
 					<a href = '#' onclick = 'agregarCliente();'><div class = 'botones' > Agregar Cliente</div></a>
+					<a href = '#' onclick = 'agregarServicio();'><div class = 'botones' > Agregar Servicio</div></a>
 					<a href = '#' onclick = 'agregarFactura();'><div class = 'botones' > Agregar Factura</div></a>
 					<a href = '#' onclick = 'mostrarClientes();'><div class = 'botones' > Mostrar Cliente</div></a>
 					<a href = '#' onclick = 'mostrarFacturas();'><div class = 'botones' > Mostrar Factura</div></a>
@@ -54,7 +55,7 @@
 				
 				<div id = "SignUpNegocio" align = "center"> 
 					<form method = 'POST' onsubmit = 'return false;'>		
-						<label> Registro de Negocio </label></br></br></br>
+						<label> Registro de Negocio </label></br></br>
 						<table>
 							<tr>
 								<th>Nombre Local: </th>
@@ -222,6 +223,23 @@
 					</form>
 					
 				</div>
+				<div id = 'SignUpServicios' align = 'center'>
+					<form method = 'POST' onsubmit = 'return false;'>
+						<label> Registrar Servicios </label></br></br></br>
+						<table>
+							<tr>
+								<th>Servicio: </th>
+								<td><input type = 'text' id = 'servicioServicio' name = 'servicioServicio'></td>
+								<th>Costo: </th>
+								<td><input type = 'text' id = 'costoServicio' name = 'costoServicio'>$</td>
+							</tr>
+							<tr>
+								<td colspan = '4' align = 'center'><button  onclick = 'cargadatofactura();' style = "width:200px;">Registrar</button></td>
+							</tr>
+							
+						</table>
+					</form>
+				</div>
 				<div id = 'mostrarCliente'>
 					<table>
 						<tr>
@@ -235,7 +253,6 @@
 							<th>Estado Civil</th>
 							<th>Email</th>
 						</tr>
-					
 					</table>
 			
 				</div>

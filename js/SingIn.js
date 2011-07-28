@@ -23,12 +23,14 @@
 	
 	
 	
+	
 /*oculta todos los div*/
 
 function load(){
 	var SignUpNegocio = document.getElementById("SignUpNegocio");
 	var SignUpClientes = document.getElementById("SignUpClientes");
 	var SignUpEmpleados = document.getElementById("SignUpEmpleados");
+	var SignUpServicios = document.getElementById("SignUpServicios");
 	var SignUpFactura = document.getElementById("SignUpFactura");
 	var mostrarCliente = document.getElementById("mostrarCliente");
 	var mostrarFactura = document.getElementById("mostrarFactura");
@@ -37,6 +39,7 @@ function load(){
 	SignUpClientes.style.display = "none";
 	SignUpEmpleados.style.display = "none";
 	SignUpFactura.style.display = "none";
+	SignUpServicios.style.display = "none";
 	mostrarCliente.style.display = "none";
 	mostrarFactura.style.display = "none";
 }
@@ -425,6 +428,74 @@ function validacionSignUpClientes(){
 	}
 	
 }
+function registrarServicio(){
+	if(validacionSignUpServicio()){
+		var varAjax_4 = getHTTPrequest();
+		var respuesta = "";
+		
+		varAjax_4.open('GET','engine/negocioregistrarservicio.php?servicio='+
+		servicio.value+'&costo='+costo.value,true);
+		varAjax_4.onreadystatechange = function(){
+			if(varAjax_4.readyState == 4 && varAjax_4.status == 200){
+				respuesta = varAjax_4.responseText;
+				if(respuesta == "Good"){
+					servicio.value="";
+					costo.value="";
+				}
+				else{
+				
+					alert("Que verga esta");
+				}
+			}
+			
+		}
+		
+	}
+	varAjax_4.send(null);
+}
+function validacionSignUpServicio(){
+	servicio = document.getElementById("servicioServicio");
+	costo = document.getElementById("costoServicio");
+	var ind = "";
+	
+	if(costo.value == "" || isNaN(costo.value)){
+		ind = "h";
+		costo.style.border = '3px solid blue';
+		
+	}
+	else
+	{
+		costo.style.border = '3px solid red';
+	}
+	if(servicio.value == ""){
+		ind = "h";
+		servicio.style.border = '3px solid blue';
+	}
+	else{
+		servicio.style.border = '3px solid red';
+	}
+	if(ind == ""){
+		return true;
+	}
+	else{
+		return false;
+	}
+
+}
+function cargadatofactura(){
+	
+	var varAjax_5 = getHTTPrequest();
+	var respuesta = "";
+	varAjax_5.open('GET',"engine/negociocargadatofactura.php",true);
+	alert(varAjax_5);
+	varAjax_5.onreadystatechange = function(){
+		if(varAjax_5.readyState == 4 && varAjax_5.status == 200){
+			alert(varAjax_5.responseXML.getElementsByTagName('nombre')[0].childNodes[0].nodeValue);
+		}
+	}
+	varAjax_5.send(null);
+}
+
 function validacionSignUpFactura(){
 	cedula = document.getElementById("cedulaFactura");
 	servicio = document.getElementById("servicioFactura");
@@ -483,6 +554,7 @@ function agregarNegocio(){
 		SignUpFactura.style.display = "none";
 		mostrarCliente.style.display = "none";
 		mostrarFactura.style.display = "none";
+		SignUpServicios.style.display = "none";
 	}
 	else{
 		SignUpNegocio.style.display = "none";
@@ -497,6 +569,7 @@ function agregarCliente(){
 		SignUpFactura.style.display = "none";
 		mostrarCliente.style.display = "none";
 		mostrarFactura.style.display = "none";
+		SignUpServicios.style.display = "none";
 	}
 	else{
 		SignUpClientes.style.display = "none";
@@ -512,6 +585,7 @@ function agregarEmpleado(){
 		SignUpFactura.style.display = "none";
 		mostrarCliente.style.display = "none";
 		mostrarFactura.style.display = "none";
+		SignUpServicios.style.display = "none";
 	}
 	else{
 		SignUpEmpleados.style.display = "none";
@@ -526,9 +600,25 @@ function agregarFactura(){
 		SignUpFactura.style.display = "block";
 		mostrarCliente.style.display = "none";
 		mostrarFactura.style.display = "none";
+		SignUpServicios.style.display = "none";
 	}
 	else{
 		SignUpFactura.style.display = "none";
+	}
+}
+function agregarServicio(){
+
+	if(SignUpServicios.style.display == "none"){
+		SignUpNegocio.style.display = "none";
+		SignUpClientes.style.display = "none";
+		SignUpEmpleados.style.display = "none";
+		SignUpFactura.style.display = "none";
+		mostrarCliente.style.display = "none";
+		mostrarFactura.style.display = "none";
+		SignUpServicios.style.display = "block";
+	}
+	else{
+		SignUpServicios.style.display = "none";
 	}
 }
 function mostrarClientes(){
@@ -540,6 +630,7 @@ function mostrarClientes(){
 		SignUpFactura.style.display = "none";
 		mostrarCliente.style.display = "block";
 		mostrarFactura.style.display = "none";
+		SignUpServicios.style.display = "none";
 	}
 	else{
 		mostrarCliente.style.display = "none";
@@ -553,7 +644,7 @@ function mostrarFacturas(){
 		SignUpFactura.style.display = "none";
 		mostrarCliente.style.display = "none";
 		mostrarFactura.style.display = "block";
-	
+		SignUpServicios.style.display = "none";
 	}
 	else{
 	

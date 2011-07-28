@@ -44,8 +44,8 @@ CREATE TABLE IF NOT EXISTS `datos_personales` (
   `telefono_local` varchar(15) NULL,
   `telefono_celular` varchar(15) NULL,
   `sexo` varchar(10) NOT NULL,
-  `estado_civil` varchar(10) NOT NULL,
-  `email` varchar(100) NOT NULL,
+  `estado_civil` varchar(10) NULL,
+  `email` varchar(100) NULL,
   PRIMARY KEY (`cedula`)
 ) ENGINE=MyISAM ;
 
