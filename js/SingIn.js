@@ -28,7 +28,7 @@
 function load(){
 	
 	elementos = document.getElementsByName("elemento");
-	document.getElementById("mapaNO").style.display="none";
+	//document.getElementById("mapaNO").style.display="none";
 	
 	for(i=0;i<elementos.length;i++){
 	
@@ -507,7 +507,7 @@ function validacionSignUpFactura(){
 	
 }
 function mostrarOcultar(div){
-
+alert('entro');
 	elementos = document.getElementsByName("elemento");
 	
 	for(i=0;i<elementos.length;i++){
@@ -525,5 +525,5 @@ function mostrarOcultar(div){
 	}
 	
 	document.getElementById(div).style.display="block";
-
+alert('salio');
 }

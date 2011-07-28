@@ -16,7 +16,11 @@
 	<script type = 'text/javascript' src = 'js/AJax_ObjetoHTTP.js'></script>
 	<script type = 'text/javascript' src = 'js/mapaNegocio.js'></script>
 	<script type = 'text/javascript' src = 'js/SingIn.js'></script>
-	<script language="javascript"></script>
+	<script language="javascript">
+	
+	window.load=function(){ mapaLoad(); }
+	
+	</script>
 	
 	
 </head>
@@ -249,7 +253,7 @@
 						
 					</form>
 				</div>
-				<div id = 'mostrarCliente' name="elemento" class="elementosTable">
+				<div id = 'mostrarCliente' name="elemento" class="elementos">
 					<table>
 						<tr>
 							<td>Cedula</td>

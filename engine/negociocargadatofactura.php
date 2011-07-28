@@ -36,7 +36,6 @@
 	
 	// Start XML file, echo parent node
 	
-
 	echo "<raiz>";
 	echo '<datospersonales>';
 	

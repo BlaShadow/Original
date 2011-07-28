@@ -126,125 +126,6 @@ a{
 	color: black;
 }
 
-/* Registrar Negocio */
-/*
-#SignUpNegocio{
-
-	margin:215px;
-	background-color:red;
-	width:700px;
-	margin-top:20px;
-	margin-bottom:20px;
-	padding-top:10px;
-
-}
-#SignUpNegocio label{
-	font-family: Blackoak Std;
-	font-size: 20px;
-	color: black;
-	
-}
-#SignUpClientes{
-	margin:215px;
-	background-color:red;
-	width:700px;
-	margin-top:20px;
-	margin-bottom:20px;
-}
-#SignUpClientes label{
-
-	font-family: Blackoak Std;
-	font-size: 20px;
-	color: black;
-	
-}
-#SignUpEmpleados{
-	margin:215px;
-	background-color:red;
-	width:700px;
-	margin-top:20px;
-	margin-bottom:20px;
-}
-#SignUpEmpleados label{
-	font-family: Blackoak Std;
-	font-size: 20px;
-	color: black;
-}
-#SignUpServicios{
-	margin:215px;
-	background-color:red;
-	width:700px;
-	margin-top:20px;
-	margin-bottom:20px;
-}
-#SignUpServicios label{
-	font-family: Blackoak Std;
-	font-size: 20px;
-	color: black;
-}
-#SignUpFactura{
-	margin:215px;
-	background-color:red;
-	width:700px;
-	margin-top:20px;
-	margin-bottom:20px;
-}
-#SignUpFactura label{
-	font-family: Blackoak Std;
-	font-size: 20px;
-	color: black;
-}
-#mostrarCliente{
-	margin:170px;
-	background-color:red;
-	width:780px;
-	margin-top:20px;
-	margin-bottom:20px;
-	min-height:100px;
-}
-#mostrarCliente table{
-	margin: auto;
-	border: 2px solid black;
-	width: 780px;
-}
-#mostrarCliente th{
-	border: 2px solid black;
-	width: 10px;
-}
-#mostrarFactura{
-	margin:170px;
-	background-color:red;
-	width:780px;
-	margin-top:20px;
-	margin-bottom:20px;
-	min-height:100px;
-}
-#mostrarFactura table{
-	margin: auto;
-	border: 2px solid black;
-	width: 780px;
-}
-#mostrarFactura th{
-	border: 2px solid black;
-	width: 10px;
-}
-#negocio{
-	margin:215px;
-	background-color:red;
-	width:700px;
-	margin-top:20px;
-	margin-bottom:20px;
-}
-
-#negocio  div:hover{
-	background-color:blue;
-}
-
-#negocio a{
-	text-decoration:none;
-}
-*/
-
 /**************************************************************************/
 .botones{
 	width:150px;
@@ -276,6 +157,7 @@ a{
 	margin-top:20px;
 	margin-bottom:20px;
 	padding-top:10px;
+	display:none;
 	
 }
 
@@ -305,7 +187,7 @@ a{
 	width:720px;
 	height:200px;
 	border:2px white solid;
-	background-color:white;
+	background-color:green;
 
 }
 .elementosTable{
