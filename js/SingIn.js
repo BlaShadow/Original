@@ -28,12 +28,12 @@
 function load(){
 	
 	elementos = document.getElementsByName("elemento");
+	document.getElementById("mapaNO").style.display="none";
 	
 	for(i=0;i<elementos.length;i++){
+	
 		elementos[i].style.display="none";
 	}
-	
-	//document.getElementById("mapaNO").style.display="none";
 	
 }
 
@@ -52,16 +52,7 @@ function registrarNegocio(){
 				respuesta01 = varAjax_1.responseText;
 				alert(respuesta01);
 				if(respuesta01 == "Good"){
-					nombre.value="";
-					telefono1.value="";
-					telefono2.value="";
-					rnc.value="";
-					email.value="";
-					latitud.value="";
-					longitud.value="";
-					direccion.value="";
-					zona.value="";
-					provincia.value="";
+					document.SignUpNegocio.reset();
 				}
 				else{
 					alert("pinche verga");
@@ -184,7 +175,7 @@ function registrarEmpleado(){
 				alert(respuesta);
 				if(respuesta == "Good"){
 					
-					document.signupemepleadosName.reset();
+					document.SignUpEmpleado.reset();
 					
 				}
 				else{
@@ -305,7 +296,7 @@ function registrarCliente(){
 				alert(respuesta);
 				if(respuesta == "Good"){
 					
-					document.signupCliente.reset();
+					document.SignUpCliente.reset();
 					
 				}
 				else{
@@ -407,8 +398,53 @@ function validacionSignUpClientes(){
 	{
 		return false;
 	}
-	
 }
+
+function registrarServicio(){
+	if(validacionSignUpServicio()){
+		alert(sexo.value+estado_civil.value);
+		var varAjax_4 = getHTTPrequest();
+		var respuesta=""
+		varAjax_4.open('GET',"",true);
+	}
+}
+
+function validacionSignUpServicio(){
+	servicio = document.getElementById('servicioServicio');
+	costo = document.getElementById('costoServicio');
+	
+	var ind = "";
+	
+	if(costo.value == "" || isNaN(costo.value)){
+		ind = "h";
+		costo.style.border = '3px solid blue';
+		
+	}
+	else
+	{
+		costo.style.border = '3px solid red';
+	}
+	
+	
+	if(servicio.value == "" || !isNaN(servicio.value)){
+		ind = "h";
+		servicio.style.border = '3px solid blue';
+	}
+	else
+	{
+		servicio.style.border = '3px solid red';
+	}
+	if(ind == "")
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+
+}
+
 function validacionSignUpFactura(){
 	cedula = document.getElementById("cedulaFactura");
 	servicio = document.getElementById("servicioFactura");

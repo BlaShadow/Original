@@ -50,6 +50,7 @@
 					<a href = '#' onclick = "mostrarOcultar('SignUpClientes');"><div class = 'botones' > Agregar Empleado</div></a>
 					<a href = '#' onclick = "mostrarOcultar('SignUpEmpleados');"><div class = 'botones' > Agregar Cliente</div></a>
 					<a href = '#' onclick = "mostrarOcultar('SignUpFactura');"><div class = 'botones' > Agregar Factura</div></a>
+					<a href = '#' onclick = "mostrarOcultar('SignUpServicio');"><div class = 'botones' > Agregar Servicio</div></a>
 					<a href = '#' onclick = "mostrarOcultar('mostrarCliente');"><div class = 'botones' > Mostrar Cliente</div></a>
 					<a href = '#' onclick = "mostrarOcultar('mostrarFactura');"><div class = 'botones' > Mostrar Factura</div></a>
 					
@@ -59,7 +60,7 @@
 				
 				<div id = "SignUpNegocio" align = "center" name="elemento" class="elementos"> 
 				
-					<form metdod = 'POST' onsubmit = 'return false'>		
+					<form metdod = 'POST' onsubmit = 'return false' name = 'SignUpNegocio'>		
 						<label> Registro de Negocio </label></br></br></br>
 						<table>
 							<tr>
@@ -102,7 +103,7 @@
 					
 				</div>
 				<div id = 'SignUpClientes' align = 'center' name="elemento" class="elementos">
-					<form method = 'POST' onsubmit = 'return false;' name="signupCliente">
+					<form method = 'POST' onsubmit = 'return false;' name="SignUpCliente">
 						<table>
 							<label > Registrar Cliente </label></br></br>
 							<tr>	
@@ -150,7 +151,7 @@
 					</form>
 				</div>
 				<div id = 'SignUpEmpleados' align = 'center' name="elemento" class="elementos"> 
-					<form method = 'POST' onsubmit = 'return false;' name="signupemepleadosName">
+					<form method = 'POST' onsubmit = 'return false;' name="SignUpEmpleado">
 						<label> Registrar Empleado </label></br></br>
 						<table>
 							<tr>
@@ -201,7 +202,7 @@
 					</form>
 				</div>
 				<div id = 'SignUpFactura' align = 'center' name="elemento" class="elementos">
-					<form method = 'POST' onsubmit = 'return validacionSignUpFactura();'>
+					<form method = 'POST' onsubmit = 'return false;' name = 'SignUpFactura'>
 						<label> Registrar Factura </label></br></br></br>
 							
 						<table>
@@ -231,7 +232,24 @@
 					</form>
 					
 				</div>
-				<div id = 'mostrarCliente' name="elemento" class="elementos">
+				<div id = 'SignUpServicio' align = 'center' name="elemento" class="elementos">
+					<form method = 'POST' onsubmit = 'return false;' name = 'SignUpServicio'>
+						<label> Registrar Servicio </label></br></br>
+						<table>
+							<tr>
+								<th>Servicio</th>
+								<td><input type = 'text' id = 'servicioServicio' name = 'servicioServicio'></td>
+								<th>Costo</th>
+								<td><input type = 'text' id = 'costoServicio' name = 'costoServicio'></td>
+							</tr>
+							<tr>
+								<td colspan = '4' align = 'center'><button style = "width:200px;">Registrar</button></td>
+							</tr>
+						</table>
+						
+					</form>
+				</div>
+				<div id = 'mostrarCliente' name="elemento" class="elementosTable">
 					<table>
 						<tr>
 							<td>Cedula</td>
@@ -248,7 +266,7 @@
 					</table>
 			
 				</div>
-				<div id = 'mostrarFactura' name="elemento" class="elementos">
+				<div id = 'mostrarFactura' name="elemento" class="elementosTable">
 					<table>
 						<td>ID Factura</td>
 						<td> ID Peluqueria</td>

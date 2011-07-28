@@ -100,7 +100,6 @@ a{
 	text-align:center;
 	padding-top:5px;
 }
-<<<<<<< HEAD
 #login div:hover{
 	background-color:black;
 }
@@ -128,6 +127,7 @@ a{
 }
 
 /* Registrar Negocio */
+/*
 #SignUpNegocio{
 
 	margin:215px;
@@ -243,8 +243,7 @@ a{
 #negocio a{
 	text-decoration:none;
 }
-=======
->>>>>>> cd85467251fcd4cd09804a83636db983270ccfeb
+*/
 
 /**************************************************************************/
 .botones{
@@ -271,12 +270,13 @@ a{
 
 /**********Elemetos**************/
 .elementos{
-
-	width:720px;
-	background-color:white;
-	float:right;
-	margin:30 30 0 0;
-
+	margin:215px;
+	background-color:red;
+	width:700px;
+	margin-top:20px;
+	margin-bottom:20px;
+	padding-top:10px;
+	
 }
 
 .elementos button{
@@ -300,12 +300,41 @@ a{
 }
 
 #mapaNO{
-
+	margin-left: 207px;
+	margin-top:20px;
 	width:720px;
 	height:200px;
 	border:2px white solid;
 	background-color:white;
-	float:right;
-	margin: 30 30 0 0;
 
+}
+.elementosTable{
+	margin:170px;
+	background-color:red;
+	width:780px;
+	margin-top:20px;
+	margin-bottom:20px;
+	min-height:100px;
+
+}
+
+.elementosTable label{
+
+	color:black;
+	font-size:35px;
+
+}
+.elementosTable table{
+	margin: auto;
+	border: 2px solid black;
+	width: 780px;
+}
+.elementosTable th{
+	border: 2px solid black;
+	width: 10px;
+}
+
+.elementosTable td{
+	border: 2px solid black;
+	width: 10px;
 }
