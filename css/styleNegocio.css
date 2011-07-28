@@ -90,6 +90,7 @@ a{
 
 /***************************************/
 
+
 .login{
 	
 	width:190px;
@@ -134,6 +135,7 @@ a{
 	width:700px;
 	margin-top:20px;
 	margin-bottom:20px;
+	padding-top:10px;
 
 }
 #SignUpNegocio label{
@@ -252,7 +254,6 @@ a{
 	padding-top:5px;
 }
 
-
 #buttons{
 	float:left;
 	min-height:300px;
@@ -265,4 +266,13 @@ a{
 
 #buttons  div:hover{
 	background-color:blue;
+}
+//**************  Style Mapa  ***************/
+
+.mapaNO{
+
+	height:250px;
+	width:98%;
+	background-color:white;
+
 }

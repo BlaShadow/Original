@@ -23,25 +23,16 @@
 	
 	
 	
-	
 /*oculta todos los div*/
 
 function load(){
-	var SignUpNegocio = document.getElementById("SignUpNegocio");
-	var SignUpClientes = document.getElementById("SignUpClientes");
-	var SignUpEmpleados = document.getElementById("SignUpEmpleados");
-	var SignUpServicios = document.getElementById("SignUpServicios");
-	var SignUpFactura = document.getElementById("SignUpFactura");
-	var mostrarCliente = document.getElementById("mostrarCliente");
-	var mostrarFactura = document.getElementById("mostrarFactura");
 	
-	SignUpNegocio.style.display = "none";
-	SignUpClientes.style.display = "none";
-	SignUpEmpleados.style.display = "none";
-	SignUpFactura.style.display = "none";
-	SignUpServicios.style.display = "none";
-	mostrarCliente.style.display = "none";
-	mostrarFactura.style.display = "none";
+	elementos = document.getElementsByName("elemento");
+	
+	for(i=0;i<elementos.length;i++){
+		elementos[i].style.display="none";
+	}
+	
 }
 
 function registrarNegocio(){
@@ -179,7 +170,7 @@ function registrarEmpleado(){
 	if(validacionSignUpEmpleados()){
 		alert(sexo.value+estado_civil.value);
 		var varAjax_2 = getHTTPrequest();
-		var respuesta=""
+		var respuesta="";
 		varAjax_2.open('GET',"engine/negocioregistrarempleado.php/?cedula="+cedula.value+
 		"&nombre="+nombre.value+"&apellido="+apellido.value+"&direccion="+direccion.value+
 		"&telefono_local="+telefono_local.value+"&telefono_celular="+telefono_celular.value+
@@ -190,15 +181,9 @@ function registrarEmpleado(){
 				respuesta = varAjax_2.responseText;
 				alert(respuesta);
 				if(respuesta == "Good"){
-					cedula.value="";
-					nombre.value="";
-					apellido.value="";
-					telefono_local.value="";
-					telefono_celular.value="";
-					email.value="";
-					direccion.value="";
-					sexo.value="";
-					estado_civil.value="";
+					
+					document.signupemepleadosName.reset();
+					
 				}
 				else{
 					alert("la verga");
@@ -317,15 +302,9 @@ function registrarCliente(){
 				respuesta = varAjax_3.responseText;
 				alert(respuesta);
 				if(respuesta == "Good"){
-					cedula.value="";
-					nombre.value="";
-					apellido.value="";
-					telefono_local.value="";
-					telefono_celular.value="";
-					email.value="";
-					direccion.value="";
-					sexo.value="";
-					estado_civil.value="";
+					
+					document.signupCliente.reset();
+					
 				}
 				else{
 					alert("la verga");
@@ -428,74 +407,6 @@ function validacionSignUpClientes(){
 	}
 	
 }
-function registrarServicio(){
-	if(validacionSignUpServicio()){
-		var varAjax_4 = getHTTPrequest();
-		var respuesta = "";
-		
-		varAjax_4.open('GET','engine/negocioregistrarservicio.php?servicio='+
-		servicio.value+'&costo='+costo.value,true);
-		varAjax_4.onreadystatechange = function(){
-			if(varAjax_4.readyState == 4 && varAjax_4.status == 200){
-				respuesta = varAjax_4.responseText;
-				if(respuesta == "Good"){
-					servicio.value="";
-					costo.value="";
-				}
-				else{
-				
-					alert("Que verga esta");
-				}
-			}
-			
-		}
-		
-	}
-	varAjax_4.send(null);
-}
-function validacionSignUpServicio(){
-	servicio = document.getElementById("servicioServicio");
-	costo = document.getElementById("costoServicio");
-	var ind = "";
-	
-	if(costo.value == "" || isNaN(costo.value)){
-		ind = "h";
-		costo.style.border = '3px solid blue';
-		
-	}
-	else
-	{
-		costo.style.border = '3px solid red';
-	}
-	if(servicio.value == ""){
-		ind = "h";
-		servicio.style.border = '3px solid blue';
-	}
-	else{
-		servicio.style.border = '3px solid red';
-	}
-	if(ind == ""){
-		return true;
-	}
-	else{
-		return false;
-	}
-
-}
-function cargadatofactura(){
-	
-	var varAjax_5 = getHTTPrequest();
-	var respuesta = "";
-	varAjax_5.open('GET',"engine/negociocargadatofactura.php",true);
-	alert(varAjax_5);
-	varAjax_5.onreadystatechange = function(){
-		if(varAjax_5.readyState == 4 && varAjax_5.status == 200){
-			alert(varAjax_5.responseXML.getElementsByTagName('nombre')[0].childNodes[0].nodeValue);
-		}
-	}
-	varAjax_5.send(null);
-}
-
 function validacionSignUpFactura(){
 	cedula = document.getElementById("cedulaFactura");
 	servicio = document.getElementById("servicioFactura");
@@ -544,110 +455,14 @@ function validacionSignUpFactura(){
 	}
 	
 }
+function mostrarOcultar(div){
 
-function agregarNegocio(){
-
-	if(SignUpNegocio.style.display == "none"){
-		SignUpNegocio.style.display = "block";
-		SignUpClientes.style.display = "none";
-		SignUpEmpleados.style.display = "none";
-		SignUpFactura.style.display = "none";
-		mostrarCliente.style.display = "none";
-		mostrarFactura.style.display = "none";
-		SignUpServicios.style.display = "none";
-	}
-	else{
-		SignUpNegocio.style.display = "none";
-	}
-}
-
-function agregarCliente(){
-	if(SignUpClientes.style.display == "none"){
-		SignUpNegocio.style.display = "none";
-		SignUpClientes.style.display = "block";
-		SignUpEmpleados.style.display = "none";
-		SignUpFactura.style.display = "none";
-		mostrarCliente.style.display = "none";
-		mostrarFactura.style.display = "none";
-		SignUpServicios.style.display = "none";
-	}
-	else{
-		SignUpClientes.style.display = "none";
-	}
-}
-
-function agregarEmpleado(){
-
-	if( SignUpEmpleados.style.display == "none"){
-		SignUpNegocio.style.display = "none";
-		SignUpClientes.style.display = "none";
-		SignUpEmpleados.style.display = "block";
-		SignUpFactura.style.display = "none";
-		mostrarCliente.style.display = "none";
-		mostrarFactura.style.display = "none";
-		SignUpServicios.style.display = "none";
-	}
-	else{
-		SignUpEmpleados.style.display = "none";
-	}
-}
-function agregarFactura(){
-
-	if(SignUpFactura.style.display == "none"){
-		SignUpNegocio.style.display = "none";
-		SignUpClientes.style.display = "none";
-		SignUpEmpleados.style.display = "none";
-		SignUpFactura.style.display = "block";
-		mostrarCliente.style.display = "none";
-		mostrarFactura.style.display = "none";
-		SignUpServicios.style.display = "none";
-	}
-	else{
-		SignUpFactura.style.display = "none";
-	}
-}
-function agregarServicio(){
-
-	if(SignUpServicios.style.display == "none"){
-		SignUpNegocio.style.display = "none";
-		SignUpClientes.style.display = "none";
-		SignUpEmpleados.style.display = "none";
-		SignUpFactura.style.display = "none";
-		mostrarCliente.style.display = "none";
-		mostrarFactura.style.display = "none";
-		SignUpServicios.style.display = "block";
-	}
-	else{
-		SignUpServicios.style.display = "none";
-	}
-}
-function mostrarClientes(){
-
-	if(mostrarCliente.style.display == "none"){
-		SignUpNegocio.style.display = "none";
-		SignUpClientes.style.display = "none";
-		SignUpEmpleados.style.display = "none";
-		SignUpFactura.style.display = "none";
-		mostrarCliente.style.display = "block";
-		mostrarFactura.style.display = "none";
-		SignUpServicios.style.display = "none";
-	}
-	else{
-		mostrarCliente.style.display = "none";
-	}
-}
-function mostrarFacturas(){
-	if(mostrarFactura.style.display == "none"){
-		SignUpNegocio.style.display = "none";
-		SignUpClientes.style.display = "none";
-		SignUpEmpleados.style.display = "none";
-		SignUpFactura.style.display = "none";
-		mostrarCliente.style.display = "none";
-		mostrarFactura.style.display = "block";
-		SignUpServicios.style.display = "none";
-	}
-	else{
+	elementos = document.getElementsByName("elemento");
 	
-		mostrarFactura.style.display = "none";
+	for(i=0;i<elementos.length;i++){
+		elementos[i].style.display="none";
 	}
+	
+	document.getElementById(div).style.display="block";
+
 }

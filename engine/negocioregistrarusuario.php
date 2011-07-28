@@ -22,6 +22,9 @@
 		'".$telefono_celular."','".$sexo."','".$estado_civil."','".$email."','".$clase."')";
 		
 		$result = mysql_query($query);
+		
+		echo mysql_error();
+		
 		if(mysql_affected_rows() > 0){
 		
 			echo "Good";
