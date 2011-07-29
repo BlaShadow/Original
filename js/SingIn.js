@@ -34,7 +34,7 @@ function load(){
 	
 		elementos[i].style.display="none";
 	}
-	registrarServicio();
+	cargarNombres();
 }
 
 function registrarNegocio(){
@@ -295,9 +295,7 @@ function registrarCliente(){
 				respuesta = varAjax_3.responseText;
 				alert(respuesta);
 				if(respuesta == "Good"){
-					
 					document.SignUpCliente.reset();
-					
 				}
 				else{
 					alert("la verga");
@@ -400,26 +398,42 @@ function validacionSignUpClientes(){
 	}
 }
 
-function registrarServicio(){
-	if(validacionSignUpServicio()){
-		var varAjax_4 = getHTTPrequest();
-		var respuesta="";
-		varAjax_4.open('GET',"engine/negociocargadatofactura.php",true);
-		varAjax_4.onreadystatechange = function(){
-			if(varAjax_4.readyState == 4 && varAjax_4.status == 200){
-				var select = document.getElementById('servicio');
-				var xml = varAjax_4.responseXML;
-				var nombre = xml.getElementsByTagName('nombre');
-				var apellido = xml.getElementsByTagName('apellido');
-				alert(xml+ " " +nombre[0].childNodes[0].nodeValue+ " " + apellido[0].childNodes[0].nodeValue + " " + select);
-				for(var ind = 0;ind < nombre.length;ind++){
-					select.innerHTML = "<option value = '"+nombre[ind].childNodes[ind].nodeValue+" "+nombre[ind].childNodes[ind].nodeValue+"'>"+nombre[ind].childNodes[ind].nodeValue+" "+nombre[ind].childNodes[ind].nodeValue+"</option>";
-					
-				}
+function cargarNombres(){
+	var varAjax_4 = getHTTPrequest();
+	varAjax_4.open('GET',"engine/negociocargadatofactura.php",true);
+	varAjax_4.onreadystatechange = function(){
+		if(varAjax_4.readyState == 4 && varAjax_4.status == 200){
+			var select = document.getElementById('nombreClienteFactura');
+			var xml = varAjax_4.responseXML;
+			var nombre = xml.getElementsByTagName('nombre');
+			var apellido = xml.getElementsByTagName('apellido');
+			select.innerHTML = "";
+			for(var ind = 0;ind < nombre.length;ind++){
+				select.innerHTML += "<option value = '"+nombre[ind].firstChild.nodeValue+" " +apellido[ind].firstChild.nodeValue+"'>"+nombre[ind].firstChild.nodeValue+" " +apellido[ind].firstChild.nodeValue+"</option>";
 			}
 		}
 	}
 	varAjax_4.send(null);
+}
+function registrarServicio(){
+	if(validacionSignUpServicio()){
+		var varAjax_5 = getHTTPrequest();
+		var respuesta = "";
+		varAjax_5.open('GET',"engine/negocioregistrarservicio.php?servicio="+
+		servicio.value+"&costo="+costo.value,true);
+		varAjax_5.onreadystatechange = function(){
+			if(varAjax_5.readyState == 4 && varAjax_5.status == 200){
+				respuesta = varAjax_5.responseText;
+				if(respuesta == "Good"){
+					document.SignUpFactura.reset();
+				}
+				else{
+					alert(respuesta);
+				}
+			}
+		}
+	}
+	varAjax_5.send(null);
 }
 
 function validacionSignUpServicio(){
@@ -431,14 +445,11 @@ function validacionSignUpServicio(){
 	if(costo.value == "" || isNaN(costo.value)){
 		ind = "h";
 		costo.style.border = '3px solid blue';
-		
 	}
 	else
 	{
 		costo.style.border = '3px solid red';
 	}
-	
-	
 	if(servicio.value == "" || !isNaN(servicio.value)){
 		ind = "h";
 		servicio.style.border = '3px solid blue';
@@ -507,7 +518,7 @@ function validacionSignUpFactura(){
 	
 }
 function mostrarOcultar(div){
-alert('entro');
+
 	elementos = document.getElementsByName("elemento");
 	
 	for(i=0;i<elementos.length;i++){
@@ -525,5 +536,5 @@ alert('entro');
 	}
 	
 	document.getElementById(div).style.display="block";
-alert('salio');
+
 }

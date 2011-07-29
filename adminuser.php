@@ -16,11 +16,6 @@
 	<script type = 'text/javascript' src = 'js/AJax_ObjetoHTTP.js'></script>
 	<script type = 'text/javascript' src = 'js/mapaNegocio.js'></script>
 	<script type = 'text/javascript' src = 'js/SingIn.js'></script>
-	<script language="javascript">
-	
-	window.load=function(){ mapaLoad(); }
-	
-	</script>
 	
 	
 </head>
@@ -51,9 +46,9 @@
 				<div id = 'buttons' >
 				
 					<a href = '#' onclick = "mostrarOcultar('SignUpNegocio');"><div class = 'botones' > Agregar Negocio</div></a>
-					<a href = '#' onclick = "mostrarOcultar('SignUpClientes');"><div class = 'botones' > Agregar Empleado</div></a>
-					<a href = '#' onclick = "mostrarOcultar('SignUpEmpleados');"><div class = 'botones' > Agregar Cliente</div></a>
-					<a href = '#' onclick = "mostrarOcultar('SignUpFactura');"><div class = 'botones' > Agregar Factura</div></a>
+					<a href = '#' onclick = "mostrarOcultar('SignUpEmpleados');"><div class = 'botones' > Agregar Empleado</div></a>
+					<a href = '#' onclick = "mostrarOcultar('SignUpClientes');"><div class = 'botones' > Agregar Cliente</div></a>
+					<a href = '#' onclick = "mostrarOcultar('SignUpFactura');cargarNombres();"><div class = 'botones' > Agregar Factura</div></a>
 					<a href = '#' onclick = "mostrarOcultar('SignUpServicio');"><div class = 'botones' > Agregar Servicio</div></a>
 					<a href = '#' onclick = "mostrarOcultar('mostrarCliente');"><div class = 'botones' > Mostrar Cliente</div></a>
 					<a href = '#' onclick = "mostrarOcultar('mostrarFactura');"><div class = 'botones' > Mostrar Factura</div></a>
@@ -211,11 +206,16 @@
 							
 						<table>
 							<tr>
-								<td>Cedula Cliente:</td>
-								<td><input type = 'text' id = 'cedulaFactura' name = 'cedula'></td>
+								<td>Cliente:</td>
+								<td><SELECT id = 'nombreClienteFactura' name = 'nombreClienteFactura'>
+									<option value = ''> Seleccione...... </option>
+									
+									</SELECT></td>
 								<td>Servicio</td>
-								<td><select id = 'servicio'>
-									</select></td>
+								<td><SELECT id = 'servicio' name = 'servicio'>
+									<option value = ''> Seleccione...... </option>
+									
+									</SELECT></td>
 							</tr>
 							<tr>
 								<td>Costo</td>
@@ -253,7 +253,7 @@
 						
 					</form>
 				</div>
-				<div id = 'mostrarCliente' name="elemento" class="elementos">
+				<div id = 'mostrarCliente' name="elemento" class="elementosTable">
 					<table>
 						<tr>
 							<td>Cedula</td>
