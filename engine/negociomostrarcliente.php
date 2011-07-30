@@ -4,7 +4,6 @@
 	include_once("validarLetras.php");
 	$conexion = new Conexion;
 	
-	// funcion en caso de que se usen caracter raritos.
 	
 	// Query que me retorna el id_peluqueria para buscar los clientes.
 	$query1 = "select id_peluqueria from peluqueria where id_usuario=".$_SESSION["usuario"];
@@ -15,14 +14,13 @@
 	$query2 = "select id_cliente from clientes where id_peluqueria=".$row1['id_peluqueria'];
 	$result2 = mysql_query($query2);
 	
-	// Start XML file, echo parent node
 	echo "<?xml version='1.0' encoding='UTF-8' ?>";
 	echo "<datos>";
 	echo "<datospersonales>";
 	
 	while ($row = mysql_fetch_array($result2)){
 		
-		$query = "select distinct nombre, apellido from
+		$query = "select distinct * from
 		datos_personales where cedula=".$row['id_cliente'];
 		
 		$result3 = mysql_query($query);
@@ -31,25 +29,17 @@
 		echo "<cedula>".$row['id_cliente']."</cedula>";
 		echo "<nombre>".parseToXML($row2['nombre'])."</nombre>";
 		echo "<apellido>".parseToXML($row2['apellido'])."</apellido>";
+		echo "<direccion>".parseToXML($row2['direccion'])."</direccion>";
+		echo "<telefono_local>".$row2['telefono_local']."</telefono_local>";
+		echo "<telefono_celular>".$row2['telefono_celular']."</telefono_celular>";
+		echo "<sexo>".$row2['sexo']."</sexo>";
+		echo "<estado_civil>".$row2['estado_civil']."</estado_civil>";
+		echo "<email>".parseToXML($row2['email'])."</email>";
 		echo "</persona>";
 	}
-	
-	$query = "select distinct servicio,precio from servicios
-	where id_peluqueria=".$row1['id_peluqueria'];
-	$result4 = mysql_query($query);
-			
-	echo ' </datospersonales>';
-	echo "<peluqueria>";
-	while($row2 = mysql_fetch_array($result4)){
-		echo "<datoservicio>";
-		echo "<servicio>".parseToXML($row2['servicio'])."</servicio>";
-		echo "<costo>".$row2['precio']."</costo>";
-		echo "</datoservicio>";
-	}
-	echo "</peluqueria>";
-	echo "</datos>";
+	echo '</datospersonales>';
+	echo '</datos>';
 	// End XML file	
 	header("Content-type: text/xml");
 	
 ?>
-	

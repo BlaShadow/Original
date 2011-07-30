@@ -34,7 +34,7 @@ function load(){
 	
 		elementos[i].style.display="none";
 	}
-	cargarNombres();
+	cargarDatosFactura();
 }
 
 function registrarNegocio(){
@@ -398,23 +398,151 @@ function validacionSignUpClientes(){
 	}
 }
 
-function cargarNombres(){
+function cargarDatosFactura(){
 	var varAjax_4 = getHTTPrequest();
 	varAjax_4.open('GET',"engine/negociocargadatofactura.php",true);
 	varAjax_4.onreadystatechange = function(){
 		if(varAjax_4.readyState == 4 && varAjax_4.status == 200){
-			var select = document.getElementById('nombreClienteFactura');
+			
+			var select1 = document.getElementById('nombreClienteFactura');
+			var select2 = document.getElementById('servicioFactura');
+			
 			var xml = varAjax_4.responseXML;
-			var nombre = xml.getElementsByTagName('nombre');
-			var apellido = xml.getElementsByTagName('apellido');
-			select.innerHTML = "";
-			for(var ind = 0;ind < nombre.length;ind++){
-				select.innerHTML += "<option value = '"+nombre[ind].firstChild.nodeValue+" " +apellido[ind].firstChild.nodeValue+"'>"+nombre[ind].firstChild.nodeValue+" " +apellido[ind].firstChild.nodeValue+"</option>";
+			var nombre1 = xml.getElementsByTagName('nombre');
+			var apellido1 = xml.getElementsByTagName('apellido');
+			var cedula1 = xml.getElementsByTagName('cedula');
+			var servicio1 = xml.getElementsByTagName('servicio');
+			
+			
+			select1.innerHTML = "";
+			select1.innerHTML = "<option value = ''>Seleccione ......</option>";
+			for(var ind = 0;ind < nombre1.length;ind++){
+				select1.innerHTML += "<option value = '"+cedula1[ind].firstChild.nodeValue+"'>"+nombre1[ind].firstChild.nodeValue+" " +apellido1[ind].firstChild.nodeValue+"</option>";
+			}
+			select2.innerHTML = "";
+			select2.innerHTML = "<option value = ''>Seleccione ......</option>";
+			for(var ind = 0;ind < servicio1.length;ind++){
+				select2.innerHTML += "<option value = '"+servicio1[ind].firstChild.nodeValue+"'>"+servicio1[ind].firstChild.nodeValue+"</option>";
 			}
 		}
 	}
 	varAjax_4.send(null);
 }
+function setCostos(servicio){
+	var varAjax_7 = getHTTPrequest();
+	varAjax_7.open('GET',"engine/negociocargadatofactura.php",true);
+	varAjax_7.onreadystatechange = function(){
+		if(varAjax_7.readyState == 4 && varAjax_7.status == 200){
+			var xml = varAjax_7.responseXML;
+			var servicio1 = xml.getElementsByTagName('servicio');
+			var costo1 = xml.getElementsByTagName('costo');
+			for(var ind = 0;ind < servicio1.length;ind++){
+				if(servicio1[ind].firstChild.nodeValue == servicio){
+					document.getElementById('costoFactura').value = costo1[ind].firstChild.nodeValue;
+					break;
+				}
+			}
+		}
+	}
+	varAjax_7.send(null);
+}
+function calculoTotal(){
+	costo = document.getElementById('costoFactura').value;
+	descuento = document.getElementById('descuentoFactura').value;
+	itbis = document.getElementById('itbisFactura').value;
+	total = document.getElementById('totalFactura');
+	var tot;
+	
+	tot = (costo - descuento);
+	if(itbis > 0){
+		tot = tot+((costo * itbis)/100);
+	}
+	total.value = tot.toFixed(2);
+}
+function registrarFactura(){
+	if(validacionSignUpFactura()){
+		var varAjax_6 = getHTTPrequest();
+		var respuesta = "";
+		
+		varAjax_6.open('GET',"engine/negocioregistrarfactura.php/?cliente="+
+		cliente.value+"&servicio="+servicio.value+"&costo="+costo.value+"&descuento="+descuento.value+
+		"&itbis="+itbis.value+"&total="+total.value,true);
+		
+		varAjax_6.onreadystatechange = function(){
+			if(varAjax_6.readyState == 4 && varAjax_6.status == 200){
+				respuesta = varAjax_6.responseText;
+				alert(respuesta);
+				if(respuesta == "Good"){
+					document.SignUpFactura.reset();
+				}
+				else{
+					alert("que verga esta");
+				}
+			}
+		}
+	}
+	varAjax_6.send(null);
+}
+function validacionSignUpFactura(){
+	cliente = document.getElementById('nombreClienteFactura');
+	servicio = document.getElementById('servicioFactura');
+	costo = document.getElementById('costoFactura');
+	descuento = document.getElementById('descuentoFactura');
+	itbis = document.getElementById('itbisFactura');
+	total = document.getElementById('totalFactura');
+	var ind = "";
+	
+	if(cliente.value == ""){
+		ind = "h";
+		cliente.style.border = '3px solid blue';
+	}
+	else
+	{
+		cliente.style.border = '3px solid red';
+	}	
+	if(servicio.value == ""){
+		ind = "h";
+		servicio.style.border = '3px solid blue';
+	}
+	else{
+		servicio.style.border = '3px solid red';
+	}	
+	if(costo.value == "" || isNaN(costo.value)){
+		ind = "h";
+		costo.style.border = '3px solid blue';
+	}
+	else{
+		costo.style.border = '3px solid red';
+	}
+	if(descuento.value == "" || isNaN(descuento.value)){
+		ind = "h";
+		descuento.style.border = '3px solid blue';
+	}
+	else{
+		descuento.style.border = '3px solid red';
+	}
+	if(itbis.value == "" || isNaN(itbis.value)){
+		ind = "h";
+		itbis.style.border = '3px solid blue';
+	}
+	else{
+		itbis.style.border = '3px solid red';
+	}
+	if(total.value == "" || isNaN(total.value)){
+		ind = "h";
+		total.style.border = '3px solid blue';
+	}
+	else{
+		total.style.border = '3px solid red';
+	}
+	if(ind == ""){
+		return true;
+	}
+	else{
+		return false;
+	}	
+}
+
 function registrarServicio(){
 	if(validacionSignUpServicio()){
 		var varAjax_5 = getHTTPrequest();
@@ -468,55 +596,73 @@ function validacionSignUpServicio(){
 	}
 
 }
-
-function validacionSignUpFactura(){
-	cedula = document.getElementById("cedulaFactura");
-	servicio = document.getElementById("servicioFactura");
-	costo = document.getElementById("costoFactura");
-	descuento = document.getElementById("descuentoFactura");
-	itbis = document.getElementById("itbisFactura");
-	total = document.getElementById("totalFactura");
-	
-	if(cedula.value == "" || isNaN(cedula.value) || cedula.value.length < 11){
-		ind = "h";
-		cedula.style.border = '3px solid blue';
+// Muestra los clientes
+function mostrarClientesF(){
+	var varAjax_8 = getHTTPrequest();
+	varAjax_8.open('GET',"engine/negociomostrarcliente.php",true);
+	varAjax_8.onreadystatechange = function(){
+		if(varAjax_8.readyState == 4 && varAjax_8.status == 200){
+			var xml = varAjax_8.responseXML;
+			var table = document.getElementById('mostrarClientes');
+			table.innerHTML = "";
+			table.innerHTML = "<tr><td>Cedula</td><td>Nombre</td><td>Apellido</td><td>Direccion</td><td>Telefono Local</td><td>Telefono Cel</td><td>Sexo</td><td>Estado Civil</td><td>Email</td></tr>";
+			for(var ind1 = 0;ind1 < xml.getElementsByTagName('persona').length;ind1++){
+				var tr = document.createElement('tr');
+				for(var ind2 = 0; ind2 < xml.getElementsByTagName('persona')[ind1].childNodes.length;ind2++){
+					var td = document.createElement('td');
+					td.innerHTML = xml.getElementsByTagName('persona')[ind1].childNodes[ind2].firstChild.nodeValue;
+					tr.appendChild(td);
+				}
+				table.appendChild(tr);
+			}
+		}
 	}
-	else
-	{
-		cedula.style.border = '3px solid red';
-	}
-	
-	if(costo.value == "" || !isNaN(costo.value)){
-		ind = "h";
-		costo.style.border = '3px solid blue';
-	}
-	else{
-		costo.style.border = '3px solid red';
-	}
-	if(descuento.value == "" || !isNaN(descuento.value)){
-		ind = "h";
-		descuento.style.border = '3px solid blue';
-	}
-	else{
-		descuento.style.border = '3px solid red';
-	}
-	if(itbis.value == "" || !isNaN(itbis.value)){
-		ind = "h";
-		itbis.style.border = '3px solid blue';
-	}
-	else{
-		itbis.style.border = '3px solid red';
-	}
-	if(ind == "")
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
-	
+	varAjax_8.send(null);
 }
+function mostrarFacturasF(){
+	var varAjax_9 = getHTTPrequest();
+	varAjax_9.open('GET',"engine/negociomostrarfactura.php",true);
+	varAjax_9.onreadystatechange = function(){
+		if(varAjax_9.readyState == 4 && varAjax_9.status == 200){
+			var xml = varAjax_9.responseXML;
+			var table1 = document.getElementById('mostrarFacturas');
+			table1.innerHTML = "";
+			table1.innerHTML = "<tr><td>ID Factura</td><td>Cliente</td><td>Servicio</td><td>Costo</td><td>Descuento</td><td>Itbis</td><td>Total</td><td>Fecha</td></tr>";
+			for(var ind1 = 0;ind1 < xml.getElementsByTagName('factura').length;ind1++){
+				var tr = document.createElement('tr');
+				for(var ind2 = 0; ind2 < xml.getElementsByTagName('factura')[ind1].childNodes.length;ind2++){
+					var td = document.createElement('td');
+					td.innerHTML = xml.getElementsByTagName('factura')[ind1].childNodes[ind2].firstChild.nodeValue;
+					tr.appendChild(td);
+				
+				}
+				var td = document.createElement('td');
+				td.setAttribute('align','center');
+				td.innerHTML = "<button onclick = 'eliminarFactura("+xml.getElementsByTagName('factura')[ind1].childNodes[0].firstChild.nodeValue+");'>Eliminar</button>";
+				tr.appendChild(td);
+				table1.appendChild(tr);
+			}
+		}
+	}
+	varAjax_9.send(null);
+}
+function eliminarFactura(id_factura){
+	if(confirm("Seguro que decea eliminar esta factura?")){
+		var varAjax_0 = getHTTPrequest();
+		varAjax_0.open('GET',"engine/negocioeliminarfactura.php?id_factura="+id_factura,true);
+		varAjax_0.onreadystatechange = function(){
+			if(varAjax_0.readyState == 4 && varAjax_0.status == 200){
+				var respuesta = varAjax_0.responseText;
+				if(respuesta == "Good"){
+					alert("Borrado");
+				}
+			}
+		}
+	}
+	varAjax_0.send(null);
+	mostrarFacturasF();
+}
+// Funcion que muestra el div seleccionado
 function mostrarOcultar(div){
 
 	elementos = document.getElementsByName("elemento");
@@ -526,15 +672,9 @@ function mostrarOcultar(div){
 	}
 	
 	if(div=="SignUpNegocio"){
-	
 		document.getElementById("mapaNO").style.display="block";
-	
 	}else{
-	
 		document.getElementById("mapaNO").style.display="none";
-	
 	}
-	
 	document.getElementById(div).style.display="block";
-
 }

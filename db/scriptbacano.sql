@@ -96,8 +96,8 @@ begin
 	declare idPeluqueria int(11);
 	select id_peluqueria into idPeluqueria from peluqueria where id_usuario = idUsuario;
 	
-     insert into factura(id_peluqueria,id_cliente,servicio,costo,descuento,etbis,total,fecha,vigencia)
-     values(idPeluqueria,id_cliente,servicio,costo,descuento,etbis,total,fecha,"A");     
+     insert into factura(id_peluqueria,id_cliente,servicio,costo,descuento,itbis,total,fecha,vigencia)
+     values(idPeluqueria,id_cliente,servicio,costo,descuento,itbis,total,fecha,"A");     
 end;
 
 -- --------------------------------------------------------

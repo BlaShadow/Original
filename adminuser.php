@@ -48,10 +48,10 @@
 					<a href = '#' onclick = "mostrarOcultar('SignUpNegocio');"><div class = 'botones' > Agregar Negocio</div></a>
 					<a href = '#' onclick = "mostrarOcultar('SignUpEmpleados');"><div class = 'botones' > Agregar Empleado</div></a>
 					<a href = '#' onclick = "mostrarOcultar('SignUpClientes');"><div class = 'botones' > Agregar Cliente</div></a>
-					<a href = '#' onclick = "mostrarOcultar('SignUpFactura');cargarNombres();"><div class = 'botones' > Agregar Factura</div></a>
+					<a href = '#' onclick = "mostrarOcultar('SignUpFactura');cargarDatosFactura();"><div class = 'botones' > Agregar Factura</div></a>
 					<a href = '#' onclick = "mostrarOcultar('SignUpServicio');"><div class = 'botones' > Agregar Servicio</div></a>
-					<a href = '#' onclick = "mostrarOcultar('mostrarCliente');"><div class = 'botones' > Mostrar Cliente</div></a>
-					<a href = '#' onclick = "mostrarOcultar('mostrarFactura');"><div class = 'botones' > Mostrar Factura</div></a>
+					<a href = '#' onclick = "mostrarOcultar('mostrarCliente');mostrarClientesF();"><div class = 'botones' > Mostrar Cliente</div></a>
+					<a href = '#' onclick = "mostrarOcultar('mostrarFactura');mostrarFacturasF();"><div class = 'botones' > Mostrar Factura</div></a>
 					
 				</div>
 				
@@ -212,25 +212,26 @@
 									
 									</SELECT></td>
 								<td>Servicio</td>
-								<td><SELECT id = 'servicio' name = 'servicio'>
+								<td><SELECT  onchange = 'setCostos(this.value);' id = 'servicioFactura' name = 'servicioFactura'>
 									<option value = ''> Seleccione...... </option>
 									
 									</SELECT></td>
 							</tr>
 							<tr>
 								<td>Costo</td>
-								<td><input type = 'text' id = 'costoFactura' name = 'costo'></td>
+								<td><input type = 'text' id = 'costoFactura' name = 'costoFactura' value = '0'></td>
 								<td>Descuento</td>
-								<td><input type = 'text' id = 'descuentoFactura' name = 'descuento'></td>
+								<td><input type = 'text' id = 'descuentoFactura' name = 'descuentoFactura' value = '0'></td>
 							</tr>
 							<tr>
 								<td>Itbis</td>
-								<td><input type = 'text' id = 'itbisFactura' name = 'itbis'></td>
+								<td><input type = 'text' id = 'itbisFactura' name = 'itbisFactura' value = '0'></td>
 								<td>total</td>
-								<td><input type = 'text' id = 'totalFactura' name = 'total'></td>
+								<td><input type = 'text' id = 'totalFactura' name = 'totalFactura' value = '0'></td>
 							</tr>
 							<tr>
-								<td colspan = '4' align = 'center'><button style = "width:200px;">Registrar</button></td>
+								<td colspan = '2' align = 'center'><button onclick = 'calculoTotal();' style = "width:200px;">Total</button></td>
+								<td colspan = '2' align = 'center'><button onclick = 'registrarFactura();' style = "width:200px;">Registrar</button></td>
 							</tr>
 						</table>
 					</form>
@@ -254,33 +255,13 @@
 					</form>
 				</div>
 				<div id = 'mostrarCliente' name="elemento" class="elementosTable">
-					<table>
-						<tr>
-							<td>Cedula</td>
-							<td>Nombre</td>
-							<td>Apellido</td>
-							<td>Direccion</td>
-							<td>Telefono Local</td>
-							<td>Telefono Cel</td>
-							<td>Sexo</td>
-							<td>Estado Civil</td>
-							<td>Email</td>
-						</tr>
-					
+					<table id = 'mostrarClientes' >
 					</table>
 			
 				</div>
 				<div id = 'mostrarFactura' name="elemento" class="elementosTable">
-					<table>
-						<td>ID Factura</td>
-						<td> ID Peluqueria</td>
-						<td>ID Cliente</td>
-						<td>Servicio</td>
-						<td>Costo</td>
-						<td>Descuento</td>
-						<td>Itbis</td>
-						<td>Total</td>
-						<td>Fecha</td>
+					<table id = 'mostrarFacturas'>
+						
 					</table>
 				</div>
 			
