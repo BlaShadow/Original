@@ -64,21 +64,21 @@
 						<table>
 							<tr>
 								<td>Nombre Local: </td>
-								<td> <input type = 'text' id = 'nombreNegocio' name = 'nombre' > </td>
+								<td> <input type = 'text' id = 'nombreNegocio' name = 'nombre' maxlength = '40'> </td>
 								<td> RNC: </td>
-								<td> <input type = 'text' id = 'rncNegocio' name = 'rnc' > </td>
+								<td> <input type = 'text' id = 'rncNegocio' name = 'rnc' maxlength = '11'> </td>
 							</tr>			
 							<tr>		
 								<td> Telefono 1:</td>
-								<td> <input type = 'text' id = 'telefono1Negocio' name = 'telefono1' > </td>
+								<td> <input type = 'text' id = 'telefono1Negocio' name = 'telefono1' maxlength = '15'> </td>
 								<td> Telefono 2:</td>
-								<td> <input type = 'text' id = 'telefono2Negocio' name = 'telefono2' > </td>
+								<td> <input type = 'text' id = 'telefono2Negocio' name = 'telefono2' maxlength = '15'> </td>
 							</tr>
 							<tr>
 								<td>Email: </td>
-								<td> <input type = 'text' id = 'emailNegocio' name = 'email' > </td>
+								<td> <input type = 'text' id = 'emailNegocio' name = 'email' maxlength = '100'> </td>
 								<td>Direccion:</td> 
-								<td><input type = 'text' id = 'direccionNegocio' name = 'direccion' ></td>
+								<td><input type = 'text' id = 'direccionNegocio' name = 'direccion' maxlength = '50'></td>
 							</tr>
 							
 							<tr>
@@ -89,13 +89,14 @@
 							</tr>
 							<tr>
 								<td>Zona:</td> 
-								<td><input type = 'text' id = 'zonaNegocio' name = 'zona' ></td>
+								<td><input type = 'text' id = 'zonaNegocio' name = 'zona' maxlength = '50'></td>
 								<td>Provincia:</td>
-								<td><input type = 'text' id = 'provinciaNegocio' name = 'provincia' ></td>
+								<td><input type = 'text' id = 'provinciaNegocio' name = 'provincia' maxlength = '50'></td>
 							</tr>
 							<tr>
 
-								<td colspan = '4' align = 'center'><button onclick = 'registrarNegocio();' style = "widtd: 200px;"> Registrar </button></td>
+								<td colspan = '2' align = 'center'><button onclick = 'mostrarOcultar("mostrarPeluqueria");mostrarPeluqueria();' style = "widtd: 200px;"> Modificar </button></td>
+								<td colspan = '2' align = 'center'><button onclick = 'registrarNegocio();' style = "widtd: 200px;"> Registrar </button></td>
 							</tr>
 						</table>
 					</form>
@@ -107,21 +108,21 @@
 							<label > Registrar Cliente </label></br></br>
 							<tr>	
 								<td>Cedula:</td>
-								<td><input type="text" id = 'txtCedulaCliente' name = 'txtCedula'></td>
+								<td><input type="text" id = 'txtCedulaCliente' name = 'txtCedula' maxlength = '11'></td>
 								<td>Nombre:</td> 
-								<td><input type="text" id = 'txtNombreCliente' name = 'txtNombre'></td>
+								<td><input type="text" id = 'txtNombreCliente' name = 'txtNombre' maxlength = '40'></td>
 							</tr>
 							<tr>
 								<td>Apellido: </td>
-								<td><input type="text" id = 'txtApellidoCliente' name = 'txtApellido'></td>
+								<td><input type="text" id = 'txtApellidoCliente' name = 'txtApellido' maxlength = '40'></td>
 								<td>Direccion: </td>
-								<td><input type="text" id = 'txtDireccionCliente' name = 'txtDireccion'></td>
+								<td><input type="text" id = 'txtDireccionCliente' name = 'txtDireccion' maxlength = '100'></td>
 							</tr>
 							<tr>
 								<td>Telefono Local:</td>
-								<td><input type="text" id = 'txtTelefonoLocalCliente' name = 'txtTelefonoLocal'></td>
+								<td><input type="text" id = 'txtTelefonoLocalCliente' name = 'txtTelefonoLocal' maxlength = '15'></td>
 								<td>Telefono Celular:</td> 
-								<td><input type="text" id = 'txtTelefonoCelularCliente' name = 'txtTelefonoCelular'></td>
+								<td><input type="text" id = 'txtTelefonoCelularCliente' name = 'txtTelefonoCelular' maxlength = '15'></td>
 							</tr>
 							<tr>
 								<td>Sexo:</td>
@@ -141,10 +142,10 @@
 							</tr>
 							<tr>
 								<td>Email:</td> 
-								<td><input type="text" id = 'txtEmailCliente' name = 'txtEmail'></td>
+								<td><input type="text" id = 'txtEmailCliente' name = 'txtEmail' maxlength = '100'></td>
 							</tr>
 							<tr>
-								<td colspan = '4' align = 'center'><button onclick = 'registrarCliente();' style = "width:200px;"> Registrar </button></td>
+								<td colspan = '4' align = 'center'><button onclick = 'registrarCliente("SignUpClientes");' style = "width:200px;"> Registrar </button></td>
 							</tr>
 						</table>
 					</form>
@@ -155,21 +156,21 @@
 						<table>
 							<tr>
 								<td>Cedula: </td>
-								<td><input type="text" id = 'txtCedulaEmpleado' name = 'txtCedula'></td>
+								<td><input type="text" id = 'txtCedulaEmpleado' name = 'txtCedula' maxlength = '11'></td>
 								<td>Nombre: </td>
-								<td><input type="text" id = 'txtNombreEmpleado' name = 'txtNombre'></td>
+								<td><input type="text" id = 'txtNombreEmpleado' name = 'txtNombre' maxlength = '40'></td>
 							</tr>
 							<tr>
 								<td>Apellido:</td>
-								<td><input type="text" id = 'txtApellidoEmpleado' name = 'txtApellido'></td>
+								<td><input type="text" id = 'txtApellidoEmpleado' name = 'txtApellido' maxlength = '40'></td>
 								<td>Direccion: </td>
-								<td><input type="text" id = 'txtDireccionEmpleado' name = 'txtDireccion'></td>
+								<td><input type="text" id = 'txtDireccionEmpleado' name = 'txtDireccion' maxlength = '100'></td>
 							</tr>
 							<tr>
 								<td>Telefono Local: </td>
-								<td><input type="text" id = 'txtTelefonoLocalEmpleado' name = 'txtTelefonoLocal'></td>
+								<td><input type="text" id = 'txtTelefonoLocalEmpleado' name = 'txtTelefonoLocal' maxlength = '15'></td>
 								<td>Telefono Celular: </td>
-								<td><input type="text" id = 'txtTelefonoCelularEmpleado' name = 'txtTelefonoCelular'></td>
+								<td><input type="text" id = 'txtTelefonoCelularEmpleado' name = 'txtTelefonoCelular' maxlength = '15'></td>
 							</tr>
 							
 							<tr>
@@ -192,10 +193,10 @@
 							
 							<tr>
 								<td>Email: </td>
-								<td><input type="text" id = 'txtEmailEmpleado' name = 'txtEmail'></td>
+								<td><input type="text" id = 'txtEmailEmpleado' name = 'txtEmail' maxlength = '100'></td>
 							</tr>
 							<tr>
-								<td colspan = '4' align = 'center'> <button onclick = 'registrarEmpleado();' style="width:200px;"> Registrar </button></td>
+								<td colspan = '4' align = 'center'> <button onclick = 'registrarEmpleado("SignUpEmpleados");' style="width:200px;"> Registrar </button></td>
 							</tr>
 						</table>
 					</form>
@@ -219,15 +220,15 @@
 							</tr>
 							<tr>
 								<td>Costo</td>
-								<td><input type = 'text' id = 'costoFactura' name = 'costoFactura' value = '0'></td>
+								<td><input type = 'text' id = 'costoFactura' name = 'costoFactura' value = '0'>$</td>
 								<td>Descuento</td>
-								<td><input type = 'text' id = 'descuentoFactura' name = 'descuentoFactura' value = '0'></td>
+								<td><input type = 'text' id = 'descuentoFactura' name = 'descuentoFactura' value = '0'>$</td>
 							</tr>
 							<tr>
 								<td>Itbis</td>
-								<td><input type = 'text' id = 'itbisFactura' name = 'itbisFactura' value = '0'></td>
-								<td>total</td>
-								<td><input type = 'text' id = 'totalFactura' name = 'totalFactura' value = '0'></td>
+								<td><input type = 'text' id = 'itbisFactura' name = 'itbisFactura' value = '0'>% </td>
+								<td> Total</td>
+								<td><input type = 'text' id = 'totalFactura' name = 'totalFactura' value = '0'>$</td>
 							</tr>
 							<tr>
 								<td colspan = '2' align = 'center'><button onclick = 'calculoTotal();' style = "width:200px;">Total</button></td>
@@ -243,15 +244,14 @@
 						<table>
 							<tr>
 								<th>Servicio</th>
-								<td><input type = 'text' id = 'servicioServicio' name = 'servicioServicio'></td>
+								<td><input type = 'text' id = 'servicioServicio' name = 'servicioServicio' maxlength = '30'></td>
 								<th>Costo</th>
-								<td><input type = 'text' id = 'costoServicio' name = 'costoServicio'></td>
+								<td><input type = 'text' id = 'costoServicio' name = 'costoServicio'>$</td>
 							</tr>
 							<tr>
 								<td colspan = '4' align = 'center'><button onclick = 'registrarServicio();' style = "width:200px;">Registrar</button></td>
 							</tr>
 						</table>
-						
 					</form>
 				</div>
 				<div id = 'mostrarCliente' name="elemento" class="elementosTable">
@@ -264,9 +264,18 @@
 						
 					</table>
 				</div>
-			
-			<div style="clear:both;height:20px;"></div>
+				<div id = 'mostrarPeluqueria' name="elemento" align = 'center' class="elementosTable">
+					<table id = 'mostrarPeluquerias'>
+					
+					</table>
+					<button onclick = 'setDatosPeluqueria();' style = "width:200px;">Modificar</button>
+				</div>
+				<div style="clear:both;height:20px;"></div>
+				
 			</div>
+			
+			
+			<div id = 'Mensaje' align = 'center' class = 'mensaje'></div>
 			
 		</div>
 		

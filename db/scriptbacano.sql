@@ -77,6 +77,7 @@ CREATE TABLE IF NOT EXISTS `factura` (
   `itbis` float(10,6) NOT NULL,
   `total` float(10,6) NOT NULL,
   `fecha` date NOT NULL,
+  `comentario` varchar(40) NULL,
   `vigencia` char(1) NOT NULL,
   PRIMARY KEY (`id_factura`)
 ) ENGINE=MyISAM ;

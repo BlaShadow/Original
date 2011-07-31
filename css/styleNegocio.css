@@ -181,7 +181,11 @@ a{
 	font-size:35px;
 
 }
-
+.mensaje label {
+	color:black;
+	font-size:20px;
+	
+}
 #mapaNO{
 	margin-left: 207px;
 	margin-top:20px;
@@ -192,9 +196,9 @@ a{
 
 }
 .elementosTable{
-	margin:170px;
+	margin:160px;
 	background-color:red;
-	width:780px;
+	width:784px;
 	margin-top:20px;
 	margin-bottom:20px;
 	min-height:100px;
@@ -218,6 +222,7 @@ a{
 }
 
 .elementosTable td{
-	border: 2px solid black;
-	width: 10px;
+	border: 1px solid black;
+	min-width: 10px;
+	min-height:5px;
 }

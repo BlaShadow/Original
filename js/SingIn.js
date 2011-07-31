@@ -1,37 +1,10 @@
 /* Creacion global de las variables mas usadas*/
-	var cedula;
-	var nombre;
-	var apellido;
-	var direccion;
-	var telefono_local;
-	var telefono_celular;
-	var sexo;
-	var estado_civil;
-	var email;
-	var telefono1;
-	var telefono2;
-	var rnc;
-	var latitud;
-	var longitud;
-	var zona;
-	var provincia;
-	var servicio;
-	var costo;
-	var descuento;
-	var itbis;
-	var total;
-	
-	
-	
+	var cedula,nombre,apellido,direccion,telefono_local,telefono_celular,sexo,estado_civil,email;
+	var telefono1,telefono2,rnc,latitud,longitud,zona,provincia,servicio,costo,descuento,itbis,total;
 /*oculta todos los div*/
-
 function load(){
-	
 	elementos = document.getElementsByName("elemento");
-	//document.getElementById("mapaNO").style.display="none";
-	
 	for(i=0;i<elementos.length;i++){
-	
 		elementos[i].style.display="none";
 	}
 	cargarDatosFactura();
@@ -48,19 +21,23 @@ function registrarNegocio(){
 		
 		varAjax_1.onreadystatechange = function(){
 			if(varAjax_1.readyState == 4 && varAjax_1.status == 200){
-				
 				respuesta01 = varAjax_1.responseText;
 				alert(respuesta01);
-				if(respuesta01 == "Good"){
+				if(respuesta01 == "Registro"){
 					document.SignUpNegocio.reset();
+					document.getElementById('Mensaje').innerHTML = "<label style = 'font-color:white;'> Registro!</label>";
+				}
+				else if(respuesta01 == "Actualizo"){
+					document.SignUpNegocio.reset();
+					document.getElementById('Mensaje').innerHTML = "<label style = 'font-color:white;'> Actualizo!</label>";
 				}
 				else{
-					alert("pinche verga");
+					alert("Joder con esta verga");
 				}
 			}
 		}
+		varAjax_1.send(null);
 	}
-	varAjax_1.send(null);
 }
 
 function validacionSignUpNegocio(){
@@ -81,8 +58,7 @@ function validacionSignUpNegocio(){
 		ind = "h";
 		nombre.style.border = '3px solid blue';
 	}
-	else
-	{
+	else{
 		nombre.style.border = '3px solid red';
 	}
 	if(telefono1.value == "" || isNaN(telefono1.value)){
@@ -149,18 +125,15 @@ function validacionSignUpNegocio(){
 		provincia.style.border = '3px solid red';
 	}
 	
-	if(ind == "")
-	{
+	if(ind == ""){
 		return true;
 	}
-	else
-	{
+	else{
 		return false;
 	}
 }
-function registrarEmpleado(){
-	
-	if(validacionSignUpEmpleados()){
+function registrarEmpleado(div){
+	if(validacionSignUpClientesEmpleados(div)){
 		alert(sexo.value+estado_civil.value);
 		var varAjax_2 = getHTTPrequest();
 		var respuesta="";
@@ -174,9 +147,8 @@ function registrarEmpleado(){
 				respuesta = varAjax_2.responseText;
 				alert(respuesta);
 				if(respuesta == "Good"){
-					
 					document.SignUpEmpleado.reset();
-					
+					document.getElementById('Mensaje').innerHTML = "<label style = 'font-color:white;'> Listo!</label>";
 				}
 				else{
 					alert("la verga");
@@ -184,104 +156,12 @@ function registrarEmpleado(){
 			}
 			
 		}
-		
-	}
 	varAjax_2.send(null);
-}
-function validacionSignUpEmpleados(){
-	cedula = document.getElementById("txtCedulaEmpleado");
-	nombre = document.getElementById("txtNombreEmpleado");
-	apellido = document.getElementById("txtApellidoEmpleado");
-	direccion = document.getElementById("txtDireccionEmpleado");
-	telefono_local = document.getElementById("txtTelefonoLocalEmpleado");
-	telefono_celular = document.getElementById("txtTelefonoCelularEmpleado");
-	sexo = document.getElementById("txtSexoEmpleado");
-	estado_civil = document.getElementById("txtEstadoCivilEmpleado");
-	email = document.getElementById("txtEmailEmpleado");
-	var ind = "";
-	
-	
-	if(cedula.value == "" || isNaN(cedula.value) || cedula.value.length < 11){
-		ind = "h";
-		cedula.style.border = '3px solid blue';
-		
-	}
-	else
-	{
-		cedula.style.border = '3px solid red';
-	}
-	
-	
-	if(nombre.value == "" || !isNaN(nombre.value)){
-		ind = "h";
-		nombre.style.border = '3px solid blue';
-	}
-	else
-	{
-		nombre.style.border = '3px solid red';
-	}
-	if(apellido.value == "" || !isNaN(apellido.value)){
-		ind = "h";
-		apellido.style.border = '3px solid blue';
-	}
-	else{
-		apellido.style.border = '3px solid red';
-	}
-	if(direccion.value == ""){
-		ind = "h";
-		direccion.style.border = '3px solid blue';
-	}
-	else{
-		direccion.style.border = '3px solid red';
-	}
-	if(telefono_local.value == "" || isNaN(telefono_local.value)){
-		ind = "h";
-		telefono_local.style.border = '3px solid blue';
-	}
-	else{
-		telefono_local.style.border = '3px solid red';
-	}
-	if(telefono_celular.value == "" || isNaN(telefono_celular.value)){
-		ind = "h";
-		telefono_celular.style.border = '3px solid blue';
-	}
-	else{
-		telefono_celular.style.border = '3px solid red';
-	}
-	
-	if(sexo.value == ""){
-		ind = "h";
-		sexo.style.border = '3px solid blue';
-	}
-	else{
-		sexo.style.border = '3px solid red';
-	}
-	if(estado_civil.value == ""){
-		ind = "h";
-		estado_civil.style.border = '3px solid blue';
-	}
-	else{
-		estado_civil.style.border = '3px solid red';
-	}
-	if(email.value == ""){
-		ind = "h";
-		email.style.border = '3px solid blue';
-	}
-	else{
-		email.style.border = '3px solid red';
-	}
-	if(ind == "")
-	{
-		return true;
-	}
-	else
-	{
-		return false;
 	}
 }
-function registrarCliente(){
+function registrarCliente(div){
 	
-	if(validacionSignUpClientes()){
+	if(validacionSignUpClientesEmpleados(div)){
 		alert(sexo.value+estado_civil.value);
 		var varAjax_3 = getHTTPrequest();
 		var respuesta="";
@@ -296,6 +176,7 @@ function registrarCliente(){
 				alert(respuesta);
 				if(respuesta == "Good"){
 					document.SignUpCliente.reset();
+					document.getElementById('Mensaje').innerHTML = "<label style = 'font-color:white;'> Listo!</label>";
 				}
 				else{
 					alert("la verga");
@@ -303,20 +184,33 @@ function registrarCliente(){
 			}
 			
 		}
-		
+		varAjax_3.send(null);	
 	}
-	varAjax_3.send(null);
 }
-function validacionSignUpClientes(){
-	cedula = document.getElementById("txtCedulaCliente");
-	nombre = document.getElementById("txtNombreCliente");
-	apellido = document.getElementById("txtApellidoCliente");
-	direccion = document.getElementById("txtDireccionCliente");
-	telefono_local = document.getElementById("txtTelefonoLocalCliente");
-	telefono_celular = document.getElementById("txtTelefonoCelularCliente");
-	sexo = document.getElementById("txtSexoCliente");
-	estado_civil = document.getElementById("txtEstadoCivilCliente");
-	email = document.getElementById("txtEmailCliente");
+function validacionSignUpClientesEmpleados(div){
+	alert(div);
+	if(div == "SignUpClientes"){
+		cedula = document.getElementById("txtCedulaCliente");
+		nombre = document.getElementById("txtNombreCliente");
+		apellido = document.getElementById("txtApellidoCliente");
+		direccion = document.getElementById("txtDireccionCliente");
+		telefono_local = document.getElementById("txtTelefonoLocalCliente");
+		telefono_celular = document.getElementById("txtTelefonoCelularCliente");
+		sexo = document.getElementById("txtSexoCliente");
+		estado_civil = document.getElementById("txtEstadoCivilCliente");
+		email = document.getElementById("txtEmailCliente");
+	}
+	else{
+		cedula = document.getElementById("txtCedulaEmpleado");
+		nombre = document.getElementById("txtNombreEmpleado");
+		apellido = document.getElementById("txtApellidoEmpleado");
+		direccion = document.getElementById("txtDireccionEmpleado");
+		telefono_local = document.getElementById("txtTelefonoLocalEmpleado");
+		telefono_celular = document.getElementById("txtTelefonoCelularEmpleado");
+		sexo = document.getElementById("txtSexoEmpleado");
+		estado_civil = document.getElementById("txtEstadoCivilEmpleado");
+		email = document.getElementById("txtEmailEmpleado");
+	}
 	var ind = "";
 	
 	if(cedula.value == "" || isNaN(cedula.value) || cedula.value.length < 11){
@@ -474,14 +368,15 @@ function registrarFactura(){
 				alert(respuesta);
 				if(respuesta == "Good"){
 					document.SignUpFactura.reset();
+					document.getElementById('Mensaje').innerHTML = "<label style = 'font-color:white;'> Listo!</label>";
 				}
 				else{
 					alert("que verga esta");
 				}
 			}
 		}
+		varAjax_6.send(null);
 	}
-	varAjax_6.send(null);
 }
 function validacionSignUpFactura(){
 	cliente = document.getElementById('nombreClienteFactura');
@@ -553,15 +448,16 @@ function registrarServicio(){
 			if(varAjax_5.readyState == 4 && varAjax_5.status == 200){
 				respuesta = varAjax_5.responseText;
 				if(respuesta == "Good"){
-					document.SignUpFactura.reset();
+					document.SignUpServicio.reset();
+					document.getElementById('Mensaje').innerHTML = "<label style = 'font-color:white;'> Listo!</label>";
 				}
 				else{
 					alert(respuesta);
 				}
 			}
 		}
+		varAjax_5.send(null);
 	}
-	varAjax_5.send(null);
 }
 
 function validacionSignUpServicio(){
@@ -648,19 +544,80 @@ function mostrarFacturasF(){
 }
 function eliminarFactura(id_factura){
 	if(confirm("Seguro que decea eliminar esta factura?")){
-		var varAjax_0 = getHTTPrequest();
-		varAjax_0.open('GET',"engine/negocioeliminarfactura.php?id_factura="+id_factura,true);
-		varAjax_0.onreadystatechange = function(){
-			if(varAjax_0.readyState == 4 && varAjax_0.status == 200){
-				var respuesta = varAjax_0.responseText;
-				if(respuesta == "Good"){
-					alert("Borrado");
+		var porque = prompt("Por que desea eliminar esta factura?","");
+		if(porque != "" && porque != " "){
+			var varAjax_0 = getHTTPrequest();
+			varAjax_0.open('GET',"engine/negocioeliminarfactura.php?id_factura="+id_factura+
+			"&comentario="+porque,true);
+			varAjax_0.onreadystatechange = function(){
+				if(varAjax_0.readyState == 4 && varAjax_0.status == 200){
+					var respuesta = varAjax_0.responseText;
+					if(respuesta == "Good"){
+						document.getElementById('Mensaje').innerHTML = "<label style = 'font-color:white;'> Borrado!</label>";
+					}
 				}
 			}
 		}
+		varAjax_0.send(null);
 	}
-	varAjax_0.send(null);
 	mostrarFacturasF();
+}
+function mostrarPeluqueria(){
+	var varAjax_01 = getHTTPrequest();
+	varAjax_01.open('GET',"engine/negociodatospeluqueria.php",true);
+	varAjax_01.onreadystatechange = function(){
+		if(varAjax_01.readyState == 4 && varAjax_01.status == 200){
+			var xml = varAjax_01.responseXML;
+			var table1 = document.getElementById('mostrarPeluquerias');
+			table1.innerHTML = "";
+			table1.innerHTML = "<tr><td>Nombre Local</td><td>Telefono 1</td><td>Telefono 2</td><td>Latitud</td><td>Longitud</td><td>Direccion</td><td>Zona</td><td>Provincia</td><td>RNC</td><td>Email</td><td></td></tr>";
+			for(var ind1 = 0;ind1 < xml.getElementsByTagName('peluqueria').length;ind1++){
+				var tr = document.createElement('tr');
+				for(var ind2 = 0; ind2 < xml.getElementsByTagName('peluqueria')[ind1].childNodes.length;ind2++){
+					var td = document.createElement('td');
+					td.innerHTML = xml.getElementsByTagName('peluqueria')[ind1].childNodes[ind2].firstChild.nodeValue;
+					tr.appendChild(td);
+				}
+				table1.appendChild(tr);
+			}
+			
+		}
+	}
+	varAjax_01.send(null);
+}
+function setDatosPeluqueria(){
+	camposSUN();
+	var varAjax_02 = getHTTPrequest();
+	varAjax_02.open('GET',"engine/negociodatospeluqueria.php",true);
+	varAjax_02.onreadystatechange = function(){
+		if(varAjax_02.readyState == 4 && varAjax_02.status == 200){
+			var xml = varAjax_02.responseXML;
+			nombre.value = xml.getElementsByTagName('nombre')[0].firstChild.nodeValue;
+			telefono1.value = xml.getElementsByTagName('telefono1')[0].firstChild.nodeValue;
+			telefono2.value = xml.getElementsByTagName('telefono2')[0].firstChild.nodeValue;
+			rnc.value = xml.getElementsByTagName('rnc')[0].firstChild.nodeValue;
+			email.value = xml.getElementsByTagName('email')[0].firstChild.nodeValue;
+			latitud.value = xml.getElementsByTagName('latitud')[0].firstChild.nodeValue;
+			longitud.value = xml.getElementsByTagName('longitud')[0].firstChild.nodeValue;
+			direccion.value = xml.getElementsByTagName('direccion')[0].firstChild.nodeValue;
+			zona.value = xml.getElementsByTagName('zona')[0].firstChild.nodeValue;
+			provincia.value = xml.getElementsByTagName('provincia')[0].firstChild.nodeValue;
+			mostrarOcultar('SignUpNegocio');
+		}
+	}
+	varAjax_02.send(null);
+}
+function camposSUN(){
+	nombre = document.getElementById("nombreNegocio");
+	telefono1 = document.getElementById("telefono1Negocio");
+	telefono2 = document.getElementById("telefono2Negocio");
+	rnc = document.getElementById("rncNegocio");
+	email = document.getElementById("emailNegocio");
+	latitud = document.getElementById("latitudNegocio");
+	longitud = document.getElementById("longitudNegocio");
+	direccion = document.getElementById("direccionNegocio");
+	zona = document.getElementById("zonaNegocio");
+	provincia = document.getElementById("provinciaNegocio");
 }
 // Funcion que muestra el div seleccionado
 function mostrarOcultar(div){

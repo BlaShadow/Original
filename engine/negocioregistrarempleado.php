@@ -14,6 +14,7 @@
 		$estado_civil = $_GET["estado_civil"];
 		$email = $_GET["email"];
 		
+		
 		$query1 = "select id_peluqueria from peluqueria where id_usuario =".$_SESSION['usuario'];
 		$result = mysql_query($query1);
 		$row = mysql_fetch_assoc($result);
@@ -29,7 +30,6 @@
 		else{
 			echo "Bad";
 		}
-		
 	}
 	
 ?>

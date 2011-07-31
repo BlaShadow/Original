@@ -4,8 +4,6 @@
 	include_once("validarLetras.php");
 	$conexion = new Conexion;
 	
-	// funcion en caso de que se usen caracter raritos.
-	
 	// Query que me retorna el id_peluqueria para buscar los clientes.
 	$query1 = "select id_peluqueria from peluqueria where id_usuario=".$_SESSION["usuario"];
 	$result1 = mysql_query($query1);
@@ -43,7 +41,7 @@
 	while($row2 = mysql_fetch_array($result4)){
 		echo "<datoservicio>";
 		echo "<servicio>".parseToXML($row2['servicio'])."</servicio>";
-		echo "<costo>".$row2['precio']."</costo>";
+		echo "<costo>".round($row2['precio'],2)."</costo>";
 		echo "</datoservicio>";
 	}
 	echo "</peluqueria>";
